@@ -74,8 +74,7 @@ pip install -r requirements.txt
         |-- ...
 |-- pretrained_models/  # 预训练模型目录
     |-- bert-base-uncased/  # bert-base-uncased预训练模型目录，需自行下载放置在该目录
-    |-- swinv2-base/  # Swin Transfo
-    rmer V2预训练模型目录，需自行下载放置在该目录
+    |-- swinv2-base/  # Swin Transformer V2预训练模型目录，需自行下载放置在该目录
 |-- results/  # 实验结果目录
     |-- result.txt  # 测试集预测结果
 |-- search/  # 参数搜索目录
