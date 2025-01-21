@@ -1,0 +1,26 @@
+# 深度学习框架
+torch>=1.9.0
+torchvision>=0.10.0
+
+# 自然语言处理
+transformers>=4.15.0
+nltk>=3.6.5
+
+# 机器学习
+scikit-learn>=0.24.2
+numpy>=1.19.5
+
+# 图像处理
+Pillow>=8.3.1
+
+# 进度条
+tqdm>=4.62.3
+
+# 实验跟踪
+wandb>=0.12.0
+
+# 日期时间处理
+python-dateutil>=2.8.2
+
+# 其他依赖
+subprocess32>=3.5.4  # 用于运行子进程 

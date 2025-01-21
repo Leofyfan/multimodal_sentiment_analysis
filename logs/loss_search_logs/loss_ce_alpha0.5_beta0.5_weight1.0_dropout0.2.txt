@@ -1,0 +1,14 @@
+=== 命令 ===
+python main.py --loss_type ce --alpha 0.5 --beta 0.5 --neural_init_weight 1.0 --dropout 0.2 --name loss_ce_alpha0.5_beta0.5_weight1.0_dropout0.2 --wandb True
+
+=== 标准输出 ===
+
+=== 标准错误 ===
+Traceback (most recent call last):
+  File "/root/project5/main.py", line 8, in <module>
+    from multimodel import MultimodalModel
+  File "/root/project5/multimodel.py", line 157
+    elif self.config.feature_fusion == "dynamic_routing":
+    ^^^^
+SyntaxError: invalid syntax
+

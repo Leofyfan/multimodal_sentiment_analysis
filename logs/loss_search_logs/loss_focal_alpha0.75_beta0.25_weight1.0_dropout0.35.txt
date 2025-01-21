@@ -1,0 +1,2332 @@
+=== 命令 ===
+python main.py --loss_type focal --alpha 0.75 --beta 0.25 --neural_init_weight 1.0 --dropout 0.35 --name loss_focal_alpha0.75_beta0.25_weight1.0_dropout0.35 --wandb True
+
+=== 标准输出 ===
+Config Info:
+device: cuda
+batch_size: 32
+learning_rate: 0.0001
+num_epochs: 10
+val_ratio: 0.2
+wandb: True
+early_stop_patience: 3
+text_model_name: ./pretrained_models/bert-base-uncased
+image_model_name: ./pretrained_models/swinv2-base
+data_dir: data
+train_file: train.txt
+test_file: test_without_label.txt
+result_file: result.txt
+use_kfold: False
+k_folds: 5
+project_name: multimodal_sentiment_analysis_loss
+use_text: True
+use_image: True
+feature_fusion: concat
+num_classes: 3
+log_iteration: 10
+name: loss_focal_alpha0.75_beta0.25_weight1.0_dropout0.35
+text_dim: 128
+image_dim: 256
+dropout: 0.35
+loss_type: focal
+alpha: 0.75
+beta: 0.25
+neural_init_weight: 1.0
+
+数据集统计信息:
+总样本数: 6869
+原始样本数: 4000
+增强样本数: 2869
+
+标签分布:
+negative: 2386 (34.74%)
+neutral: 2095 (30.50%)
+positive: 2388 (34.76%)
+
+缺失文本数: 0
+缺失图像数: 0
+Training on cuda
+
+=== 第 1 次迭代调试信息 ===
+当前类别统计：
+positive: count=12.0, difficulty=0.6847, log_difficulty=0.5216, weight=3.6079
+neutral: count=7.0, difficulty=0.7060, log_difficulty=0.5342, weight=3.6708
+negative: count=13.0, difficulty=0.6654, log_difficulty=0.5101, weight=3.5503
+
+当前batch的pt分布：
+positive: min=0.1628, max=0.5563, mean=0.3153
+neutral: min=0.2004, max=0.3905, mean=0.2940
+negative: min=0.0792, max=0.5292, mean=0.3346
+
+当前batch准确率：
+整体准确率: 0.3438
+positive 准确率: 0.3333
+neutral 准确率: 0.1429
+negative 准确率: 0.4615
+
+损失分量：
+基础交叉熵: 1.2031
+焦点损失: 0.4495
+边界损失: 0.7660
+总损失: 1.4046
+Epoch 1 [1/172] - loss: 1.4046, acc: 0.3438
+Epoch 1 [2/172] - loss: 1.1791
+Epoch 1 [3/172] - loss: 1.2572
+Epoch 1 [4/172] - loss: 1.4197
+Epoch 1 [5/172] - loss: 1.2808
+Epoch 1 [6/172] - loss: 1.1510
+Epoch 1 [7/172] - loss: 1.4440
+Epoch 1 [8/172] - loss: 1.0055
+Epoch 1 [9/172] - loss: 1.0659
+Epoch 1 [10/172] - loss: 1.5674, acc: 0.2812
+Epoch 1 [11/172] - loss: 1.7405
+Epoch 1 [12/172] - loss: 1.1877
+Epoch 1 [13/172] - loss: 1.3200
+Epoch 1 [14/172] - loss: 1.5210
+Epoch 1 [15/172] - loss: 1.6117
+Epoch 1 [16/172] - loss: 1.5912
+Epoch 1 [17/172] - loss: 1.2410
+Epoch 1 [18/172] - loss: 1.2569
+Epoch 1 [19/172] - loss: 1.2222
+Epoch 1 [20/172] - loss: 1.2335, acc: 0.3750
+Epoch 1 [21/172] - loss: 1.5611
+Epoch 1 [22/172] - loss: 1.3176
+Epoch 1 [23/172] - loss: 1.1597
+Epoch 1 [24/172] - loss: 1.3300
+Epoch 1 [25/172] - loss: 1.0178
+Epoch 1 [26/172] - loss: 1.4312
+Epoch 1 [27/172] - loss: 1.3261
+Epoch 1 [28/172] - loss: 1.4283
+Epoch 1 [29/172] - loss: 1.5585
+Epoch 1 [30/172] - loss: 1.5363, acc: 0.3750
+Epoch 1 [31/172] - loss: 1.6667
+Epoch 1 [32/172] - loss: 1.3096
+Epoch 1 [33/172] - loss: 1.5413
+Epoch 1 [34/172] - loss: 1.2779
+Epoch 1 [35/172] - loss: 1.4374
+Epoch 1 [36/172] - loss: 1.0902
+Epoch 1 [37/172] - loss: 1.3893
+Epoch 1 [38/172] - loss: 1.2352
+Epoch 1 [39/172] - loss: 1.2447
+Epoch 1 [40/172] - loss: 1.2073, acc: 0.3438
+Epoch 1 [41/172] - loss: 1.2383
+Epoch 1 [42/172] - loss: 1.5705
+Epoch 1 [43/172] - loss: 1.2755
+Epoch 1 [44/172] - loss: 1.2488
+Epoch 1 [45/172] - loss: 1.2114
+Epoch 1 [46/172] - loss: 1.0339
+Epoch 1 [47/172] - loss: 0.9786
+Epoch 1 [48/172] - loss: 1.2005
+Epoch 1 [49/172] - loss: 1.0946
+Epoch 1 [50/172] - loss: 1.1471, acc: 0.2500
+Epoch 1 [51/172] - loss: 1.7525
+Epoch 1 [52/172] - loss: 1.1933
+Epoch 1 [53/172] - loss: 1.7360
+Epoch 1 [54/172] - loss: 1.2205
+Epoch 1 [55/172] - loss: 1.2645
+Epoch 1 [56/172] - loss: 1.3575
+Epoch 1 [57/172] - loss: 1.5478
+Epoch 1 [58/172] - loss: 1.0960
+Epoch 1 [59/172] - loss: 1.3088
+Epoch 1 [60/172] - loss: 0.8951, acc: 0.5938
+Epoch 1 [61/172] - loss: 1.0497
+Epoch 1 [62/172] - loss: 1.0311
+Epoch 1 [63/172] - loss: 0.9487
+Epoch 1 [64/172] - loss: 1.3054
+Epoch 1 [65/172] - loss: 0.9283
+Epoch 1 [66/172] - loss: 1.2140
+Epoch 1 [67/172] - loss: 1.2551
+Epoch 1 [68/172] - loss: 1.2632
+Epoch 1 [69/172] - loss: 1.0781
+Epoch 1 [70/172] - loss: 1.2832, acc: 0.2500
+Epoch 1 [71/172] - loss: 1.2169
+Epoch 1 [72/172] - loss: 1.1897
+Epoch 1 [73/172] - loss: 1.3728
+Epoch 1 [74/172] - loss: 0.9177
+Epoch 1 [75/172] - loss: 0.8722
+Epoch 1 [76/172] - loss: 0.9708
+Epoch 1 [77/172] - loss: 0.9639
+Epoch 1 [78/172] - loss: 1.0917
+Epoch 1 [79/172] - loss: 1.1752
+Epoch 1 [80/172] - loss: 1.3559, acc: 0.2500
+Epoch 1 [81/172] - loss: 0.8531
+Epoch 1 [82/172] - loss: 1.0330
+Epoch 1 [83/172] - loss: 1.2418
+Epoch 1 [84/172] - loss: 1.3234
+Epoch 1 [85/172] - loss: 1.3331
+Epoch 1 [86/172] - loss: 1.3411
+Epoch 1 [87/172] - loss: 1.3809
+Epoch 1 [88/172] - loss: 1.1643
+Epoch 1 [89/172] - loss: 1.1821
+Epoch 1 [90/172] - loss: 1.1978, acc: 0.4688
+Epoch 1 [91/172] - loss: 0.9671
+Epoch 1 [92/172] - loss: 1.1413
+Epoch 1 [93/172] - loss: 0.9888
+Epoch 1 [94/172] - loss: 0.8856
+Epoch 1 [95/172] - loss: 0.9922
+Epoch 1 [96/172] - loss: 1.2152
+Epoch 1 [97/172] - loss: 0.9623
+Epoch 1 [98/172] - loss: 0.9829
+Epoch 1 [99/172] - loss: 1.3305
+Epoch 1 [100/172] - loss: 1.1064, acc: 0.3750
+
+=== 第 101 次迭代调试信息 ===
+当前类别统计：
+positive: count=1130.0, difficulty=0.6537, log_difficulty=0.5030, weight=3.5151
+neutral: count=983.0, difficulty=0.6466, log_difficulty=0.4987, weight=3.4937
+negative: count=1119.0, difficulty=0.6443, log_difficulty=0.4973, weight=3.4865
+
+当前batch的pt分布：
+positive: min=0.1049, max=0.7668, mean=0.3496
+neutral: min=0.4097, max=0.8112, mean=0.5385
+negative: min=0.1352, max=0.5251, mean=0.3393
+
+当前batch准确率：
+整体准确率: 0.3750
+positive 准确率: 0.2500
+neutral 准确率: 1.0000
+negative 准确率: 0.3125
+
+损失分量：
+基础交叉熵: 1.0830
+焦点损失: 0.3835
+边界损失: 0.7069
+总损失: 1.1836
+Epoch 1 [101/172] - loss: 1.1836
+Epoch 1 [102/172] - loss: 1.0223
+Epoch 1 [103/172] - loss: 1.0280
+Epoch 1 [104/172] - loss: 0.7680
+Epoch 1 [105/172] - loss: 0.9289
+Epoch 1 [106/172] - loss: 0.9175
+Epoch 1 [107/172] - loss: 0.9913
+Epoch 1 [108/172] - loss: 1.0783
+Epoch 1 [109/172] - loss: 1.2346
+Epoch 1 [110/172] - loss: 0.9539, acc: 0.6250
+Epoch 1 [111/172] - loss: 0.9678
+Epoch 1 [112/172] - loss: 0.9117
+Epoch 1 [113/172] - loss: 1.1979
+Epoch 1 [114/172] - loss: 0.9731
+Epoch 1 [115/172] - loss: 1.2370
+Epoch 1 [116/172] - loss: 1.4733
+Epoch 1 [117/172] - loss: 1.3573
+Epoch 1 [118/172] - loss: 0.9179
+Epoch 1 [119/172] - loss: 1.5200
+Epoch 1 [120/172] - loss: 1.0393, acc: 0.5000
+Epoch 1 [121/172] - loss: 1.2582
+Epoch 1 [122/172] - loss: 0.9669
+Epoch 1 [123/172] - loss: 0.9645
+Epoch 1 [124/172] - loss: 1.2015
+Epoch 1 [125/172] - loss: 0.9811
+Epoch 1 [126/172] - loss: 1.2499
+Epoch 1 [127/172] - loss: 0.8410
+Epoch 1 [128/172] - loss: 0.9237
+Epoch 1 [129/172] - loss: 1.4356
+Epoch 1 [130/172] - loss: 1.0317, acc: 0.5312
+Epoch 1 [131/172] - loss: 1.0532
+Epoch 1 [132/172] - loss: 0.9624
+Epoch 1 [133/172] - loss: 1.3205
+Epoch 1 [134/172] - loss: 1.2421
+Epoch 1 [135/172] - loss: 1.1272
+Epoch 1 [136/172] - loss: 1.1264
+Epoch 1 [137/172] - loss: 1.0799
+Epoch 1 [138/172] - loss: 1.2677
+Epoch 1 [139/172] - loss: 1.0368
+Epoch 1 [140/172] - loss: 1.1901, acc: 0.3438
+Epoch 1 [141/172] - loss: 1.0806
+Epoch 1 [142/172] - loss: 0.9490
+Epoch 1 [143/172] - loss: 0.8960
+Epoch 1 [144/172] - loss: 1.0303
+Epoch 1 [145/172] - loss: 1.1894
+Epoch 1 [146/172] - loss: 0.9868
+Epoch 1 [147/172] - loss: 1.2203
+Epoch 1 [148/172] - loss: 1.1601
+Epoch 1 [149/172] - loss: 1.1266
+Epoch 1 [150/172] - loss: 0.9995, acc: 0.5312
+Epoch 1 [151/172] - loss: 0.9542
+Epoch 1 [152/172] - loss: 0.9777
+Epoch 1 [153/172] - loss: 1.2314
+Epoch 1 [154/172] - loss: 1.0436
+Epoch 1 [155/172] - loss: 0.9396
+Epoch 1 [156/172] - loss: 1.2078
+Epoch 1 [157/172] - loss: 1.1552
+Epoch 1 [158/172] - loss: 0.9959
+Epoch 1 [159/172] - loss: 1.0964
+Epoch 1 [160/172] - loss: 1.1087, acc: 0.3750
+Epoch 1 [161/172] - loss: 0.9699
+Epoch 1 [162/172] - loss: 0.7910
+Epoch 1 [163/172] - loss: 0.8389
+Epoch 1 [164/172] - loss: 1.3007
+Epoch 1 [165/172] - loss: 0.9945
+Epoch 1 [166/172] - loss: 0.9667
+Epoch 1 [167/172] - loss: 1.0328
+Epoch 1 [168/172] - loss: 1.0554
+Epoch 1 [169/172] - loss: 1.0678
+Epoch 1 [170/172] - loss: 1.0038, acc: 0.3750
+Epoch 1 [171/172] - loss: 0.9416
+Epoch 1 [172/172] - loss: 1.0221
+
+类别准确率:
+positive: 0.6595 (308/467)
+neutral: 0.6265 (52/83)
+negative: 0.2520 (63/250)
+
+Epoch 1/10
+Train Loss: 1.0213, Train Acc: 0.5192
+Val Loss: 0.9643, Val Acc: 0.5288
+Epoch 2 [1/172] - loss: 1.7059, acc: 0.4062
+Epoch 2 [2/172] - loss: 0.8226
+Epoch 2 [3/172] - loss: 1.3451
+Epoch 2 [4/172] - loss: 0.8860
+Epoch 2 [5/172] - loss: 1.0141
+Epoch 2 [6/172] - loss: 1.2943
+Epoch 2 [7/172] - loss: 1.0223
+Epoch 2 [8/172] - loss: 0.9711
+Epoch 2 [9/172] - loss: 0.8791
+Epoch 2 [10/172] - loss: 0.9421, acc: 0.4688
+Epoch 2 [11/172] - loss: 0.9278
+Epoch 2 [12/172] - loss: 0.8408
+Epoch 2 [13/172] - loss: 0.8166
+Epoch 2 [14/172] - loss: 0.6095
+Epoch 2 [15/172] - loss: 0.6967
+Epoch 2 [16/172] - loss: 0.8893
+Epoch 2 [17/172] - loss: 1.0264
+Epoch 2 [18/172] - loss: 0.9526
+Epoch 2 [19/172] - loss: 0.9360
+Epoch 2 [20/172] - loss: 0.9226, acc: 0.5312
+Epoch 2 [21/172] - loss: 0.9918
+Epoch 2 [22/172] - loss: 0.6676
+Epoch 2 [23/172] - loss: 0.6630
+Epoch 2 [24/172] - loss: 1.0441
+Epoch 2 [25/172] - loss: 0.9587
+Epoch 2 [26/172] - loss: 0.9897
+Epoch 2 [27/172] - loss: 0.9556
+Epoch 2 [28/172] - loss: 0.9686
+
+=== 第 201 次迭代调试信息 ===
+当前类别统计：
+positive: count=2247.0, difficulty=0.6188, log_difficulty=0.4817, weight=3.4084
+neutral: count=1952.0, difficulty=0.6152, log_difficulty=0.4795, weight=3.3973
+negative: count=2216.0, difficulty=0.6321, log_difficulty=0.4899, weight=3.4495
+
+当前batch的pt分布：
+positive: min=0.2712, max=0.6175, mean=0.4396
+neutral: min=0.2059, max=0.8423, mean=0.4708
+negative: min=0.1565, max=0.5199, mean=0.3296
+
+当前batch准确率：
+整体准确率: 0.5312
+positive 准确率: 0.5556
+neutral 准确率: 0.7273
+negative 准确率: 0.3333
+
+损失分量：
+基础交叉熵: 0.9633
+焦点损失: 0.2961
+边界损失: 0.6506
+总损失: 0.9239
+Epoch 2 [29/172] - loss: 0.9239
+Epoch 2 [30/172] - loss: 0.7946, acc: 0.6250
+Epoch 2 [31/172] - loss: 0.6927
+Epoch 2 [32/172] - loss: 0.7078
+Epoch 2 [33/172] - loss: 0.7539
+Epoch 2 [34/172] - loss: 1.0134
+Epoch 2 [35/172] - loss: 0.8288
+Epoch 2 [36/172] - loss: 0.9010
+Epoch 2 [37/172] - loss: 0.8218
+Epoch 2 [38/172] - loss: 0.9078
+Epoch 2 [39/172] - loss: 0.8615
+Epoch 2 [40/172] - loss: 0.8941, acc: 0.5625
+Epoch 2 [41/172] - loss: 1.2550
+Epoch 2 [42/172] - loss: 0.6872
+Epoch 2 [43/172] - loss: 0.5637
+Epoch 2 [44/172] - loss: 1.1042
+Epoch 2 [45/172] - loss: 1.2610
+Epoch 2 [46/172] - loss: 0.8327
+Epoch 2 [47/172] - loss: 1.0086
+Epoch 2 [48/172] - loss: 1.0695
+Epoch 2 [49/172] - loss: 0.8417
+Epoch 2 [50/172] - loss: 0.9499, acc: 0.5625
+Epoch 2 [51/172] - loss: 0.7785
+Epoch 2 [52/172] - loss: 1.0845
+Epoch 2 [53/172] - loss: 0.8509
+Epoch 2 [54/172] - loss: 0.7287
+Epoch 2 [55/172] - loss: 0.7561
+Epoch 2 [56/172] - loss: 0.7822
+Epoch 2 [57/172] - loss: 0.7530
+Epoch 2 [58/172] - loss: 0.8612
+Epoch 2 [59/172] - loss: 1.0708
+Epoch 2 [60/172] - loss: 0.7779, acc: 0.5938
+Epoch 2 [61/172] - loss: 0.5720
+Epoch 2 [62/172] - loss: 0.7663
+Epoch 2 [63/172] - loss: 1.2000
+Epoch 2 [64/172] - loss: 1.0830
+Epoch 2 [65/172] - loss: 0.8048
+Epoch 2 [66/172] - loss: 0.7659
+Epoch 2 [67/172] - loss: 0.7988
+Epoch 2 [68/172] - loss: 0.7738
+Epoch 2 [69/172] - loss: 0.7767
+Epoch 2 [70/172] - loss: 0.9296, acc: 0.6250
+Epoch 2 [71/172] - loss: 0.8810
+Epoch 2 [72/172] - loss: 0.8826
+Epoch 2 [73/172] - loss: 0.6843
+Epoch 2 [74/172] - loss: 0.9378
+Epoch 2 [75/172] - loss: 0.8722
+Epoch 2 [76/172] - loss: 0.6118
+Epoch 2 [77/172] - loss: 0.6329
+Epoch 2 [78/172] - loss: 0.6941
+Epoch 2 [79/172] - loss: 0.7911
+Epoch 2 [80/172] - loss: 1.0184, acc: 0.4062
+Epoch 2 [81/172] - loss: 0.8880
+Epoch 2 [82/172] - loss: 0.8904
+Epoch 2 [83/172] - loss: 0.8742
+Epoch 2 [84/172] - loss: 0.8028
+Epoch 2 [85/172] - loss: 0.8575
+Epoch 2 [86/172] - loss: 0.7336
+Epoch 2 [87/172] - loss: 0.9742
+Epoch 2 [88/172] - loss: 0.7433
+Epoch 2 [89/172] - loss: 0.9096
+Epoch 2 [90/172] - loss: 0.5654, acc: 0.7500
+Epoch 2 [91/172] - loss: 0.6188
+Epoch 2 [92/172] - loss: 0.9807
+Epoch 2 [93/172] - loss: 0.6597
+Epoch 2 [94/172] - loss: 0.7963
+Epoch 2 [95/172] - loss: 0.8367
+Epoch 2 [96/172] - loss: 0.7385
+Epoch 2 [97/172] - loss: 0.5638
+Epoch 2 [98/172] - loss: 0.6659
+Epoch 2 [99/172] - loss: 1.0360
+Epoch 2 [100/172] - loss: 0.7367, acc: 0.6562
+Epoch 2 [101/172] - loss: 0.6231
+Epoch 2 [102/172] - loss: 0.8041
+Epoch 2 [103/172] - loss: 0.7617
+Epoch 2 [104/172] - loss: 1.1056
+Epoch 2 [105/172] - loss: 0.7223
+Epoch 2 [106/172] - loss: 0.7722
+Epoch 2 [107/172] - loss: 0.6339
+Epoch 2 [108/172] - loss: 1.0359
+Epoch 2 [109/172] - loss: 0.7233
+Epoch 2 [110/172] - loss: 0.5939, acc: 0.7812
+Epoch 2 [111/172] - loss: 0.6071
+Epoch 2 [112/172] - loss: 0.6976
+Epoch 2 [113/172] - loss: 0.5932
+Epoch 2 [114/172] - loss: 0.7541
+Epoch 2 [115/172] - loss: 0.4760
+Epoch 2 [116/172] - loss: 1.2744
+Epoch 2 [117/172] - loss: 0.9106
+Epoch 2 [118/172] - loss: 0.4721
+Epoch 2 [119/172] - loss: 0.9939
+Epoch 2 [120/172] - loss: 0.6598, acc: 0.7500
+Epoch 2 [121/172] - loss: 0.5188
+Epoch 2 [122/172] - loss: 0.8122
+Epoch 2 [123/172] - loss: 0.6579
+Epoch 2 [124/172] - loss: 0.8174
+Epoch 2 [125/172] - loss: 0.4681
+Epoch 2 [126/172] - loss: 0.6530
+Epoch 2 [127/172] - loss: 0.7922
+Epoch 2 [128/172] - loss: 0.8222
+
+=== 第 301 次迭代调试信息 ===
+当前类别统计：
+positive: count=3372.0, difficulty=0.5919, log_difficulty=0.4649, weight=3.3247
+neutral: count=2949.0, difficulty=0.5684, log_difficulty=0.4501, weight=3.2504
+negative: count=3294.0, difficulty=0.6147, log_difficulty=0.4791, weight=3.3957
+
+当前batch的pt分布：
+positive: min=0.2710, max=0.7014, mean=0.5418
+neutral: min=0.3363, max=0.9274, mean=0.5480
+negative: min=0.2916, max=0.7461, mean=0.4538
+
+当前batch准确率：
+整体准确率: 0.6250
+positive 准确率: 0.6000
+neutral 准确率: 0.6364
+negative 准确率: 0.6364
+
+损失分量：
+基础交叉熵: 0.7218
+焦点损失: 0.1580
+边界损失: 0.5878
+总损失: 0.5419
+Epoch 2 [129/172] - loss: 0.5419
+Epoch 2 [130/172] - loss: 0.6346, acc: 0.6250
+Epoch 2 [131/172] - loss: 0.9909
+Epoch 2 [132/172] - loss: 0.8137
+Epoch 2 [133/172] - loss: 0.6385
+Epoch 2 [134/172] - loss: 0.6533
+Epoch 2 [135/172] - loss: 1.1232
+Epoch 2 [136/172] - loss: 0.6165
+Epoch 2 [137/172] - loss: 0.5585
+Epoch 2 [138/172] - loss: 0.8140
+Epoch 2 [139/172] - loss: 0.8444
+Epoch 2 [140/172] - loss: 0.7136, acc: 0.5625
+Epoch 2 [141/172] - loss: 0.6985
+Epoch 2 [142/172] - loss: 0.7538
+Epoch 2 [143/172] - loss: 0.5112
+Epoch 2 [144/172] - loss: 0.7233
+Epoch 2 [145/172] - loss: 1.1010
+Epoch 2 [146/172] - loss: 0.7099
+Epoch 2 [147/172] - loss: 0.5318
+Epoch 2 [148/172] - loss: 0.5755
+Epoch 2 [149/172] - loss: 0.7184
+Epoch 2 [150/172] - loss: 0.7375, acc: 0.6562
+Epoch 2 [151/172] - loss: 0.6850
+Epoch 2 [152/172] - loss: 0.5376
+Epoch 2 [153/172] - loss: 0.7095
+Epoch 2 [154/172] - loss: 0.5135
+Epoch 2 [155/172] - loss: 0.6749
+Epoch 2 [156/172] - loss: 0.6039
+Epoch 2 [157/172] - loss: 0.5565
+Epoch 2 [158/172] - loss: 0.5209
+Epoch 2 [159/172] - loss: 0.8388
+Epoch 2 [160/172] - loss: 0.4164, acc: 0.8125
+Epoch 2 [161/172] - loss: 0.4733
+Epoch 2 [162/172] - loss: 1.0528
+Epoch 2 [163/172] - loss: 0.6592
+Epoch 2 [164/172] - loss: 0.9066
+Epoch 2 [165/172] - loss: 0.8144
+Epoch 2 [166/172] - loss: 0.7458
+Epoch 2 [167/172] - loss: 0.7202
+Epoch 2 [168/172] - loss: 0.6122
+Epoch 2 [169/172] - loss: 0.7002
+Epoch 2 [170/172] - loss: 0.5531, acc: 0.6875
+Epoch 2 [171/172] - loss: 0.8910
+Epoch 2 [172/172] - loss: 0.7905
+
+类别准确率:
+positive: 0.8308 (388/467)
+neutral: 0.2530 (21/83)
+negative: 0.3600 (90/250)
+
+Epoch 2/10
+Train Loss: 0.7032, Train Acc: 0.6808
+Val Loss: 0.8064, Val Acc: 0.6238
+Epoch 3 [1/172] - loss: 0.6559, acc: 0.6250
+Epoch 3 [2/172] - loss: 0.5396
+Epoch 3 [3/172] - loss: 0.6510
+Epoch 3 [4/172] - loss: 0.4943
+Epoch 3 [5/172] - loss: 0.4771
+Epoch 3 [6/172] - loss: 0.6608
+Epoch 3 [7/172] - loss: 0.5340
+Epoch 3 [8/172] - loss: 0.5100
+Epoch 3 [9/172] - loss: 0.4189
+Epoch 3 [10/172] - loss: 0.4936, acc: 0.7812
+Epoch 3 [11/172] - loss: 0.6961
+Epoch 3 [12/172] - loss: 0.5236
+Epoch 3 [13/172] - loss: 0.5104
+Epoch 3 [14/172] - loss: 0.3956
+Epoch 3 [15/172] - loss: 0.4604
+Epoch 3 [16/172] - loss: 0.4973
+Epoch 3 [17/172] - loss: 0.5441
+Epoch 3 [18/172] - loss: 0.5683
+Epoch 3 [19/172] - loss: 0.4194
+Epoch 3 [20/172] - loss: 0.2261, acc: 0.9375
+Epoch 3 [21/172] - loss: 0.4568
+Epoch 3 [22/172] - loss: 0.7011
+Epoch 3 [23/172] - loss: 0.4468
+Epoch 3 [24/172] - loss: 0.4414
+Epoch 3 [25/172] - loss: 0.3885
+Epoch 3 [26/172] - loss: 0.3762
+Epoch 3 [27/172] - loss: 0.5447
+Epoch 3 [28/172] - loss: 0.4302
+Epoch 3 [29/172] - loss: 0.4439
+Epoch 3 [30/172] - loss: 0.6682, acc: 0.6562
+Epoch 3 [31/172] - loss: 0.4841
+Epoch 3 [32/172] - loss: 0.7493
+Epoch 3 [33/172] - loss: 0.3029
+Epoch 3 [34/172] - loss: 0.4574
+Epoch 3 [35/172] - loss: 0.3989
+Epoch 3 [36/172] - loss: 0.4177
+Epoch 3 [37/172] - loss: 0.5905
+Epoch 3 [38/172] - loss: 0.3001
+Epoch 3 [39/172] - loss: 0.4166
+Epoch 3 [40/172] - loss: 0.4091, acc: 0.7812
+Epoch 3 [41/172] - loss: 0.5867
+Epoch 3 [42/172] - loss: 0.5813
+Epoch 3 [43/172] - loss: 0.3802
+Epoch 3 [44/172] - loss: 0.3757
+Epoch 3 [45/172] - loss: 0.5671
+Epoch 3 [46/172] - loss: 0.4886
+Epoch 3 [47/172] - loss: 0.3535
+Epoch 3 [48/172] - loss: 0.5618
+Epoch 3 [49/172] - loss: 0.3030
+Epoch 3 [50/172] - loss: 0.2545, acc: 0.9375
+Epoch 3 [51/172] - loss: 0.3143
+Epoch 3 [52/172] - loss: 0.5708
+Epoch 3 [53/172] - loss: 0.4275
+Epoch 3 [54/172] - loss: 0.3712
+Epoch 3 [55/172] - loss: 0.3900
+Epoch 3 [56/172] - loss: 0.3836
+
+=== 第 401 次迭代调试信息 ===
+当前类别统计：
+positive: count=4493.0, difficulty=0.5644, log_difficulty=0.4475, weight=3.2376
+neutral: count=3923.0, difficulty=0.5211, log_difficulty=0.4194, weight=3.0971
+negative: count=4382.0, difficulty=0.5859, log_difficulty=0.4612, weight=3.3059
+
+当前batch的pt分布：
+positive: min=0.3613, max=0.8367, mean=0.6054
+neutral: min=0.0529, max=0.9692, mean=0.5341
+negative: min=0.2950, max=0.8153, mean=0.6006
+
+当前batch准确率：
+整体准确率: 0.8438
+positive 准确率: 0.8182
+neutral 准确率: 0.8750
+negative 准确率: 0.8000
+
+损失分量：
+基础交叉熵: 0.6591
+焦点损失: 0.1836
+边界损失: 0.5146
+总损失: 0.5608
+Epoch 3 [57/172] - loss: 0.5608
+Epoch 3 [58/172] - loss: 0.2924
+Epoch 3 [59/172] - loss: 0.5225
+Epoch 3 [60/172] - loss: 0.3589, acc: 0.8125
+Epoch 3 [61/172] - loss: 0.4047
+Epoch 3 [62/172] - loss: 0.3328
+Epoch 3 [63/172] - loss: 0.4165
+Epoch 3 [64/172] - loss: 0.3549
+Epoch 3 [65/172] - loss: 0.2840
+Epoch 3 [66/172] - loss: 0.4350
+Epoch 3 [67/172] - loss: 0.4816
+Epoch 3 [68/172] - loss: 0.3699
+Epoch 3 [69/172] - loss: 0.3833
+Epoch 3 [70/172] - loss: 0.5614, acc: 0.6562
+Epoch 3 [71/172] - loss: 0.4087
+Epoch 3 [72/172] - loss: 0.4563
+Epoch 3 [73/172] - loss: 0.2811
+Epoch 3 [74/172] - loss: 0.5473
+Epoch 3 [75/172] - loss: 0.3949
+Epoch 3 [76/172] - loss: 0.5186
+Epoch 3 [77/172] - loss: 0.4485
+Epoch 3 [78/172] - loss: 0.3490
+Epoch 3 [79/172] - loss: 0.3796
+Epoch 3 [80/172] - loss: 0.2915, acc: 0.8750
+Epoch 3 [81/172] - loss: 0.3301
+Epoch 3 [82/172] - loss: 0.4845
+Epoch 3 [83/172] - loss: 0.2784
+Epoch 3 [84/172] - loss: 0.4523
+Epoch 3 [85/172] - loss: 0.4674
+Epoch 3 [86/172] - loss: 0.4282
+Epoch 3 [87/172] - loss: 0.6176
+Epoch 3 [88/172] - loss: 0.4047
+Epoch 3 [89/172] - loss: 0.2735
+Epoch 3 [90/172] - loss: 0.5123, acc: 0.8438
+Epoch 3 [91/172] - loss: 0.5121
+Epoch 3 [92/172] - loss: 0.2810
+Epoch 3 [93/172] - loss: 0.5431
+Epoch 3 [94/172] - loss: 0.4009
+Epoch 3 [95/172] - loss: 0.3285
+Epoch 3 [96/172] - loss: 0.5869
+Epoch 3 [97/172] - loss: 0.3845
+Epoch 3 [98/172] - loss: 0.3913
+Epoch 3 [99/172] - loss: 0.2620
+Epoch 3 [100/172] - loss: 0.4394, acc: 0.7500
+Epoch 3 [101/172] - loss: 0.3994
+Epoch 3 [102/172] - loss: 0.2726
+Epoch 3 [103/172] - loss: 0.4022
+Epoch 3 [104/172] - loss: 0.2902
+Epoch 3 [105/172] - loss: 0.2762
+Epoch 3 [106/172] - loss: 0.2814
+Epoch 3 [107/172] - loss: 0.2283
+Epoch 3 [108/172] - loss: 0.2226
+Epoch 3 [109/172] - loss: 0.2634
+Epoch 3 [110/172] - loss: 0.6375, acc: 0.6875
+Epoch 3 [111/172] - loss: 0.4493
+Epoch 3 [112/172] - loss: 0.3140
+Epoch 3 [113/172] - loss: 0.3103
+Epoch 3 [114/172] - loss: 0.3258
+Epoch 3 [115/172] - loss: 0.3070
+Epoch 3 [116/172] - loss: 0.4216
+Epoch 3 [117/172] - loss: 0.5984
+Epoch 3 [118/172] - loss: 0.4111
+Epoch 3 [119/172] - loss: 0.2744
+Epoch 3 [120/172] - loss: 0.4279, acc: 0.7188
+Epoch 3 [121/172] - loss: 0.5047
+Epoch 3 [122/172] - loss: 0.5516
+Epoch 3 [123/172] - loss: 0.3312
+Epoch 3 [124/172] - loss: 0.4583
+Epoch 3 [125/172] - loss: 0.4009
+Epoch 3 [126/172] - loss: 0.4632
+Epoch 3 [127/172] - loss: 0.4589
+Epoch 3 [128/172] - loss: 0.4772
+Epoch 3 [129/172] - loss: 0.3994
+Epoch 3 [130/172] - loss: 0.2904, acc: 0.8750
+Epoch 3 [131/172] - loss: 0.3437
+Epoch 3 [132/172] - loss: 0.1917
+Epoch 3 [133/172] - loss: 0.3659
+Epoch 3 [134/172] - loss: 0.2256
+Epoch 3 [135/172] - loss: 0.2890
+Epoch 3 [136/172] - loss: 0.2930
+Epoch 3 [137/172] - loss: 0.3797
+Epoch 3 [138/172] - loss: 0.4264
+Epoch 3 [139/172] - loss: 0.3524
+Epoch 3 [140/172] - loss: 0.2952, acc: 0.8438
+Epoch 3 [141/172] - loss: 0.3015
+Epoch 3 [142/172] - loss: 0.3869
+Epoch 3 [143/172] - loss: 0.2796
+Epoch 3 [144/172] - loss: 0.4785
+Epoch 3 [145/172] - loss: 0.5252
+Epoch 3 [146/172] - loss: 0.3556
+Epoch 3 [147/172] - loss: 0.3699
+Epoch 3 [148/172] - loss: 0.2700
+Epoch 3 [149/172] - loss: 0.3919
+Epoch 3 [150/172] - loss: 0.3783, acc: 0.7812
+Epoch 3 [151/172] - loss: 0.5010
+Epoch 3 [152/172] - loss: 0.6291
+Epoch 3 [153/172] - loss: 0.2623
+Epoch 3 [154/172] - loss: 0.3082
+Epoch 3 [155/172] - loss: 0.3972
+Epoch 3 [156/172] - loss: 0.1798
+
+=== 第 501 次迭代调试信息 ===
+当前类别统计：
+positive: count=5595.0, difficulty=0.5378, log_difficulty=0.4304, weight=3.1518
+neutral: count=4903.0, difficulty=0.4667, log_difficulty=0.3830, weight=2.9150
+negative: count=5500.0, difficulty=0.5518, log_difficulty=0.4394, weight=3.1971
+
+当前batch的pt分布：
+positive: min=0.3038, max=0.7855, mean=0.6099
+neutral: min=0.4113, max=0.9799, mean=0.8036
+negative: min=0.4766, max=0.8189, mean=0.6754
+
+当前batch准确率：
+整体准确率: 0.8750
+positive 准确率: 0.7273
+neutral 准确率: 1.0000
+negative 准确率: 0.9000
+
+损失分量：
+基础交叉熵: 0.3968
+焦点损失: 0.0500
+边界损失: 0.3740
+总损失: 0.2104
+Epoch 3 [157/172] - loss: 0.2104
+Epoch 3 [158/172] - loss: 0.3400
+Epoch 3 [159/172] - loss: 0.4023
+Epoch 3 [160/172] - loss: 0.4761, acc: 0.8125
+Epoch 3 [161/172] - loss: 0.4800
+Epoch 3 [162/172] - loss: 0.3814
+Epoch 3 [163/172] - loss: 0.4508
+Epoch 3 [164/172] - loss: 0.1754
+Epoch 3 [165/172] - loss: 0.2656
+Epoch 3 [166/172] - loss: 0.2655
+Epoch 3 [167/172] - loss: 0.2370
+Epoch 3 [168/172] - loss: 0.3097
+Epoch 3 [169/172] - loss: 0.1992
+Epoch 3 [170/172] - loss: 0.2536, acc: 0.8750
+Epoch 3 [171/172] - loss: 0.2889
+Epoch 3 [172/172] - loss: 0.3232
+
+类别准确率:
+positive: 0.6360 (297/467)
+neutral: 0.2410 (20/83)
+negative: 0.6680 (167/250)
+
+Epoch 3/10
+Train Loss: 0.3162, Train Acc: 0.8303
+Val Loss: 0.8532, Val Acc: 0.6050
+Epoch 4 [1/172] - loss: 0.1621, acc: 0.9062
+Epoch 4 [2/172] - loss: 0.2571
+Epoch 4 [3/172] - loss: 0.3374
+Epoch 4 [4/172] - loss: 0.2955
+Epoch 4 [5/172] - loss: 0.4031
+Epoch 4 [6/172] - loss: 0.1825
+Epoch 4 [7/172] - loss: 0.2555
+Epoch 4 [8/172] - loss: 0.3455
+Epoch 4 [9/172] - loss: 0.1724
+Epoch 4 [10/172] - loss: 0.2312, acc: 0.8125
+Epoch 4 [11/172] - loss: 0.2058
+Epoch 4 [12/172] - loss: 0.1956
+Epoch 4 [13/172] - loss: 0.3954
+Epoch 4 [14/172] - loss: 0.1767
+Epoch 4 [15/172] - loss: 0.1801
+Epoch 4 [16/172] - loss: 0.2074
+Epoch 4 [17/172] - loss: 0.2654
+Epoch 4 [18/172] - loss: 0.2820
+Epoch 4 [19/172] - loss: 0.1530
+Epoch 4 [20/172] - loss: 0.1850, acc: 0.8750
+Epoch 4 [21/172] - loss: 0.1942
+Epoch 4 [22/172] - loss: 0.2428
+Epoch 4 [23/172] - loss: 0.2441
+Epoch 4 [24/172] - loss: 0.1231
+Epoch 4 [25/172] - loss: 0.1942
+Epoch 4 [26/172] - loss: 0.2858
+Epoch 4 [27/172] - loss: 0.1625
+Epoch 4 [28/172] - loss: 0.1903
+Epoch 4 [29/172] - loss: 0.1345
+Epoch 4 [30/172] - loss: 0.2409, acc: 0.9062
+Epoch 4 [31/172] - loss: 0.3012
+Epoch 4 [32/172] - loss: 0.1303
+Epoch 4 [33/172] - loss: 0.1798
+Epoch 4 [34/172] - loss: 0.3211
+Epoch 4 [35/172] - loss: 0.2354
+Epoch 4 [36/172] - loss: 0.2309
+Epoch 4 [37/172] - loss: 0.1585
+Epoch 4 [38/172] - loss: 0.1864
+Epoch 4 [39/172] - loss: 0.3391
+Epoch 4 [40/172] - loss: 0.3124, acc: 0.7812
+Epoch 4 [41/172] - loss: 0.2064
+Epoch 4 [42/172] - loss: 0.1701
+Epoch 4 [43/172] - loss: 0.2578
+Epoch 4 [44/172] - loss: 0.1788
+Epoch 4 [45/172] - loss: 0.1720
+Epoch 4 [46/172] - loss: 0.1318
+Epoch 4 [47/172] - loss: 0.1477
+Epoch 4 [48/172] - loss: 0.1723
+Epoch 4 [49/172] - loss: 0.1321
+Epoch 4 [50/172] - loss: 0.2246, acc: 0.9062
+Epoch 4 [51/172] - loss: 0.1601
+Epoch 4 [52/172] - loss: 0.2176
+Epoch 4 [53/172] - loss: 0.2131
+Epoch 4 [54/172] - loss: 0.1843
+Epoch 4 [55/172] - loss: 0.3037
+Epoch 4 [56/172] - loss: 0.1416
+Epoch 4 [57/172] - loss: 0.1224
+Epoch 4 [58/172] - loss: 0.1238
+Epoch 4 [59/172] - loss: 0.1893
+Epoch 4 [60/172] - loss: 0.1343, acc: 0.9375
+Epoch 4 [61/172] - loss: 0.2153
+Epoch 4 [62/172] - loss: 0.2270
+Epoch 4 [63/172] - loss: 0.1838
+Epoch 4 [64/172] - loss: 0.1325
+Epoch 4 [65/172] - loss: 0.2687
+Epoch 4 [66/172] - loss: 0.1607
+Epoch 4 [67/172] - loss: 0.1608
+Epoch 4 [68/172] - loss: 0.3583
+Epoch 4 [69/172] - loss: 0.1899
+Epoch 4 [70/172] - loss: 0.1430, acc: 0.9375
+Epoch 4 [71/172] - loss: 0.1708
+Epoch 4 [72/172] - loss: 0.1414
+Epoch 4 [73/172] - loss: 0.1426
+Epoch 4 [74/172] - loss: 0.1582
+Epoch 4 [75/172] - loss: 0.2061
+Epoch 4 [76/172] - loss: 0.1165
+Epoch 4 [77/172] - loss: 0.1258
+Epoch 4 [78/172] - loss: 0.1516
+Epoch 4 [79/172] - loss: 0.1265
+Epoch 4 [80/172] - loss: 0.1879, acc: 0.8438
+Epoch 4 [81/172] - loss: 0.1661
+Epoch 4 [82/172] - loss: 0.2118
+Epoch 4 [83/172] - loss: 0.1172
+Epoch 4 [84/172] - loss: 0.2397
+
+=== 第 601 次迭代调试信息 ===
+当前类别统计：
+positive: count=6687.0, difficulty=0.5030, log_difficulty=0.4074, weight=3.0372
+neutral: count=5865.0, difficulty=0.4174, log_difficulty=0.3489, weight=2.7443
+negative: count=6629.0, difficulty=0.5153, log_difficulty=0.4156, weight=3.0782
+
+当前batch的pt分布：
+positive: min=0.3521, max=0.8869, mean=0.6261
+neutral: min=0.3749, max=0.9962, mean=0.8616
+negative: min=0.4022, max=0.9769, mean=0.7468
+
+当前batch准确率：
+整体准确率: 0.8125
+positive 准确率: 0.7500
+neutral 准确率: 1.0000
+negative 准确率: 0.7778
+
+损失分量：
+基础交叉熵: 0.3938
+焦点损失: 0.0662
+边界损失: 0.3470
+总损失: 0.2359
+Epoch 4 [85/172] - loss: 0.2359
+Epoch 4 [86/172] - loss: 0.1987
+Epoch 4 [87/172] - loss: 0.1893
+Epoch 4 [88/172] - loss: 0.1584
+Epoch 4 [89/172] - loss: 0.1832
+Epoch 4 [90/172] - loss: 0.1346, acc: 0.9375
+Epoch 4 [91/172] - loss: 0.2847
+Epoch 4 [92/172] - loss: 0.3415
+Epoch 4 [93/172] - loss: 0.3149
+Epoch 4 [94/172] - loss: 0.5985
+Epoch 4 [95/172] - loss: 0.2504
+Epoch 4 [96/172] - loss: 0.1314
+Epoch 4 [97/172] - loss: 0.1451
+Epoch 4 [98/172] - loss: 0.1950
+Epoch 4 [99/172] - loss: 0.1490
+Epoch 4 [100/172] - loss: 0.2532, acc: 0.8125
+Epoch 4 [101/172] - loss: 0.2069
+Epoch 4 [102/172] - loss: 0.1612
+Epoch 4 [103/172] - loss: 0.1753
+Epoch 4 [104/172] - loss: 0.2464
+Epoch 4 [105/172] - loss: 0.1044
+Epoch 4 [106/172] - loss: 0.1169
+Epoch 4 [107/172] - loss: 0.1883
+Epoch 4 [108/172] - loss: 0.1600
+Epoch 4 [109/172] - loss: 0.1768
+Epoch 4 [110/172] - loss: 0.4126, acc: 0.8438
+Epoch 4 [111/172] - loss: 0.2592
+Epoch 4 [112/172] - loss: 0.1095
+Epoch 4 [113/172] - loss: 0.2134
+Epoch 4 [114/172] - loss: 0.2715
+Epoch 4 [115/172] - loss: 0.1767
+Epoch 4 [116/172] - loss: 0.2173
+Epoch 4 [117/172] - loss: 0.1592
+Epoch 4 [118/172] - loss: 0.2343
+Epoch 4 [119/172] - loss: 0.1241
+Epoch 4 [120/172] - loss: 0.1813, acc: 0.8750
+Epoch 4 [121/172] - loss: 0.2417
+Epoch 4 [122/172] - loss: 0.1601
+Epoch 4 [123/172] - loss: 0.1326
+Epoch 4 [124/172] - loss: 0.1218
+Epoch 4 [125/172] - loss: 0.1195
+Epoch 4 [126/172] - loss: 0.2940
+Epoch 4 [127/172] - loss: 0.3126
+Epoch 4 [128/172] - loss: 0.0971
+Epoch 4 [129/172] - loss: 0.1771
+Epoch 4 [130/172] - loss: 0.1277, acc: 1.0000
+Epoch 4 [131/172] - loss: 0.1120
+Epoch 4 [132/172] - loss: 0.2534
+Epoch 4 [133/172] - loss: 0.1163
+Epoch 4 [134/172] - loss: 0.1776
+Epoch 4 [135/172] - loss: 0.2733
+Epoch 4 [136/172] - loss: 0.2936
+Epoch 4 [137/172] - loss: 0.1189
+Epoch 4 [138/172] - loss: 0.1571
+Epoch 4 [139/172] - loss: 0.2797
+Epoch 4 [140/172] - loss: 0.1857, acc: 0.8750
+Epoch 4 [141/172] - loss: 0.1382
+Epoch 4 [142/172] - loss: 0.2236
+Epoch 4 [143/172] - loss: 0.0860
+Epoch 4 [144/172] - loss: 0.1746
+Epoch 4 [145/172] - loss: 0.3386
+Epoch 4 [146/172] - loss: 0.1917
+Epoch 4 [147/172] - loss: 0.2435
+Epoch 4 [148/172] - loss: 0.0932
+Epoch 4 [149/172] - loss: 0.0944
+Epoch 4 [150/172] - loss: 0.1987, acc: 0.9062
+Epoch 4 [151/172] - loss: 0.2652
+Epoch 4 [152/172] - loss: 0.1103
+Epoch 4 [153/172] - loss: 0.1110
+Epoch 4 [154/172] - loss: 0.3246
+Epoch 4 [155/172] - loss: 0.2166
+Epoch 4 [156/172] - loss: 0.2111
+Epoch 4 [157/172] - loss: 0.5258
+Epoch 4 [158/172] - loss: 0.1455
+Epoch 4 [159/172] - loss: 0.1360
+Epoch 4 [160/172] - loss: 0.2309, acc: 0.9375
+Epoch 4 [161/172] - loss: 0.2282
+Epoch 4 [162/172] - loss: 0.1463
+Epoch 4 [163/172] - loss: 0.1586
+Epoch 4 [164/172] - loss: 0.1654
+Epoch 4 [165/172] - loss: 0.1807
+Epoch 4 [166/172] - loss: 0.1612
+Epoch 4 [167/172] - loss: 0.1413
+Epoch 4 [168/172] - loss: 0.1377
+Epoch 4 [169/172] - loss: 0.1197
+Epoch 4 [170/172] - loss: 0.2747, acc: 0.8750
+Epoch 4 [171/172] - loss: 0.2333
+Epoch 4 [172/172] - loss: 0.3266
+
+类别准确率:
+positive: 0.8351 (390/467)
+neutral: 0.1325 (11/83)
+negative: 0.5040 (126/250)
+
+Epoch 4/10
+Train Loss: 0.2070, Train Acc: 0.9131
+Val Loss: 0.8158, Val Acc: 0.6587
+Epoch 5 [1/172] - loss: 0.1368, acc: 0.9688
+Epoch 5 [2/172] - loss: 0.1342
+Epoch 5 [3/172] - loss: 0.1350
+Epoch 5 [4/172] - loss: 0.1177
+Epoch 5 [5/172] - loss: 0.1042
+Epoch 5 [6/172] - loss: 0.1525
+Epoch 5 [7/172] - loss: 0.1010
+Epoch 5 [8/172] - loss: 0.1323
+Epoch 5 [9/172] - loss: 0.1860
+Epoch 5 [10/172] - loss: 0.1065, acc: 0.9688
+Epoch 5 [11/172] - loss: 0.1373
+Epoch 5 [12/172] - loss: 0.0880
+
+=== 第 701 次迭代调试信息 ===
+当前类别统计：
+positive: count=7825.0, difficulty=0.4691, log_difficulty=0.3847, weight=2.9234
+neutral: count=6845.0, difficulty=0.3785, log_difficulty=0.3210, weight=2.6049
+negative: count=7694.0, difficulty=0.4828, log_difficulty=0.3940, weight=2.9698
+
+当前batch的pt分布：
+positive: min=0.2670, max=0.9894, mean=0.7047
+neutral: min=0.8531, max=0.9725, mean=0.9185
+negative: min=0.4756, max=0.9753, mean=0.7838
+
+当前batch准确率：
+整体准确率: 0.9062
+positive 准确率: 0.7857
+neutral 准确率: 1.0000
+negative 准确率: 1.0000
+
+损失分量：
+基础交叉熵: 0.2886
+焦点损失: 0.0428
+边界损失: 0.2837
+总损失: 0.1649
+Epoch 5 [13/172] - loss: 0.1649
+Epoch 5 [14/172] - loss: 0.2460
+Epoch 5 [15/172] - loss: 0.0878
+Epoch 5 [16/172] - loss: 0.0947
+Epoch 5 [17/172] - loss: 0.1889
+Epoch 5 [18/172] - loss: 0.0786
+Epoch 5 [19/172] - loss: 0.1256
+Epoch 5 [20/172] - loss: 0.1066, acc: 0.9688
+Epoch 5 [21/172] - loss: 0.1618
+Epoch 5 [22/172] - loss: 0.4348
+Epoch 5 [23/172] - loss: 0.0978
+Epoch 5 [24/172] - loss: 0.1195
+Epoch 5 [25/172] - loss: 0.2463
+Epoch 5 [26/172] - loss: 0.2040
+Epoch 5 [27/172] - loss: 0.0744
+Epoch 5 [28/172] - loss: 0.1787
+Epoch 5 [29/172] - loss: 0.0917
+Epoch 5 [30/172] - loss: 0.1218, acc: 0.9375
+Epoch 5 [31/172] - loss: 0.0843
+Epoch 5 [32/172] - loss: 0.0846
+Epoch 5 [33/172] - loss: 0.1572
+Epoch 5 [34/172] - loss: 0.1547
+Epoch 5 [35/172] - loss: 0.0885
+Epoch 5 [36/172] - loss: 0.1734
+Epoch 5 [37/172] - loss: 0.2784
+Epoch 5 [38/172] - loss: 0.1142
+Epoch 5 [39/172] - loss: 0.2245
+Epoch 5 [40/172] - loss: 0.1194, acc: 0.9375
+Epoch 5 [41/172] - loss: 0.0723
+Epoch 5 [42/172] - loss: 0.1312
+Epoch 5 [43/172] - loss: 0.2136
+Epoch 5 [44/172] - loss: 0.1531
+Epoch 5 [45/172] - loss: 0.1056
+Epoch 5 [46/172] - loss: 0.1162
+Epoch 5 [47/172] - loss: 0.0675
+Epoch 5 [48/172] - loss: 0.0893
+Epoch 5 [49/172] - loss: 0.1160
+Epoch 5 [50/172] - loss: 0.0897, acc: 1.0000
+Epoch 5 [51/172] - loss: 0.0772
+Epoch 5 [52/172] - loss: 0.1152
+Epoch 5 [53/172] - loss: 0.1805
+Epoch 5 [54/172] - loss: 0.0802
+Epoch 5 [55/172] - loss: 0.1646
+Epoch 5 [56/172] - loss: 0.1298
+Epoch 5 [57/172] - loss: 0.0909
+Epoch 5 [58/172] - loss: 0.0867
+Epoch 5 [59/172] - loss: 0.1792
+Epoch 5 [60/172] - loss: 0.0801, acc: 1.0000
+Epoch 5 [61/172] - loss: 0.0688
+Epoch 5 [62/172] - loss: 0.1243
+Epoch 5 [63/172] - loss: 0.2200
+Epoch 5 [64/172] - loss: 0.1070
+Epoch 5 [65/172] - loss: 0.0679
+Epoch 5 [66/172] - loss: 0.1017
+Epoch 5 [67/172] - loss: 0.0691
+Epoch 5 [68/172] - loss: 0.1386
+Epoch 5 [69/172] - loss: 0.1229
+Epoch 5 [70/172] - loss: 0.0857, acc: 1.0000
+Epoch 5 [71/172] - loss: 0.0995
+Epoch 5 [72/172] - loss: 0.0763
+Epoch 5 [73/172] - loss: 0.1130
+Epoch 5 [74/172] - loss: 0.1266
+Epoch 5 [75/172] - loss: 0.0711
+Epoch 5 [76/172] - loss: 0.0826
+Epoch 5 [77/172] - loss: 0.1166
+Epoch 5 [78/172] - loss: 0.0921
+Epoch 5 [79/172] - loss: 0.0702
+Epoch 5 [80/172] - loss: 0.1211, acc: 0.9375
+Epoch 5 [81/172] - loss: 0.1368
+Epoch 5 [82/172] - loss: 0.2653
+Epoch 5 [83/172] - loss: 0.0871
+Epoch 5 [84/172] - loss: 0.1471
+Epoch 5 [85/172] - loss: 0.3138
+Epoch 5 [86/172] - loss: 0.1055
+Epoch 5 [87/172] - loss: 0.1734
+Epoch 5 [88/172] - loss: 0.1871
+Epoch 5 [89/172] - loss: 0.0882
+Epoch 5 [90/172] - loss: 0.0990, acc: 0.9688
+Epoch 5 [91/172] - loss: 0.1006
+Epoch 5 [92/172] - loss: 0.0676
+Epoch 5 [93/172] - loss: 0.0905
+Epoch 5 [94/172] - loss: 0.0848
+Epoch 5 [95/172] - loss: 0.0879
+Epoch 5 [96/172] - loss: 0.1118
+Epoch 5 [97/172] - loss: 0.1671
+Epoch 5 [98/172] - loss: 0.0703
+Epoch 5 [99/172] - loss: 0.4328
+Epoch 5 [100/172] - loss: 0.1266, acc: 0.9375
+Epoch 5 [101/172] - loss: 0.0724
+Epoch 5 [102/172] - loss: 0.0939
+Epoch 5 [103/172] - loss: 0.0737
+Epoch 5 [104/172] - loss: 0.1616
+Epoch 5 [105/172] - loss: 0.3002
+Epoch 5 [106/172] - loss: 0.0857
+Epoch 5 [107/172] - loss: 0.1040
+Epoch 5 [108/172] - loss: 0.1585
+Epoch 5 [109/172] - loss: 0.1573
+Epoch 5 [110/172] - loss: 0.0665, acc: 1.0000
+Epoch 5 [111/172] - loss: 0.1726
+Epoch 5 [112/172] - loss: 0.0858
+
+=== 第 801 次迭代调试信息 ===
+当前类别统计：
+positive: count=8959.0, difficulty=0.4365, log_difficulty=0.3622, weight=2.8109
+neutral: count=7825.0, difficulty=0.3465, log_difficulty=0.2975, weight=2.4876
+negative: count=8780.0, difficulty=0.4494, log_difficulty=0.3711, weight=2.8556
+
+当前batch的pt分布：
+positive: min=0.2843, max=0.9794, mean=0.6865
+neutral: min=0.6321, max=0.9961, mean=0.8766
+negative: min=0.7494, max=0.9855, mean=0.8795
+
+当前batch准确率：
+整体准确率: 0.8750
+positive 准确率: 0.7500
+neutral 准确率: 1.0000
+negative 准确率: 1.0000
+
+损失分量：
+基础交叉熵: 0.2828
+焦点损失: 0.0422
+边界损失: 0.2800
+总损失: 0.1586
+Epoch 5 [113/172] - loss: 0.1586
+Epoch 5 [114/172] - loss: 0.1279
+Epoch 5 [115/172] - loss: 0.1486
+Epoch 5 [116/172] - loss: 0.0815
+Epoch 5 [117/172] - loss: 0.1567
+Epoch 5 [118/172] - loss: 0.0639
+Epoch 5 [119/172] - loss: 0.0927
+Epoch 5 [120/172] - loss: 0.0906, acc: 0.9688
+Epoch 5 [121/172] - loss: 0.1239
+Epoch 5 [122/172] - loss: 0.0807
+Epoch 5 [123/172] - loss: 0.0889
+Epoch 5 [124/172] - loss: 0.0773
+Epoch 5 [125/172] - loss: 0.0756
+Epoch 5 [126/172] - loss: 0.1376
+Epoch 5 [127/172] - loss: 0.1019
+Epoch 5 [128/172] - loss: 0.0994
+Epoch 5 [129/172] - loss: 0.1737
+Epoch 5 [130/172] - loss: 0.0590, acc: 1.0000
+Epoch 5 [131/172] - loss: 0.2268
+Epoch 5 [132/172] - loss: 0.1156
+Epoch 5 [133/172] - loss: 0.1755
+Epoch 5 [134/172] - loss: 0.2138
+Epoch 5 [135/172] - loss: 0.1156
+Epoch 5 [136/172] - loss: 0.0750
+Epoch 5 [137/172] - loss: 0.2247
+Epoch 5 [138/172] - loss: 0.1651
+Epoch 5 [139/172] - loss: 0.2513
+Epoch 5 [140/172] - loss: 0.1154, acc: 0.9688
+Epoch 5 [141/172] - loss: 0.1761
+Epoch 5 [142/172] - loss: 0.0815
+Epoch 5 [143/172] - loss: 0.1372
+Epoch 5 [144/172] - loss: 0.0821
+Epoch 5 [145/172] - loss: 0.1553
+Epoch 5 [146/172] - loss: 0.1238
+Epoch 5 [147/172] - loss: 0.2765
+Epoch 5 [148/172] - loss: 0.0688
+Epoch 5 [149/172] - loss: 0.1494
+Epoch 5 [150/172] - loss: 0.1908, acc: 0.9375
+Epoch 5 [151/172] - loss: 0.0715
+Epoch 5 [152/172] - loss: 0.0666
+Epoch 5 [153/172] - loss: 0.1357
+Epoch 5 [154/172] - loss: 0.0712
+Epoch 5 [155/172] - loss: 0.1837
+Epoch 5 [156/172] - loss: 0.1371
+Epoch 5 [157/172] - loss: 0.0758
+Epoch 5 [158/172] - loss: 0.0972
+Epoch 5 [159/172] - loss: 0.1124
+Epoch 5 [160/172] - loss: 0.0789, acc: 0.9688
+Epoch 5 [161/172] - loss: 0.0883
+Epoch 5 [162/172] - loss: 0.1108
+Epoch 5 [163/172] - loss: 0.1365
+Epoch 5 [164/172] - loss: 0.0931
+Epoch 5 [165/172] - loss: 0.2613
+Epoch 5 [166/172] - loss: 0.2500
+Epoch 5 [167/172] - loss: 0.0880
+Epoch 5 [168/172] - loss: 0.0828
+Epoch 5 [169/172] - loss: 0.1146
+Epoch 5 [170/172] - loss: 0.0957, acc: 0.9375
+Epoch 5 [171/172] - loss: 0.1118
+Epoch 5 [172/172] - loss: 0.0796
+
+类别准确率:
+positive: 0.8480 (396/467)
+neutral: 0.2651 (22/83)
+negative: 0.4120 (103/250)
+
+Epoch 5/10
+Train Loss: 0.1173, Train Acc: 0.9556
+Val Loss: 0.8871, Val Acc: 0.6512
+Epoch 6 [1/172] - loss: 0.1101, acc: 0.9375
+Epoch 6 [2/172] - loss: 0.0918
+Epoch 6 [3/172] - loss: 0.0713
+Epoch 6 [4/172] - loss: 0.1190
+Epoch 6 [5/172] - loss: 0.1853
+Epoch 6 [6/172] - loss: 0.1131
+Epoch 6 [7/172] - loss: 0.2139
+Epoch 6 [8/172] - loss: 0.1019
+Epoch 6 [9/172] - loss: 0.0673
+Epoch 6 [10/172] - loss: 0.0671, acc: 1.0000
+Epoch 6 [11/172] - loss: 0.1425
+Epoch 6 [12/172] - loss: 0.0880
+Epoch 6 [13/172] - loss: 0.1878
+Epoch 6 [14/172] - loss: 0.0821
+Epoch 6 [15/172] - loss: 0.0721
+Epoch 6 [16/172] - loss: 0.2836
+Epoch 6 [17/172] - loss: 0.2225
+Epoch 6 [18/172] - loss: 0.0804
+Epoch 6 [19/172] - loss: 0.0786
+Epoch 6 [20/172] - loss: 0.0673, acc: 1.0000
+Epoch 6 [21/172] - loss: 0.0764
+Epoch 6 [22/172] - loss: 0.0781
+Epoch 6 [23/172] - loss: 0.2630
+Epoch 6 [24/172] - loss: 0.1139
+Epoch 6 [25/172] - loss: 0.2017
+Epoch 6 [26/172] - loss: 0.0768
+Epoch 6 [27/172] - loss: 0.1313
+Epoch 6 [28/172] - loss: 0.0642
+Epoch 6 [29/172] - loss: 0.0634
+Epoch 6 [30/172] - loss: 0.0519, acc: 1.0000
+Epoch 6 [31/172] - loss: 0.0901
+Epoch 6 [32/172] - loss: 0.0542
+Epoch 6 [33/172] - loss: 0.1255
+Epoch 6 [34/172] - loss: 0.2531
+Epoch 6 [35/172] - loss: 0.0617
+Epoch 6 [36/172] - loss: 0.0791
+Epoch 6 [37/172] - loss: 0.1055
+Epoch 6 [38/172] - loss: 0.0654
+Epoch 6 [39/172] - loss: 0.0762
+Epoch 6 [40/172] - loss: 0.2363, acc: 0.9375
+
+=== 第 901 次迭代调试信息 ===
+当前类别统计：
+positive: count=10062.0, difficulty=0.4079, log_difficulty=0.3421, weight=2.7104
+neutral: count=8815.0, difficulty=0.3206, log_difficulty=0.2781, weight=2.3903
+negative: count=9870.0, difficulty=0.4206, log_difficulty=0.3511, weight=2.7555
+
+当前batch的pt分布：
+positive: min=0.1210, max=0.9879, mean=0.8242
+neutral: min=0.7613, max=0.9925, mean=0.9067
+negative: min=0.6309, max=0.9817, mean=0.8150
+
+当前batch准确率：
+整体准确率: 0.9688
+positive 准确率: 0.9091
+neutral 准确率: 1.0000
+negative 准确率: 1.0000
+
+损失分量：
+基础交叉熵: 0.2067
+焦点损失: 0.0513
+边界损失: 0.2167
+总损失: 0.1585
+Epoch 6 [41/172] - loss: 0.1585
+Epoch 6 [42/172] - loss: 0.1010
+Epoch 6 [43/172] - loss: 0.1821
+Epoch 6 [44/172] - loss: 0.0573
+Epoch 6 [45/172] - loss: 0.0622
+Epoch 6 [46/172] - loss: 0.1828
+Epoch 6 [47/172] - loss: 0.0777
+Epoch 6 [48/172] - loss: 0.0771
+Epoch 6 [49/172] - loss: 0.2213
+Epoch 6 [50/172] - loss: 0.2212, acc: 0.9375
+Epoch 6 [51/172] - loss: 0.0676
+Epoch 6 [52/172] - loss: 0.1533
+Epoch 6 [53/172] - loss: 0.0585
+Epoch 6 [54/172] - loss: 0.4314
+Epoch 6 [55/172] - loss: 0.0896
+Epoch 6 [56/172] - loss: 0.1303
+Epoch 6 [57/172] - loss: 0.0614
+Epoch 6 [58/172] - loss: 0.0971
+Epoch 6 [59/172] - loss: 0.1371
+Epoch 6 [60/172] - loss: 0.0881, acc: 1.0000
+Epoch 6 [61/172] - loss: 0.0811
+Epoch 6 [62/172] - loss: 0.0683
+Epoch 6 [63/172] - loss: 0.1061
+Epoch 6 [64/172] - loss: 0.1916
+Epoch 6 [65/172] - loss: 0.0832
+Epoch 6 [66/172] - loss: 0.0874
+Epoch 6 [67/172] - loss: 0.0812
+Epoch 6 [68/172] - loss: 0.0924
+Epoch 6 [69/172] - loss: 0.1503
+Epoch 6 [70/172] - loss: 0.0502, acc: 1.0000
+Epoch 6 [71/172] - loss: 0.0602
+Epoch 6 [72/172] - loss: 0.0555
+Epoch 6 [73/172] - loss: 0.2301
+Epoch 6 [74/172] - loss: 0.1163
+Epoch 6 [75/172] - loss: 0.1220
+Epoch 6 [76/172] - loss: 0.1183
+Epoch 6 [77/172] - loss: 0.1126
+Epoch 6 [78/172] - loss: 0.2567
+Epoch 6 [79/172] - loss: 0.0536
+Epoch 6 [80/172] - loss: 0.0844, acc: 0.9688
+Epoch 6 [81/172] - loss: 0.1632
+Epoch 6 [82/172] - loss: 0.1252
+Epoch 6 [83/172] - loss: 0.0710
+Epoch 6 [84/172] - loss: 0.0810
+Epoch 6 [85/172] - loss: 0.0858
+Epoch 6 [86/172] - loss: 0.2122
+Epoch 6 [87/172] - loss: 0.2068
+Epoch 6 [88/172] - loss: 0.2235
+Epoch 6 [89/172] - loss: 0.0849
+Epoch 6 [90/172] - loss: 0.0681, acc: 1.0000
+Epoch 6 [91/172] - loss: 0.3352
+Epoch 6 [92/172] - loss: 0.0904
+Epoch 6 [93/172] - loss: 0.0616
+Epoch 6 [94/172] - loss: 0.1455
+Epoch 6 [95/172] - loss: 0.0637
+Epoch 6 [96/172] - loss: 0.0837
+Epoch 6 [97/172] - loss: 0.0733
+Epoch 6 [98/172] - loss: 0.0694
+Epoch 6 [99/172] - loss: 0.0741
+Epoch 6 [100/172] - loss: 0.1352, acc: 0.9375
+Epoch 6 [101/172] - loss: 0.0868
+Epoch 6 [102/172] - loss: 0.1424
+Epoch 6 [103/172] - loss: 0.1949
+Epoch 6 [104/172] - loss: 0.1711
+Epoch 6 [105/172] - loss: 0.0885
+Epoch 6 [106/172] - loss: 0.1125
+Epoch 6 [107/172] - loss: 0.2423
+Epoch 6 [108/172] - loss: 0.1016
+Epoch 6 [109/172] - loss: 0.1979
+Epoch 6 [110/172] - loss: 0.1284, acc: 0.9688
+Epoch 6 [111/172] - loss: 0.0884
+Epoch 6 [112/172] - loss: 0.1144
+Epoch 6 [113/172] - loss: 0.1103
+Epoch 6 [114/172] - loss: 0.0604
+Epoch 6 [115/172] - loss: 0.1296
+Epoch 6 [116/172] - loss: 0.3482
+Epoch 6 [117/172] - loss: 0.1352
+Epoch 6 [118/172] - loss: 0.0712
+Epoch 6 [119/172] - loss: 0.2239
+Epoch 6 [120/172] - loss: 0.1964, acc: 0.9062
+Epoch 6 [121/172] - loss: 0.0790
+Epoch 6 [122/172] - loss: 0.1140
+Epoch 6 [123/172] - loss: 0.0793
+Epoch 6 [124/172] - loss: 0.0671
+Epoch 6 [125/172] - loss: 0.1108
+Epoch 6 [126/172] - loss: 0.1580
+Epoch 6 [127/172] - loss: 0.1264
+Epoch 6 [128/172] - loss: 0.0789
+Epoch 6 [129/172] - loss: 0.1168
+Epoch 6 [130/172] - loss: 0.1670, acc: 0.9375
+Epoch 6 [131/172] - loss: 0.0757
+Epoch 6 [132/172] - loss: 0.1613
+Epoch 6 [133/172] - loss: 0.0848
+Epoch 6 [134/172] - loss: 0.0891
+Epoch 6 [135/172] - loss: 0.1030
+Epoch 6 [136/172] - loss: 0.0687
+Epoch 6 [137/172] - loss: 0.0941
+Epoch 6 [138/172] - loss: 0.0826
+Epoch 6 [139/172] - loss: 0.1988
+Epoch 6 [140/172] - loss: 0.1564, acc: 0.9375
+
+=== 第 1001 次迭代调试信息 ===
+当前类别统计：
+positive: count=11179.0, difficulty=0.3833, log_difficulty=0.3244, weight=2.6222
+neutral: count=9796.0, difficulty=0.3005, log_difficulty=0.2628, weight=2.3139
+negative: count=10972.0, difficulty=0.3969, log_difficulty=0.3343, weight=2.6713
+
+当前batch的pt分布：
+positive: min=0.5186, max=0.9889, mean=0.8815
+neutral: min=0.4854, max=0.9972, mean=0.8799
+negative: min=0.5553, max=0.9809, mean=0.7872
+
+当前batch准确率：
+整体准确率: 1.0000
+positive 准确率: 1.0000
+neutral 准确率: 1.0000
+negative 准确率: 1.0000
+
+损失分量：
+基础交叉熵: 0.1911
+焦点损失: 0.0169
+边界损失: 0.2399
+总损失: 0.0922
+Epoch 6 [141/172] - loss: 0.0922
+Epoch 6 [142/172] - loss: 0.0845
+Epoch 6 [143/172] - loss: 0.1022
+Epoch 6 [144/172] - loss: 0.0859
+Epoch 6 [145/172] - loss: 0.0663
+Epoch 6 [146/172] - loss: 0.0593
+Epoch 6 [147/172] - loss: 0.0571
+Epoch 6 [148/172] - loss: 0.0974
+Epoch 6 [149/172] - loss: 0.1096
+Epoch 6 [150/172] - loss: 0.0510, acc: 1.0000
+Epoch 6 [151/172] - loss: 0.0785
+Epoch 6 [152/172] - loss: 0.0819
+Epoch 6 [153/172] - loss: 0.0650
+Epoch 6 [154/172] - loss: 0.0675
+Epoch 6 [155/172] - loss: 0.0937
+Epoch 6 [156/172] - loss: 0.0762
+Epoch 6 [157/172] - loss: 0.0837
+Epoch 6 [158/172] - loss: 0.1323
+Epoch 6 [159/172] - loss: 0.0612
+Epoch 6 [160/172] - loss: 0.1672, acc: 0.9688
+Epoch 6 [161/172] - loss: 0.1125
+Epoch 6 [162/172] - loss: 0.0620
+Epoch 6 [163/172] - loss: 0.0807
+Epoch 6 [164/172] - loss: 0.1234
+Epoch 6 [165/172] - loss: 0.4873
+Epoch 6 [166/172] - loss: 0.0979
+Epoch 6 [167/172] - loss: 0.0620
+Epoch 6 [168/172] - loss: 0.0643
+Epoch 6 [169/172] - loss: 0.0815
+Epoch 6 [170/172] - loss: 0.0701, acc: 0.9688
+Epoch 6 [171/172] - loss: 0.0665
+Epoch 6 [172/172] - loss: 0.1621
+
+类别准确率:
+positive: 0.8565 (400/467)
+neutral: 0.2651 (22/83)
+negative: 0.4200 (105/250)
+
+Epoch 6/10
+Train Loss: 0.1197, Train Acc: 0.9596
+Val Loss: 0.9254, Val Acc: 0.6587
+Epoch 7 [1/172] - loss: 0.0618, acc: 1.0000
+Epoch 7 [2/172] - loss: 0.0545
+Epoch 7 [3/172] - loss: 0.0559
+Epoch 7 [4/172] - loss: 0.1077
+Epoch 7 [5/172] - loss: 0.0532
+Epoch 7 [6/172] - loss: 0.0562
+Epoch 7 [7/172] - loss: 0.0619
+Epoch 7 [8/172] - loss: 0.1415
+Epoch 7 [9/172] - loss: 0.0622
+Epoch 7 [10/172] - loss: 0.0656, acc: 1.0000
+Epoch 7 [11/172] - loss: 0.1252
+Epoch 7 [12/172] - loss: 0.0785
+Epoch 7 [13/172] - loss: 0.0610
+Epoch 7 [14/172] - loss: 0.0574
+Epoch 7 [15/172] - loss: 0.1573
+Epoch 7 [16/172] - loss: 0.0669
+Epoch 7 [17/172] - loss: 0.1184
+Epoch 7 [18/172] - loss: 0.0951
+Epoch 7 [19/172] - loss: 0.1761
+Epoch 7 [20/172] - loss: 0.0512, acc: 1.0000
+Epoch 7 [21/172] - loss: 0.0875
+Epoch 7 [22/172] - loss: 0.0824
+Epoch 7 [23/172] - loss: 0.0581
+Epoch 7 [24/172] - loss: 0.0513
+Epoch 7 [25/172] - loss: 0.0532
+Epoch 7 [26/172] - loss: 0.1074
+Epoch 7 [27/172] - loss: 0.0992
+Epoch 7 [28/172] - loss: 0.1150
+Epoch 7 [29/172] - loss: 0.1082
+Epoch 7 [30/172] - loss: 0.1633, acc: 0.9688
+Epoch 7 [31/172] - loss: 0.0840
+Epoch 7 [32/172] - loss: 0.0701
+Epoch 7 [33/172] - loss: 0.0668
+Epoch 7 [34/172] - loss: 0.0848
+Epoch 7 [35/172] - loss: 0.0712
+Epoch 7 [36/172] - loss: 0.2790
+Epoch 7 [37/172] - loss: 0.0568
+Epoch 7 [38/172] - loss: 0.0739
+Epoch 7 [39/172] - loss: 0.0615
+Epoch 7 [40/172] - loss: 0.0716, acc: 0.9375
+Epoch 7 [41/172] - loss: 0.0843
+Epoch 7 [42/172] - loss: 0.0610
+Epoch 7 [43/172] - loss: 0.0599
+Epoch 7 [44/172] - loss: 0.1386
+Epoch 7 [45/172] - loss: 0.0558
+Epoch 7 [46/172] - loss: 0.2270
+Epoch 7 [47/172] - loss: 0.0739
+Epoch 7 [48/172] - loss: 0.0605
+Epoch 7 [49/172] - loss: 0.0489
+Epoch 7 [50/172] - loss: 0.0685, acc: 0.9688
+Epoch 7 [51/172] - loss: 0.0847
+Epoch 7 [52/172] - loss: 0.0764
+Epoch 7 [53/172] - loss: 0.0510
+Epoch 7 [54/172] - loss: 0.0814
+Epoch 7 [55/172] - loss: 0.0906
+Epoch 7 [56/172] - loss: 0.0560
+Epoch 7 [57/172] - loss: 0.0939
+Epoch 7 [58/172] - loss: 0.0652
+Epoch 7 [59/172] - loss: 0.0600
+Epoch 7 [60/172] - loss: 0.0765, acc: 1.0000
+Epoch 7 [61/172] - loss: 0.0792
+Epoch 7 [62/172] - loss: 0.0562
+Epoch 7 [63/172] - loss: 0.3971
+Epoch 7 [64/172] - loss: 0.0602
+Epoch 7 [65/172] - loss: 0.0813
+Epoch 7 [66/172] - loss: 0.0532
+Epoch 7 [67/172] - loss: 0.0675
+Epoch 7 [68/172] - loss: 0.0634
+
+=== 第 1101 次迭代调试信息 ===
+当前类别统计：
+positive: count=12302.0, difficulty=0.3606, log_difficulty=0.3079, weight=2.5397
+neutral: count=10756.0, difficulty=0.2820, log_difficulty=0.2484, weight=2.2419
+negative: count=12072.0, difficulty=0.3745, log_difficulty=0.3181, weight=2.5903
+
+当前batch的pt分布：
+positive: min=0.7521, max=0.9865, mean=0.9334
+neutral: min=0.9316, max=0.9928, mean=0.9681
+negative: min=0.5542, max=0.9798, mean=0.8476
+
+当前batch准确率：
+整体准确率: 1.0000
+positive 准确率: 1.0000
+neutral 准确率: 1.0000
+negative 准确率: 1.0000
+
+损失分量：
+基础交叉熵: 0.1079
+焦点损失: 0.0044
+边界损失: 0.1905
+总损失: 0.0561
+Epoch 7 [69/172] - loss: 0.0561
+Epoch 7 [70/172] - loss: 0.0613, acc: 0.9688
+Epoch 7 [71/172] - loss: 0.0822
+Epoch 7 [72/172] - loss: 0.0611
+Epoch 7 [73/172] - loss: 0.0910
+Epoch 7 [74/172] - loss: 0.0655
+Epoch 7 [75/172] - loss: 0.0534
+Epoch 7 [76/172] - loss: 0.0618
+Epoch 7 [77/172] - loss: 0.0657
+Epoch 7 [78/172] - loss: 0.0635
+Epoch 7 [79/172] - loss: 0.0817
+Epoch 7 [80/172] - loss: 0.0831, acc: 0.9375
+Epoch 7 [81/172] - loss: 0.0586
+Epoch 7 [82/172] - loss: 0.0514
+Epoch 7 [83/172] - loss: 0.0547
+Epoch 7 [84/172] - loss: 0.0657
+Epoch 7 [85/172] - loss: 0.0622
+Epoch 7 [86/172] - loss: 0.0558
+Epoch 7 [87/172] - loss: 0.0818
+Epoch 7 [88/172] - loss: 0.0476
+Epoch 7 [89/172] - loss: 0.0591
+Epoch 7 [90/172] - loss: 0.0624, acc: 0.9688
+Epoch 7 [91/172] - loss: 0.0553
+Epoch 7 [92/172] - loss: 0.0800
+Epoch 7 [93/172] - loss: 0.0678
+Epoch 7 [94/172] - loss: 0.0513
+Epoch 7 [95/172] - loss: 0.0654
+Epoch 7 [96/172] - loss: 0.0455
+Epoch 7 [97/172] - loss: 0.0647
+Epoch 7 [98/172] - loss: 0.1419
+Epoch 7 [99/172] - loss: 0.0492
+Epoch 7 [100/172] - loss: 0.0553, acc: 1.0000
+Epoch 7 [101/172] - loss: 0.0559
+Epoch 7 [102/172] - loss: 0.0690
+Epoch 7 [103/172] - loss: 0.0794
+Epoch 7 [104/172] - loss: 0.0634
+Epoch 7 [105/172] - loss: 0.1117
+Epoch 7 [106/172] - loss: 0.1342
+Epoch 7 [107/172] - loss: 0.0490
+Epoch 7 [108/172] - loss: 0.0517
+Epoch 7 [109/172] - loss: 0.1058
+Epoch 7 [110/172] - loss: 0.0790, acc: 0.9688
+Epoch 7 [111/172] - loss: 0.0745
+Epoch 7 [112/172] - loss: 0.0624
+Epoch 7 [113/172] - loss: 0.0535
+Epoch 7 [114/172] - loss: 0.0500
+Epoch 7 [115/172] - loss: 0.0441
+Epoch 7 [116/172] - loss: 0.1293
+Epoch 7 [117/172] - loss: 0.0568
+Epoch 7 [118/172] - loss: 0.0681
+Epoch 7 [119/172] - loss: 0.0803
+Epoch 7 [120/172] - loss: 0.0617, acc: 1.0000
+Epoch 7 [121/172] - loss: 0.0693
+Epoch 7 [122/172] - loss: 0.0754
+Epoch 7 [123/172] - loss: 0.0594
+Epoch 7 [124/172] - loss: 0.0909
+Epoch 7 [125/172] - loss: 0.0610
+Epoch 7 [126/172] - loss: 0.0709
+Epoch 7 [127/172] - loss: 0.0849
+Epoch 7 [128/172] - loss: 0.0540
+Epoch 7 [129/172] - loss: 0.0786
+Epoch 7 [130/172] - loss: 0.0712, acc: 0.9688
+Epoch 7 [131/172] - loss: 0.0808
+Epoch 7 [132/172] - loss: 0.1638
+Epoch 7 [133/172] - loss: 0.0656
+Epoch 7 [134/172] - loss: 0.0726
+Epoch 7 [135/172] - loss: 0.0609
+Epoch 7 [136/172] - loss: 0.0505
+Epoch 7 [137/172] - loss: 0.1348
+Epoch 7 [138/172] - loss: 0.0495
+Epoch 7 [139/172] - loss: 0.1037
+Epoch 7 [140/172] - loss: 0.0793, acc: 0.9688
+Epoch 7 [141/172] - loss: 0.0682
+Epoch 7 [142/172] - loss: 0.0685
+Epoch 7 [143/172] - loss: 0.0619
+Epoch 7 [144/172] - loss: 0.0625
+Epoch 7 [145/172] - loss: 0.0618
+Epoch 7 [146/172] - loss: 0.0796
+Epoch 7 [147/172] - loss: 0.0819
+Epoch 7 [148/172] - loss: 0.0616
+Epoch 7 [149/172] - loss: 0.0657
+Epoch 7 [150/172] - loss: 0.0517, acc: 1.0000
+Epoch 7 [151/172] - loss: 0.1452
+Epoch 7 [152/172] - loss: 0.0500
+Epoch 7 [153/172] - loss: 0.0485
+Epoch 7 [154/172] - loss: 0.0991
+Epoch 7 [155/172] - loss: 0.0454
+Epoch 7 [156/172] - loss: 0.1220
+Epoch 7 [157/172] - loss: 0.0702
+Epoch 7 [158/172] - loss: 0.0671
+Epoch 7 [159/172] - loss: 0.0550
+Epoch 7 [160/172] - loss: 0.0739, acc: 0.9688
+Epoch 7 [161/172] - loss: 0.0610
+Epoch 7 [162/172] - loss: 0.0715
+Epoch 7 [163/172] - loss: 0.0599
+Epoch 7 [164/172] - loss: 0.0679
+Epoch 7 [165/172] - loss: 0.0850
+Epoch 7 [166/172] - loss: 0.0617
+Epoch 7 [167/172] - loss: 0.0657
+Epoch 7 [168/172] - loss: 0.0604
+
+=== 第 1201 次迭代调试信息 ===
+当前类别统计：
+positive: count=13426.0, difficulty=0.3403, log_difficulty=0.2929, weight=2.4646
+neutral: count=11731.0, difficulty=0.2661, log_difficulty=0.2359, weight=2.1796
+negative: count=13173.0, difficulty=0.3539, log_difficulty=0.3030, weight=2.5151
+
+当前batch的pt分布：
+positive: min=0.7975, max=0.9890, mean=0.9388
+neutral: min=0.9070, max=0.9926, mean=0.9608
+negative: min=0.5650, max=0.9805, mean=0.8827
+
+当前batch准确率：
+整体准确率: 1.0000
+positive 准确率: 1.0000
+neutral 准确率: 1.0000
+negative 准确率: 1.0000
+
+损失分量：
+基础交叉熵: 0.0844
+焦点损失: 0.0031
+边界损失: 0.1756
+总损失: 0.0497
+Epoch 7 [169/172] - loss: 0.0497
+Epoch 7 [170/172] - loss: 0.1501, acc: 0.9688
+Epoch 7 [171/172] - loss: 0.0505
+Epoch 7 [172/172] - loss: 0.0444
+
+类别准确率:
+positive: 0.8308 (388/467)
+neutral: 0.2048 (17/83)
+negative: 0.5080 (127/250)
+
+Epoch 7/10
+Train Loss: 0.0684, Train Acc: 0.9919
+Val Loss: 0.8468, Val Acc: 0.6650
+Epoch 8 [1/172] - loss: 0.0578, acc: 1.0000
+Epoch 8 [2/172] - loss: 0.0991
+Epoch 8 [3/172] - loss: 0.0530
+Epoch 8 [4/172] - loss: 0.0431
+Epoch 8 [5/172] - loss: 0.0486
+Epoch 8 [6/172] - loss: 0.0590
+Epoch 8 [7/172] - loss: 0.0567
+Epoch 8 [8/172] - loss: 0.0477
+Epoch 8 [9/172] - loss: 0.0612
+Epoch 8 [10/172] - loss: 0.0810, acc: 0.9688
+Epoch 8 [11/172] - loss: 0.0560
+Epoch 8 [12/172] - loss: 0.0696
+Epoch 8 [13/172] - loss: 0.0683
+Epoch 8 [14/172] - loss: 0.0505
+Epoch 8 [15/172] - loss: 0.0595
+Epoch 8 [16/172] - loss: 0.0543
+Epoch 8 [17/172] - loss: 0.0460
+Epoch 8 [18/172] - loss: 0.0484
+Epoch 8 [19/172] - loss: 0.1021
+Epoch 8 [20/172] - loss: 0.0513, acc: 1.0000
+Epoch 8 [21/172] - loss: 0.0484
+Epoch 8 [22/172] - loss: 0.0590
+Epoch 8 [23/172] - loss: 0.0810
+Epoch 8 [24/172] - loss: 0.0592
+Epoch 8 [25/172] - loss: 0.0900
+Epoch 8 [26/172] - loss: 0.0536
+Epoch 8 [27/172] - loss: 0.0745
+Epoch 8 [28/172] - loss: 0.1003
+Epoch 8 [29/172] - loss: 0.0497
+Epoch 8 [30/172] - loss: 0.0473, acc: 1.0000
+Epoch 8 [31/172] - loss: 0.0522
+Epoch 8 [32/172] - loss: 0.0508
+Epoch 8 [33/172] - loss: 0.0615
+Epoch 8 [34/172] - loss: 0.0895
+Epoch 8 [35/172] - loss: 0.1569
+Epoch 8 [36/172] - loss: 0.0465
+Epoch 8 [37/172] - loss: 0.0692
+Epoch 8 [38/172] - loss: 0.1031
+Epoch 8 [39/172] - loss: 0.0518
+Epoch 8 [40/172] - loss: 0.0481, acc: 1.0000
+Epoch 8 [41/172] - loss: 0.0497
+Epoch 8 [42/172] - loss: 0.0745
+Epoch 8 [43/172] - loss: 0.0587
+Epoch 8 [44/172] - loss: 0.0588
+Epoch 8 [45/172] - loss: 0.0522
+Epoch 8 [46/172] - loss: 0.0565
+Epoch 8 [47/172] - loss: 0.1219
+Epoch 8 [48/172] - loss: 0.0639
+Epoch 8 [49/172] - loss: 0.0474
+Epoch 8 [50/172] - loss: 0.0478, acc: 1.0000
+Epoch 8 [51/172] - loss: 0.0555
+Epoch 8 [52/172] - loss: 0.0566
+Epoch 8 [53/172] - loss: 0.0726
+Epoch 8 [54/172] - loss: 0.0921
+Epoch 8 [55/172] - loss: 0.0572
+Epoch 8 [56/172] - loss: 0.0874
+Epoch 8 [57/172] - loss: 0.0516
+Epoch 8 [58/172] - loss: 0.0613
+Epoch 8 [59/172] - loss: 0.0490
+Epoch 8 [60/172] - loss: 0.0557, acc: 1.0000
+Epoch 8 [61/172] - loss: 0.0474
+Epoch 8 [62/172] - loss: 0.0575
+Epoch 8 [63/172] - loss: 0.0451
+Epoch 8 [64/172] - loss: 0.0641
+Epoch 8 [65/172] - loss: 0.0478
+Epoch 8 [66/172] - loss: 0.0546
+Epoch 8 [67/172] - loss: 0.0638
+Epoch 8 [68/172] - loss: 0.0482
+Epoch 8 [69/172] - loss: 0.0453
+Epoch 8 [70/172] - loss: 0.0507, acc: 1.0000
+Epoch 8 [71/172] - loss: 0.0902
+Epoch 8 [72/172] - loss: 0.0587
+Epoch 8 [73/172] - loss: 0.0889
+Epoch 8 [74/172] - loss: 0.2073
+Epoch 8 [75/172] - loss: 0.0655
+Epoch 8 [76/172] - loss: 0.0802
+Epoch 8 [77/172] - loss: 0.0507
+Epoch 8 [78/172] - loss: 0.1030
+Epoch 8 [79/172] - loss: 0.1106
+Epoch 8 [80/172] - loss: 0.0584, acc: 1.0000
+Epoch 8 [81/172] - loss: 0.0620
+Epoch 8 [82/172] - loss: 0.0488
+Epoch 8 [83/172] - loss: 0.0529
+Epoch 8 [84/172] - loss: 0.0528
+Epoch 8 [85/172] - loss: 0.0515
+Epoch 8 [86/172] - loss: 0.0564
+Epoch 8 [87/172] - loss: 0.0458
+Epoch 8 [88/172] - loss: 0.0862
+Epoch 8 [89/172] - loss: 0.0460
+Epoch 8 [90/172] - loss: 0.0819, acc: 0.9688
+Epoch 8 [91/172] - loss: 0.1333
+Epoch 8 [92/172] - loss: 0.0613
+Epoch 8 [93/172] - loss: 0.0454
+Epoch 8 [94/172] - loss: 0.0819
+Epoch 8 [95/172] - loss: 0.0611
+Epoch 8 [96/172] - loss: 0.0472
+
+=== 第 1301 次迭代调试信息 ===
+当前类别统计：
+positive: count=14487.0, difficulty=0.3222, log_difficulty=0.2793, weight=2.3966
+neutral: count=12738.0, difficulty=0.2519, log_difficulty=0.2246, weight=2.1231
+negative: count=14288.0, difficulty=0.3357, log_difficulty=0.2895, weight=2.4473
+
+当前batch的pt分布：
+positive: min=0.7642, max=0.9766, mean=0.9200
+neutral: min=0.4957, max=0.9756, mean=0.8495
+negative: min=0.8565, max=0.9973, mean=0.9580
+
+当前batch准确率：
+整体准确率: 1.0000
+positive 准确率: 1.0000
+neutral 准确率: 1.0000
+negative 准确率: 1.0000
+
+损失分量：
+基础交叉熵: 0.1194
+焦点损失: 0.0076
+边界损失: 0.1978
+总损失: 0.0616
+Epoch 8 [97/172] - loss: 0.0616
+Epoch 8 [98/172] - loss: 0.0508
+Epoch 8 [99/172] - loss: 0.0452
+Epoch 8 [100/172] - loss: 0.0454, acc: 1.0000
+Epoch 8 [101/172] - loss: 0.0655
+Epoch 8 [102/172] - loss: 0.0916
+Epoch 8 [103/172] - loss: 0.0558
+Epoch 8 [104/172] - loss: 0.0829
+Epoch 8 [105/172] - loss: 0.0724
+Epoch 8 [106/172] - loss: 0.0466
+Epoch 8 [107/172] - loss: 0.0486
+Epoch 8 [108/172] - loss: 0.0525
+Epoch 8 [109/172] - loss: 0.1035
+Epoch 8 [110/172] - loss: 0.0654, acc: 1.0000
+Epoch 8 [111/172] - loss: 0.1534
+Epoch 8 [112/172] - loss: 0.1200
+Epoch 8 [113/172] - loss: 0.0479
+Epoch 8 [114/172] - loss: 0.0547
+Epoch 8 [115/172] - loss: 0.0486
+Epoch 8 [116/172] - loss: 0.0488
+Epoch 8 [117/172] - loss: 0.0638
+Epoch 8 [118/172] - loss: 0.0508
+Epoch 8 [119/172] - loss: 0.0613
+Epoch 8 [120/172] - loss: 0.0537, acc: 1.0000
+Epoch 8 [121/172] - loss: 0.1009
+Epoch 8 [122/172] - loss: 0.0503
+Epoch 8 [123/172] - loss: 0.0639
+Epoch 8 [124/172] - loss: 0.0586
+Epoch 8 [125/172] - loss: 0.0478
+Epoch 8 [126/172] - loss: 0.0543
+Epoch 8 [127/172] - loss: 0.1102
+Epoch 8 [128/172] - loss: 0.0622
+Epoch 8 [129/172] - loss: 0.0587
+Epoch 8 [130/172] - loss: 0.0492, acc: 1.0000
+Epoch 8 [131/172] - loss: 0.0518
+Epoch 8 [132/172] - loss: 0.0459
+Epoch 8 [133/172] - loss: 0.0490
+Epoch 8 [134/172] - loss: 0.0499
+Epoch 8 [135/172] - loss: 0.0510
+Epoch 8 [136/172] - loss: 0.0575
+Epoch 8 [137/172] - loss: 0.0504
+Epoch 8 [138/172] - loss: 0.0717
+Epoch 8 [139/172] - loss: 0.0517
+Epoch 8 [140/172] - loss: 0.0518, acc: 1.0000
+Epoch 8 [141/172] - loss: 0.0465
+Epoch 8 [142/172] - loss: 0.0596
+Epoch 8 [143/172] - loss: 0.0521
+Epoch 8 [144/172] - loss: 0.0806
+Epoch 8 [145/172] - loss: 0.0592
+Epoch 8 [146/172] - loss: 0.0440
+Epoch 8 [147/172] - loss: 0.0469
+Epoch 8 [148/172] - loss: 0.0509
+Epoch 8 [149/172] - loss: 0.0484
+Epoch 8 [150/172] - loss: 0.0549, acc: 1.0000
+Epoch 8 [151/172] - loss: 0.0811
+Epoch 8 [152/172] - loss: 0.0660
+Epoch 8 [153/172] - loss: 0.0699
+Epoch 8 [154/172] - loss: 0.1162
+Epoch 8 [155/172] - loss: 0.0554
+Epoch 8 [156/172] - loss: 0.0574
+Epoch 8 [157/172] - loss: 0.0499
+Epoch 8 [158/172] - loss: 0.0779
+Epoch 8 [159/172] - loss: 0.1295
+Epoch 8 [160/172] - loss: 0.0541, acc: 1.0000
+Epoch 8 [161/172] - loss: 0.0677
+Epoch 8 [162/172] - loss: 0.0677
+Epoch 8 [163/172] - loss: 0.0469
+Epoch 8 [164/172] - loss: 0.0520
+Epoch 8 [165/172] - loss: 0.0440
+Epoch 8 [166/172] - loss: 0.0543
+Epoch 8 [167/172] - loss: 0.0446
+Epoch 8 [168/172] - loss: 0.0530
+Epoch 8 [169/172] - loss: 0.0569
+Epoch 8 [170/172] - loss: 0.0639, acc: 1.0000
+Epoch 8 [171/172] - loss: 0.0887
+Epoch 8 [172/172] - loss: 0.0528
+
+类别准确率:
+positive: 0.8244 (385/467)
+neutral: 0.1807 (15/83)
+negative: 0.5320 (133/250)
+
+Epoch 8/10
+Train Loss: 0.0627, Train Acc: 0.9919
+Val Loss: 0.8512, Val Acc: 0.6663
+Epoch 9 [1/172] - loss: 0.0961, acc: 0.9688
+Epoch 9 [2/172] - loss: 0.1004
+Epoch 9 [3/172] - loss: 0.0438
+Epoch 9 [4/172] - loss: 0.0507
+Epoch 9 [5/172] - loss: 0.0456
+Epoch 9 [6/172] - loss: 0.0469
+Epoch 9 [7/172] - loss: 0.0666
+Epoch 9 [8/172] - loss: 0.0792
+Epoch 9 [9/172] - loss: 0.0461
+Epoch 9 [10/172] - loss: 0.0470, acc: 1.0000
+Epoch 9 [11/172] - loss: 0.0444
+Epoch 9 [12/172] - loss: 0.0614
+Epoch 9 [13/172] - loss: 0.0455
+Epoch 9 [14/172] - loss: 0.0520
+Epoch 9 [15/172] - loss: 0.0717
+Epoch 9 [16/172] - loss: 0.0455
+Epoch 9 [17/172] - loss: 0.0456
+Epoch 9 [18/172] - loss: 0.0442
+Epoch 9 [19/172] - loss: 0.0733
+Epoch 9 [20/172] - loss: 0.0463, acc: 1.0000
+Epoch 9 [21/172] - loss: 0.0464
+Epoch 9 [22/172] - loss: 0.0541
+Epoch 9 [23/172] - loss: 0.0445
+Epoch 9 [24/172] - loss: 0.0461
+
+=== 第 1401 次迭代调试信息 ===
+当前类别统计：
+positive: count=15648.0, difficulty=0.3057, log_difficulty=0.2667, weight=2.3336
+neutral: count=13691.0, difficulty=0.2395, log_difficulty=0.2147, weight=2.0737
+negative: count=15357.0, difficulty=0.3198, log_difficulty=0.2775, weight=2.3874
+
+当前batch的pt分布：
+positive: min=0.8619, max=0.9926, mean=0.9364
+neutral: min=0.6810, max=0.9938, mean=0.9227
+negative: min=0.6756, max=0.9910, mean=0.8958
+
+当前batch准确率：
+整体准确率: 1.0000
+positive 准确率: 1.0000
+neutral 准确率: 1.0000
+negative 准确率: 1.0000
+
+损失分量：
+基础交叉熵: 0.0893
+焦点损失: 0.0024
+边界损失: 0.1816
+总损失: 0.0494
+Epoch 9 [25/172] - loss: 0.0494
+Epoch 9 [26/172] - loss: 0.0566
+Epoch 9 [27/172] - loss: 0.0551
+Epoch 9 [28/172] - loss: 0.0763
+Epoch 9 [29/172] - loss: 0.0504
+Epoch 9 [30/172] - loss: 0.0444, acc: 1.0000
+Epoch 9 [31/172] - loss: 0.0729
+Epoch 9 [32/172] - loss: 0.0527
+Epoch 9 [33/172] - loss: 0.0943
+Epoch 9 [34/172] - loss: 0.0877
+Epoch 9 [35/172] - loss: 0.0443
+Epoch 9 [36/172] - loss: 0.0477
+Epoch 9 [37/172] - loss: 0.0885
+Epoch 9 [38/172] - loss: 0.1441
+Epoch 9 [39/172] - loss: 0.0480
+Epoch 9 [40/172] - loss: 0.0439, acc: 1.0000
+Epoch 9 [41/172] - loss: 0.0868
+Epoch 9 [42/172] - loss: 0.0473
+Epoch 9 [43/172] - loss: 0.0448
+Epoch 9 [44/172] - loss: 0.0490
+Epoch 9 [45/172] - loss: 0.0571
+Epoch 9 [46/172] - loss: 0.0553
+Epoch 9 [47/172] - loss: 0.0427
+Epoch 9 [48/172] - loss: 0.0764
+Epoch 9 [49/172] - loss: 0.0836
+Epoch 9 [50/172] - loss: 0.0422, acc: 1.0000
+Epoch 9 [51/172] - loss: 0.0434
+Epoch 9 [52/172] - loss: 0.0544
+Epoch 9 [53/172] - loss: 0.0438
+Epoch 9 [54/172] - loss: 0.0679
+Epoch 9 [55/172] - loss: 0.0725
+Epoch 9 [56/172] - loss: 0.0524
+Epoch 9 [57/172] - loss: 0.0465
+Epoch 9 [58/172] - loss: 0.0565
+Epoch 9 [59/172] - loss: 0.0765
+Epoch 9 [60/172] - loss: 0.0450, acc: 1.0000
+Epoch 9 [61/172] - loss: 0.0616
+Epoch 9 [62/172] - loss: 0.0466
+Epoch 9 [63/172] - loss: 0.0673
+Epoch 9 [64/172] - loss: 0.0542
+Epoch 9 [65/172] - loss: 0.0419
+Epoch 9 [66/172] - loss: 0.0597
+Epoch 9 [67/172] - loss: 0.1118
+Epoch 9 [68/172] - loss: 0.0467
+Epoch 9 [69/172] - loss: 0.0489
+Epoch 9 [70/172] - loss: 0.0602, acc: 1.0000
+Epoch 9 [71/172] - loss: 0.0541
+Epoch 9 [72/172] - loss: 0.0663
+Epoch 9 [73/172] - loss: 0.0473
+Epoch 9 [74/172] - loss: 0.0461
+Epoch 9 [75/172] - loss: 0.0476
+Epoch 9 [76/172] - loss: 0.0418
+Epoch 9 [77/172] - loss: 0.0439
+Epoch 9 [78/172] - loss: 0.0826
+Epoch 9 [79/172] - loss: 0.0972
+Epoch 9 [80/172] - loss: 0.0517, acc: 1.0000
+Epoch 9 [81/172] - loss: 0.0668
+Epoch 9 [82/172] - loss: 0.1023
+Epoch 9 [83/172] - loss: 0.0507
+Epoch 9 [84/172] - loss: 0.0463
+Epoch 9 [85/172] - loss: 0.0748
+Epoch 9 [86/172] - loss: 0.0510
+Epoch 9 [87/172] - loss: 0.0691
+Epoch 9 [88/172] - loss: 0.0471
+Epoch 9 [89/172] - loss: 0.0593
+Epoch 9 [90/172] - loss: 0.0504, acc: 1.0000
+Epoch 9 [91/172] - loss: 0.1231
+Epoch 9 [92/172] - loss: 0.0510
+Epoch 9 [93/172] - loss: 0.0874
+Epoch 9 [94/172] - loss: 0.0457
+Epoch 9 [95/172] - loss: 0.0530
+Epoch 9 [96/172] - loss: 0.0488
+Epoch 9 [97/172] - loss: 0.0463
+Epoch 9 [98/172] - loss: 0.1091
+Epoch 9 [99/172] - loss: 0.0605
+Epoch 9 [100/172] - loss: 0.0424, acc: 1.0000
+Epoch 9 [101/172] - loss: 0.0447
+Epoch 9 [102/172] - loss: 0.0613
+Epoch 9 [103/172] - loss: 0.0677
+Epoch 9 [104/172] - loss: 0.0665
+Epoch 9 [105/172] - loss: 0.1143
+Epoch 9 [106/172] - loss: 0.0467
+Epoch 9 [107/172] - loss: 0.0594
+Epoch 9 [108/172] - loss: 0.0997
+Epoch 9 [109/172] - loss: 0.0841
+Epoch 9 [110/172] - loss: 0.0779, acc: 0.9688
+Epoch 9 [111/172] - loss: 0.0446
+Epoch 9 [112/172] - loss: 0.0475
+Epoch 9 [113/172] - loss: 0.0425
+Epoch 9 [114/172] - loss: 0.0430
+Epoch 9 [115/172] - loss: 0.0499
+Epoch 9 [116/172] - loss: 0.0488
+Epoch 9 [117/172] - loss: 0.0538
+Epoch 9 [118/172] - loss: 0.1352
+Epoch 9 [119/172] - loss: 0.0611
+Epoch 9 [120/172] - loss: 0.0547, acc: 1.0000
+Epoch 9 [121/172] - loss: 0.0422
+Epoch 9 [122/172] - loss: 0.1297
+Epoch 9 [123/172] - loss: 0.0443
+Epoch 9 [124/172] - loss: 0.0546
+
+=== 第 1501 次迭代调试信息 ===
+当前类别统计：
+positive: count=16764.0, difficulty=0.2910, log_difficulty=0.2555, weight=2.2773
+neutral: count=14673.0, difficulty=0.2287, log_difficulty=0.2059, weight=2.0296
+negative: count=16459.0, difficulty=0.3054, log_difficulty=0.2665, weight=2.3327
+
+当前batch的pt分布：
+positive: min=0.5488, max=0.9815, mean=0.8191
+neutral: min=0.7534, max=0.9854, mean=0.9451
+negative: min=0.9391, max=0.9959, mean=0.9701
+
+当前batch准确率：
+整体准确率: 1.0000
+positive 准确率: 1.0000
+neutral 准确率: 1.0000
+negative 准确率: 1.0000
+
+损失分量：
+基础交叉熵: 0.1323
+焦点损失: 0.0099
+边界损失: 0.2071
+总损失: 0.0685
+Epoch 9 [125/172] - loss: 0.0685
+Epoch 9 [126/172] - loss: 0.0601
+Epoch 9 [127/172] - loss: 0.0436
+Epoch 9 [128/172] - loss: 0.0641
+Epoch 9 [129/172] - loss: 0.0594
+Epoch 9 [130/172] - loss: 0.0499, acc: 1.0000
+Epoch 9 [131/172] - loss: 0.0544
+Epoch 9 [132/172] - loss: 0.1078
+Epoch 9 [133/172] - loss: 0.0657
+Epoch 9 [134/172] - loss: 0.0517
+Epoch 9 [135/172] - loss: 0.0513
+Epoch 9 [136/172] - loss: 0.0571
+Epoch 9 [137/172] - loss: 0.0465
+Epoch 9 [138/172] - loss: 0.0545
+Epoch 9 [139/172] - loss: 0.0644
+Epoch 9 [140/172] - loss: 0.0518, acc: 1.0000
+Epoch 9 [141/172] - loss: 0.0486
+Epoch 9 [142/172] - loss: 0.0443
+Epoch 9 [143/172] - loss: 0.1114
+Epoch 9 [144/172] - loss: 0.0458
+Epoch 9 [145/172] - loss: 0.0504
+Epoch 9 [146/172] - loss: 0.0431
+Epoch 9 [147/172] - loss: 0.0484
+Epoch 9 [148/172] - loss: 0.0444
+Epoch 9 [149/172] - loss: 0.0601
+Epoch 9 [150/172] - loss: 0.0460, acc: 1.0000
+Epoch 9 [151/172] - loss: 0.0534
+Epoch 9 [152/172] - loss: 0.0669
+Epoch 9 [153/172] - loss: 0.0930
+Epoch 9 [154/172] - loss: 0.0825
+Epoch 9 [155/172] - loss: 0.0475
+Epoch 9 [156/172] - loss: 0.1489
+Epoch 9 [157/172] - loss: 0.0453
+Epoch 9 [158/172] - loss: 0.0502
+Epoch 9 [159/172] - loss: 0.0481
+Epoch 9 [160/172] - loss: 0.0440, acc: 1.0000
+Epoch 9 [161/172] - loss: 0.0539
+Epoch 9 [162/172] - loss: 0.0650
+Epoch 9 [163/172] - loss: 0.0499
+Epoch 9 [164/172] - loss: 0.0439
+Epoch 9 [165/172] - loss: 0.0468
+Epoch 9 [166/172] - loss: 0.0496
+Epoch 9 [167/172] - loss: 0.0921
+Epoch 9 [168/172] - loss: 0.0478
+Epoch 9 [169/172] - loss: 0.0558
+Epoch 9 [170/172] - loss: 0.0504, acc: 1.0000
+Epoch 9 [171/172] - loss: 0.0516
+Epoch 9 [172/172] - loss: 0.0417
+
+类别准确率:
+positive: 0.8608 (402/467)
+neutral: 0.2410 (20/83)
+negative: 0.4400 (110/250)
+
+Epoch 9/10
+Train Loss: 0.0522, Train Acc: 0.9980
+Val Loss: 0.8805, Val Acc: 0.6650
+Epoch 10 [1/172] - loss: 0.0613, acc: 1.0000
+Epoch 10 [2/172] - loss: 0.1074
+Epoch 10 [3/172] - loss: 0.0432
+Epoch 10 [4/172] - loss: 0.0873
+Epoch 10 [5/172] - loss: 0.0518
+Epoch 10 [6/172] - loss: 0.0647
+Epoch 10 [7/172] - loss: 0.0474
+Epoch 10 [8/172] - loss: 0.0515
+Epoch 10 [9/172] - loss: 0.0478
+Epoch 10 [10/172] - loss: 0.0671, acc: 1.0000
+Epoch 10 [11/172] - loss: 0.0514
+Epoch 10 [12/172] - loss: 0.0521
+Epoch 10 [13/172] - loss: 0.0572
+Epoch 10 [14/172] - loss: 0.0697
+Epoch 10 [15/172] - loss: 0.0425
+Epoch 10 [16/172] - loss: 0.0696
+Epoch 10 [17/172] - loss: 0.0445
+Epoch 10 [18/172] - loss: 0.0510
+Epoch 10 [19/172] - loss: 0.0519
+Epoch 10 [20/172] - loss: 0.0450, acc: 1.0000
+Epoch 10 [21/172] - loss: 0.0441
+Epoch 10 [22/172] - loss: 0.0436
+Epoch 10 [23/172] - loss: 0.0464
+Epoch 10 [24/172] - loss: 0.0940
+Epoch 10 [25/172] - loss: 0.0477
+Epoch 10 [26/172] - loss: 0.0424
+Epoch 10 [27/172] - loss: 0.0483
+Epoch 10 [28/172] - loss: 0.0428
+Epoch 10 [29/172] - loss: 0.0490
+Epoch 10 [30/172] - loss: 0.0449, acc: 1.0000
+Epoch 10 [31/172] - loss: 0.0692
+Epoch 10 [32/172] - loss: 0.0577
+Epoch 10 [33/172] - loss: 0.0431
+Epoch 10 [34/172] - loss: 0.0474
+Epoch 10 [35/172] - loss: 0.0584
+Epoch 10 [36/172] - loss: 0.1533
+Epoch 10 [37/172] - loss: 0.0855
+Epoch 10 [38/172] - loss: 0.0513
+Epoch 10 [39/172] - loss: 0.0491
+Epoch 10 [40/172] - loss: 0.0429, acc: 1.0000
+Epoch 10 [41/172] - loss: 0.0564
+Epoch 10 [42/172] - loss: 0.0661
+Epoch 10 [43/172] - loss: 0.0464
+Epoch 10 [44/172] - loss: 0.0714
+Epoch 10 [45/172] - loss: 0.0443
+Epoch 10 [46/172] - loss: 0.0452
+Epoch 10 [47/172] - loss: 0.0438
+Epoch 10 [48/172] - loss: 0.0438
+Epoch 10 [49/172] - loss: 0.0432
+Epoch 10 [50/172] - loss: 0.0436, acc: 1.0000
+Epoch 10 [51/172] - loss: 0.0560
+Epoch 10 [52/172] - loss: 0.0990
+
+=== 第 1601 次迭代调试信息 ===
+当前类别统计：
+positive: count=17907.0, difficulty=0.2778, log_difficulty=0.2451, weight=2.2256
+neutral: count=15634.0, difficulty=0.2188, log_difficulty=0.1979, weight=1.9895
+negative: count=17538.0, difficulty=0.2929, log_difficulty=0.2569, weight=2.2843
+
+当前batch的pt分布：
+positive: min=0.9233, max=0.9926, mean=0.9670
+neutral: min=0.5765, max=0.9873, mean=0.9176
+negative: min=0.8308, max=0.9777, mean=0.9303
+
+当前batch准确率：
+整体准确率: 1.0000
+positive 准确率: 1.0000
+neutral 准确率: 1.0000
+negative 准确率: 1.0000
+
+损失分量：
+基础交叉熵: 0.0685
+焦点损失: 0.0031
+边界损失: 0.1691
+总损失: 0.0469
+Epoch 10 [53/172] - loss: 0.0469
+Epoch 10 [54/172] - loss: 0.0480
+Epoch 10 [55/172] - loss: 0.0477
+Epoch 10 [56/172] - loss: 0.0460
+Epoch 10 [57/172] - loss: 0.0452
+Epoch 10 [58/172] - loss: 0.0509
+Epoch 10 [59/172] - loss: 0.0413
+Epoch 10 [60/172] - loss: 0.0444, acc: 1.0000
+Epoch 10 [61/172] - loss: 0.0466
+Epoch 10 [62/172] - loss: 0.0936
+Epoch 10 [63/172] - loss: 0.0566
+Epoch 10 [64/172] - loss: 0.0448
+Epoch 10 [65/172] - loss: 0.0750
+Epoch 10 [66/172] - loss: 0.0556
+Epoch 10 [67/172] - loss: 0.0604
+Epoch 10 [68/172] - loss: 0.0466
+Epoch 10 [69/172] - loss: 0.0440
+Epoch 10 [70/172] - loss: 0.0474, acc: 1.0000
+Epoch 10 [71/172] - loss: 0.0472
+Epoch 10 [72/172] - loss: 0.0489
+Epoch 10 [73/172] - loss: 0.0445
+Epoch 10 [74/172] - loss: 0.0506
+Epoch 10 [75/172] - loss: 0.0595
+Epoch 10 [76/172] - loss: 0.0432
+Epoch 10 [77/172] - loss: 0.0502
+Epoch 10 [78/172] - loss: 0.0505
+Epoch 10 [79/172] - loss: 0.0484
+Epoch 10 [80/172] - loss: 0.0435, acc: 1.0000
+Epoch 10 [81/172] - loss: 0.0433
+Epoch 10 [82/172] - loss: 0.0455
+Epoch 10 [83/172] - loss: 0.0825
+Epoch 10 [84/172] - loss: 0.0437
+Epoch 10 [85/172] - loss: 0.0450
+Epoch 10 [86/172] - loss: 0.0473
+Epoch 10 [87/172] - loss: 0.0424
+Epoch 10 [88/172] - loss: 0.0601
+Epoch 10 [89/172] - loss: 0.0463
+Epoch 10 [90/172] - loss: 0.0777, acc: 0.9375
+Epoch 10 [91/172] - loss: 0.0499
+Epoch 10 [92/172] - loss: 0.0452
+Epoch 10 [93/172] - loss: 0.0486
+Epoch 10 [94/172] - loss: 0.0465
+Epoch 10 [95/172] - loss: 0.0604
+Epoch 10 [96/172] - loss: 0.0507
+Epoch 10 [97/172] - loss: 0.0507
+Epoch 10 [98/172] - loss: 0.0491
+Epoch 10 [99/172] - loss: 0.0442
+Epoch 10 [100/172] - loss: 0.0555, acc: 1.0000
+Epoch 10 [101/172] - loss: 0.0434
+Epoch 10 [102/172] - loss: 0.0629
+Epoch 10 [103/172] - loss: 0.0431
+Epoch 10 [104/172] - loss: 0.0790
+Epoch 10 [105/172] - loss: 0.0582
+Epoch 10 [106/172] - loss: 0.0620
+Epoch 10 [107/172] - loss: 0.0476
+Epoch 10 [108/172] - loss: 0.0451
+Epoch 10 [109/172] - loss: 0.0463
+Epoch 10 [110/172] - loss: 0.0627, acc: 0.9688
+Epoch 10 [111/172] - loss: 0.0448
+Epoch 10 [112/172] - loss: 0.0435
+Epoch 10 [113/172] - loss: 0.0475
+Epoch 10 [114/172] - loss: 0.0628
+Epoch 10 [115/172] - loss: 0.0588
+Epoch 10 [116/172] - loss: 0.0510
+Epoch 10 [117/172] - loss: 0.0443
+Epoch 10 [118/172] - loss: 0.0472
+Epoch 10 [119/172] - loss: 0.0427
+Epoch 10 [120/172] - loss: 0.1043, acc: 0.9688
+Epoch 10 [121/172] - loss: 0.0927
+Epoch 10 [122/172] - loss: 0.0489
+Epoch 10 [123/172] - loss: 0.0475
+Epoch 10 [124/172] - loss: 0.0462
+Epoch 10 [125/172] - loss: 0.0498
+Epoch 10 [126/172] - loss: 0.0439
+Epoch 10 [127/172] - loss: 0.0452
+Epoch 10 [128/172] - loss: 0.0747
+Epoch 10 [129/172] - loss: 0.0491
+Epoch 10 [130/172] - loss: 0.0832, acc: 0.9688
+Epoch 10 [131/172] - loss: 0.0467
+Epoch 10 [132/172] - loss: 0.1240
+Epoch 10 [133/172] - loss: 0.0730
+Epoch 10 [134/172] - loss: 0.0495
+Epoch 10 [135/172] - loss: 0.1025
+Epoch 10 [136/172] - loss: 0.0454
+Epoch 10 [137/172] - loss: 0.0686
+Epoch 10 [138/172] - loss: 0.0983
+Epoch 10 [139/172] - loss: 0.0467
+Epoch 10 [140/172] - loss: 0.0424, acc: 1.0000
+Epoch 10 [141/172] - loss: 0.0433
+Epoch 10 [142/172] - loss: 0.0652
+Epoch 10 [143/172] - loss: 0.0517
+Epoch 10 [144/172] - loss: 0.1083
+Epoch 10 [145/172] - loss: 0.0502
+Epoch 10 [146/172] - loss: 0.0547
+Epoch 10 [147/172] - loss: 0.0479
+Epoch 10 [148/172] - loss: 0.1818
+Epoch 10 [149/172] - loss: 0.0577
+Epoch 10 [150/172] - loss: 0.0423, acc: 1.0000
+Epoch 10 [151/172] - loss: 0.0471
+Epoch 10 [152/172] - loss: 0.0441
+
+=== 第 1701 次迭代调试信息 ===
+当前类别统计：
+positive: count=19021.0, difficulty=0.2660, log_difficulty=0.2359, weight=2.1793
+neutral: count=16607.0, difficulty=0.2100, log_difficulty=0.1907, weight=1.9533
+negative: count=18651.0, difficulty=0.2811, log_difficulty=0.2477, weight=2.2386
+
+当前batch的pt分布：
+positive: min=0.8744, max=0.9737, mean=0.9436
+neutral: min=0.7580, max=0.9942, mean=0.9401
+negative: min=0.9377, max=0.9971, mean=0.9635
+
+当前batch准确率：
+整体准确率: 1.0000
+positive 准确率: 1.0000
+neutral 准确率: 1.0000
+negative 准确率: 1.0000
+
+损失分量：
+基础交叉熵: 0.0537
+焦点损失: 0.0006
+边界损失: 0.1619
+总损失: 0.0414
+Epoch 10 [153/172] - loss: 0.0414
+Epoch 10 [154/172] - loss: 0.0496
+Epoch 10 [155/172] - loss: 0.0459
+Epoch 10 [156/172] - loss: 0.0488
+Epoch 10 [157/172] - loss: 0.0496
+Epoch 10 [158/172] - loss: 0.0499
+Epoch 10 [159/172] - loss: 0.0539
+Epoch 10 [160/172] - loss: 0.0436, acc: 1.0000
+Epoch 10 [161/172] - loss: 0.0505
+Epoch 10 [162/172] - loss: 0.0423
+Epoch 10 [163/172] - loss: 0.0648
+Epoch 10 [164/172] - loss: 0.0429
+Epoch 10 [165/172] - loss: 0.0499
+Epoch 10 [166/172] - loss: 0.0479
+Epoch 10 [167/172] - loss: 0.0592
+Epoch 10 [168/172] - loss: 0.0445
+Epoch 10 [169/172] - loss: 0.0458
+Epoch 10 [170/172] - loss: 0.0654, acc: 0.9688
+Epoch 10 [171/172] - loss: 0.0478
+Epoch 10 [172/172] - loss: 0.0565
+
+类别准确率:
+positive: 0.8415 (393/467)
+neutral: 0.2169 (18/83)
+negative: 0.5120 (128/250)
+
+Epoch 10/10
+Train Loss: 0.0509, Train Acc: 0.9939
+Val Loss: 0.8937, Val Acc: 0.6737
+Best validation accuracy: 0.6737
+
+=== 标准错误 ===
+/root/miniconda3/lib/python3.12/site-packages/torch/nn/modules/transformer.py:379: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.self_attn.batch_first was not True(use batch_first for better inference performance)
+  warnings.warn(
+/root/miniconda3/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:62: UserWarning: The verbose parameter is deprecated. Please use get_last_lr() to access the learning rate.
+  warnings.warn(
+wandb: Using wandb-core as the SDK backend.  Please refer to https://wandb.me/wandb-core for more information.
+wandb: Currently logged in as: leofyfan (leofyfan-east-china-normal-university). Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.19.1
+wandb: Run data is saved locally in /root/project5/wandb/run-20250118_112829-f13aacs6
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run loss_focal_alpha0.75_beta0.25_weight1.0_dropout0.35_Multimodal_iterations_20250118_112828
+wandb: ⭐️ View project at https://wandb.ai/leofyfan-east-china-normal-university/multimodal_sentiment_analysis_loss
+wandb: 🚀 View run at https://wandb.ai/leofyfan-east-china-normal-university/multimodal_sentiment_analysis_loss/runs/f13aacs6
+wandb: uploading wandb-summary.json; uploading config.yaml; uploading output.log
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:  iteration ▁▁▁▁▁▂▂▂▂▂▃▃▃▃▃▃▃▄▄▄▄▄▄▅▅▅▅▅▆▆▆▆▆▆▇▇▇▇▇█
+wandb:  train_acc ▂▂▄▁▂▅▂▅▅▆▇▅▇▇▇██▇████▇█████████████████
+wandb: train_loss ▇▆▇▇▆█▄▄▄▃▄▂▂▂▃▂▁▂▂▁▁▁▁▁▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:  iteration 1718
+wandb:  train_acc 0.96875
+wandb: train_loss 0.06543
+wandb: 
+wandb: 🚀 View run loss_focal_alpha0.75_beta0.25_weight1.0_dropout0.35_Multimodal_iterations_20250118_112828 at: https://wandb.ai/leofyfan-east-china-normal-university/multimodal_sentiment_analysis_loss/runs/f13aacs6
+wandb: ⭐️ View project at: https://wandb.ai/leofyfan-east-china-normal-university/multimodal_sentiment_analysis_loss
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250118_112829-f13aacs6/logs
+wandb: Tracking run with wandb version 0.19.1
+wandb: Run data is saved locally in /root/project5/wandb/run-20250118_114357-qs9mrq27
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run loss_focal_alpha0.75_beta0.25_weight1.0_dropout0.35_Multimodal_epochs_20250118_114357
+wandb: ⭐️ View project at https://wandb.ai/leofyfan-east-china-normal-university/multimodal_sentiment_analysis_loss
+wandb: 🚀 View run at https://wandb.ai/leofyfan-east-china-normal-university/multimodal_sentiment_analysis_loss/runs/qs9mrq27
+wandb: uploading history steps 0-0, summary; uploading wandb-metadata.json; uploading wandb-summary.json
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▂▃▃▄▅▆▆▇█
+wandb:  train_acc ▁▃▆▇▇▇████
+wandb: train_loss █▆▃▂▁▁▁▁▁▁
+wandb:    val_acc ▁▆▅▇▇▇████
+wandb:   val_loss █▁▃▁▅▆▃▃▄▅
+wandb: 
+wandb: Run summary:
+wandb:      epoch 10
+wandb:  train_acc 0.99394
+wandb: train_loss 0.05092
+wandb:    val_acc 0.67375
+wandb:   val_loss 0.89365
+wandb: 
+wandb: 🚀 View run loss_focal_alpha0.75_beta0.25_weight1.0_dropout0.35_Multimodal_epochs_20250118_114357 at: https://wandb.ai/leofyfan-east-china-normal-university/multimodal_sentiment_analysis_loss/runs/qs9mrq27
+wandb: ⭐️ View project at: https://wandb.ai/leofyfan-east-china-normal-university/multimodal_sentiment_analysis_loss
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250118_114357-qs9mrq27/logs
+

@@ -1,0 +1,1376 @@
+=== 命令 ===
+python main.py --loss_type ce --alpha 0.25 --beta 0.75 --neural_init_weight 0.5 --dropout 0.3 --name loss_ce_alpha0.25_beta0.75_weight0.5_dropout0.3 --wandb True
+
+=== 标准输出 ===
+Config Info:
+device: cuda
+batch_size: 32
+learning_rate: 0.0001
+num_epochs: 10
+val_ratio: 0.2
+wandb: True
+early_stop_patience: 3
+text_model_name: ./pretrained_models/bert-base-uncased
+image_model_name: ./pretrained_models/swinv2-base
+data_dir: data
+train_file: train.txt
+test_file: test_without_label.txt
+result_file: result.txt
+use_kfold: False
+k_folds: 5
+project_name: multimodal_sentiment_analysis_loss
+use_text: True
+use_image: True
+feature_fusion: concat
+num_classes: 3
+log_iteration: 10
+name: loss_ce_alpha0.25_beta0.75_weight0.5_dropout0.3
+text_dim: 128
+image_dim: 256
+dropout: 0.3
+loss_type: ce
+alpha: 0.25
+beta: 0.75
+neural_init_weight: 0.5
+
+数据集统计信息:
+总样本数: 6869
+原始样本数: 4000
+增强样本数: 2869
+
+标签分布:
+negative: 2386 (34.74%)
+neutral: 2095 (30.50%)
+positive: 2388 (34.76%)
+
+缺失文本数: 0
+缺失图像数: 0
+Training on cuda
+Epoch 1 [1/172] - loss: 1.1252, acc: 0.2812
+Epoch 1 [2/172] - loss: 1.1381
+Epoch 1 [3/172] - loss: 1.1884
+Epoch 1 [4/172] - loss: 1.0448
+Epoch 1 [5/172] - loss: 1.0504
+Epoch 1 [6/172] - loss: 1.1871
+Epoch 1 [7/172] - loss: 1.0192
+Epoch 1 [8/172] - loss: 1.1112
+Epoch 1 [9/172] - loss: 1.1307
+Epoch 1 [10/172] - loss: 1.1684, acc: 0.3438
+Epoch 1 [11/172] - loss: 1.0505
+Epoch 1 [12/172] - loss: 1.0768
+Epoch 1 [13/172] - loss: 1.0060
+Epoch 1 [14/172] - loss: 0.9910
+Epoch 1 [15/172] - loss: 1.0610
+Epoch 1 [16/172] - loss: 1.0378
+Epoch 1 [17/172] - loss: 0.9604
+Epoch 1 [18/172] - loss: 0.9929
+Epoch 1 [19/172] - loss: 1.0209
+Epoch 1 [20/172] - loss: 1.0854, acc: 0.4375
+Epoch 1 [21/172] - loss: 1.1282
+Epoch 1 [22/172] - loss: 0.9340
+Epoch 1 [23/172] - loss: 1.1321
+Epoch 1 [24/172] - loss: 1.1114
+Epoch 1 [25/172] - loss: 1.0509
+Epoch 1 [26/172] - loss: 0.9610
+Epoch 1 [27/172] - loss: 0.9141
+Epoch 1 [28/172] - loss: 0.9698
+Epoch 1 [29/172] - loss: 1.1348
+Epoch 1 [30/172] - loss: 0.9621, acc: 0.6875
+Epoch 1 [31/172] - loss: 1.0442
+Epoch 1 [32/172] - loss: 0.8842
+Epoch 1 [33/172] - loss: 0.9883
+Epoch 1 [34/172] - loss: 0.8901
+Epoch 1 [35/172] - loss: 0.9480
+Epoch 1 [36/172] - loss: 0.7690
+Epoch 1 [37/172] - loss: 0.8388
+Epoch 1 [38/172] - loss: 0.9166
+Epoch 1 [39/172] - loss: 0.7124
+Epoch 1 [40/172] - loss: 0.9123, acc: 0.5938
+Epoch 1 [41/172] - loss: 0.8669
+Epoch 1 [42/172] - loss: 0.6464
+Epoch 1 [43/172] - loss: 1.0641
+Epoch 1 [44/172] - loss: 1.1461
+Epoch 1 [45/172] - loss: 1.1750
+Epoch 1 [46/172] - loss: 0.7407
+Epoch 1 [47/172] - loss: 1.0105
+Epoch 1 [48/172] - loss: 0.9042
+Epoch 1 [49/172] - loss: 0.9622
+Epoch 1 [50/172] - loss: 0.7755, acc: 0.6250
+Epoch 1 [51/172] - loss: 0.8741
+Epoch 1 [52/172] - loss: 1.1036
+Epoch 1 [53/172] - loss: 0.9678
+Epoch 1 [54/172] - loss: 0.9928
+Epoch 1 [55/172] - loss: 0.8232
+Epoch 1 [56/172] - loss: 0.7558
+Epoch 1 [57/172] - loss: 1.0546
+Epoch 1 [58/172] - loss: 0.5818
+Epoch 1 [59/172] - loss: 0.8592
+Epoch 1 [60/172] - loss: 0.7464, acc: 0.6875
+Epoch 1 [61/172] - loss: 0.9183
+Epoch 1 [62/172] - loss: 0.7590
+Epoch 1 [63/172] - loss: 0.9235
+Epoch 1 [64/172] - loss: 0.8174
+Epoch 1 [65/172] - loss: 0.8905
+Epoch 1 [66/172] - loss: 0.9510
+Epoch 1 [67/172] - loss: 0.8134
+Epoch 1 [68/172] - loss: 0.7718
+Epoch 1 [69/172] - loss: 0.9978
+Epoch 1 [70/172] - loss: 0.7593, acc: 0.7500
+Epoch 1 [71/172] - loss: 0.6002
+Epoch 1 [72/172] - loss: 0.7822
+Epoch 1 [73/172] - loss: 0.7718
+Epoch 1 [74/172] - loss: 0.7779
+Epoch 1 [75/172] - loss: 0.4310
+Epoch 1 [76/172] - loss: 0.8059
+Epoch 1 [77/172] - loss: 0.6416
+Epoch 1 [78/172] - loss: 0.7911
+Epoch 1 [79/172] - loss: 1.0101
+Epoch 1 [80/172] - loss: 0.4179, acc: 0.8438
+Epoch 1 [81/172] - loss: 0.7503
+Epoch 1 [82/172] - loss: 0.9397
+Epoch 1 [83/172] - loss: 0.8235
+Epoch 1 [84/172] - loss: 0.6310
+Epoch 1 [85/172] - loss: 0.6598
+Epoch 1 [86/172] - loss: 0.8619
+Epoch 1 [87/172] - loss: 0.7500
+Epoch 1 [88/172] - loss: 0.8960
+Epoch 1 [89/172] - loss: 0.8801
+Epoch 1 [90/172] - loss: 0.6937, acc: 0.7188
+Epoch 1 [91/172] - loss: 0.7791
+Epoch 1 [92/172] - loss: 0.8548
+Epoch 1 [93/172] - loss: 0.7222
+Epoch 1 [94/172] - loss: 0.5599
+Epoch 1 [95/172] - loss: 0.6558
+Epoch 1 [96/172] - loss: 0.8285
+Epoch 1 [97/172] - loss: 0.6891
+Epoch 1 [98/172] - loss: 0.6986
+Epoch 1 [99/172] - loss: 0.9827
+Epoch 1 [100/172] - loss: 0.6539, acc: 0.7188
+Epoch 1 [101/172] - loss: 1.0867
+Epoch 1 [102/172] - loss: 0.7728
+Epoch 1 [103/172] - loss: 0.7689
+Epoch 1 [104/172] - loss: 0.6378
+Epoch 1 [105/172] - loss: 1.1131
+Epoch 1 [106/172] - loss: 0.7877
+Epoch 1 [107/172] - loss: 0.6785
+Epoch 1 [108/172] - loss: 1.0715
+Epoch 1 [109/172] - loss: 0.8406
+Epoch 1 [110/172] - loss: 0.7371, acc: 0.7188
+Epoch 1 [111/172] - loss: 0.8319
+Epoch 1 [112/172] - loss: 0.5420
+Epoch 1 [113/172] - loss: 0.5540
+Epoch 1 [114/172] - loss: 0.5988
+Epoch 1 [115/172] - loss: 0.6709
+Epoch 1 [116/172] - loss: 0.8495
+Epoch 1 [117/172] - loss: 0.6490
+Epoch 1 [118/172] - loss: 0.7078
+Epoch 1 [119/172] - loss: 0.6430
+Epoch 1 [120/172] - loss: 0.5200, acc: 0.8125
+Epoch 1 [121/172] - loss: 0.5545
+Epoch 1 [122/172] - loss: 0.7152
+Epoch 1 [123/172] - loss: 0.6458
+Epoch 1 [124/172] - loss: 0.6409
+Epoch 1 [125/172] - loss: 0.4634
+Epoch 1 [126/172] - loss: 0.8801
+Epoch 1 [127/172] - loss: 0.5070
+Epoch 1 [128/172] - loss: 0.7357
+Epoch 1 [129/172] - loss: 0.7190
+Epoch 1 [130/172] - loss: 0.5058, acc: 0.8125
+Epoch 1 [131/172] - loss: 0.3284
+Epoch 1 [132/172] - loss: 0.7915
+Epoch 1 [133/172] - loss: 0.6655
+Epoch 1 [134/172] - loss: 0.7688
+Epoch 1 [135/172] - loss: 0.6690
+Epoch 1 [136/172] - loss: 0.4694
+Epoch 1 [137/172] - loss: 0.8959
+Epoch 1 [138/172] - loss: 0.6387
+Epoch 1 [139/172] - loss: 0.3384
+Epoch 1 [140/172] - loss: 0.6968, acc: 0.6875
+Epoch 1 [141/172] - loss: 0.4583
+Epoch 1 [142/172] - loss: 0.5445
+Epoch 1 [143/172] - loss: 0.6973
+Epoch 1 [144/172] - loss: 0.3876
+Epoch 1 [145/172] - loss: 0.5609
+Epoch 1 [146/172] - loss: 0.7166
+Epoch 1 [147/172] - loss: 0.8617
+Epoch 1 [148/172] - loss: 0.6825
+Epoch 1 [149/172] - loss: 0.4084
+Epoch 1 [150/172] - loss: 0.6820, acc: 0.6875
+Epoch 1 [151/172] - loss: 0.6421
+Epoch 1 [152/172] - loss: 0.5348
+Epoch 1 [153/172] - loss: 0.6818
+Epoch 1 [154/172] - loss: 0.3982
+Epoch 1 [155/172] - loss: 0.5255
+Epoch 1 [156/172] - loss: 0.7467
+Epoch 1 [157/172] - loss: 0.5947
+Epoch 1 [158/172] - loss: 0.6583
+Epoch 1 [159/172] - loss: 0.7811
+Epoch 1 [160/172] - loss: 0.5343, acc: 0.8125
+Epoch 1 [161/172] - loss: 0.4025
+Epoch 1 [162/172] - loss: 0.5679
+Epoch 1 [163/172] - loss: 0.7501
+Epoch 1 [164/172] - loss: 0.8000
+Epoch 1 [165/172] - loss: 0.4902
+Epoch 1 [166/172] - loss: 0.6680
+Epoch 1 [167/172] - loss: 0.4776
+Epoch 1 [168/172] - loss: 0.6781
+Epoch 1 [169/172] - loss: 0.4978
+Epoch 1 [170/172] - loss: 0.3906, acc: 0.8438
+Epoch 1 [171/172] - loss: 0.4686
+Epoch 1 [172/172] - loss: 0.5193
+
+类别准确率:
+positive: 0.8030 (375/467)
+neutral: 0.3976 (33/83)
+negative: 0.6080 (152/250)
+
+Epoch 1/10
+Train Loss: 0.5799, Train Acc: 0.7697
+Val Loss: 0.6752, Val Acc: 0.7000
+Epoch 2 [1/172] - loss: 0.3917, acc: 0.9375
+Epoch 2 [2/172] - loss: 0.4218
+Epoch 2 [3/172] - loss: 0.3698
+Epoch 2 [4/172] - loss: 0.4498
+Epoch 2 [5/172] - loss: 0.4936
+Epoch 2 [6/172] - loss: 0.3990
+Epoch 2 [7/172] - loss: 0.5211
+Epoch 2 [8/172] - loss: 0.4120
+Epoch 2 [9/172] - loss: 0.2610
+Epoch 2 [10/172] - loss: 0.3484, acc: 0.9062
+Epoch 2 [11/172] - loss: 0.3636
+Epoch 2 [12/172] - loss: 0.3094
+Epoch 2 [13/172] - loss: 0.6449
+Epoch 2 [14/172] - loss: 0.3111
+Epoch 2 [15/172] - loss: 0.5068
+Epoch 2 [16/172] - loss: 0.4723
+Epoch 2 [17/172] - loss: 0.5332
+Epoch 2 [18/172] - loss: 0.4535
+Epoch 2 [19/172] - loss: 0.3076
+Epoch 2 [20/172] - loss: 0.3963, acc: 0.8750
+Epoch 2 [21/172] - loss: 0.3462
+Epoch 2 [22/172] - loss: 0.4102
+Epoch 2 [23/172] - loss: 0.1693
+Epoch 2 [24/172] - loss: 0.6257
+Epoch 2 [25/172] - loss: 0.4032
+Epoch 2 [26/172] - loss: 0.2476
+Epoch 2 [27/172] - loss: 0.2567
+Epoch 2 [28/172] - loss: 0.4146
+Epoch 2 [29/172] - loss: 0.4317
+Epoch 2 [30/172] - loss: 0.2983, acc: 0.9062
+Epoch 2 [31/172] - loss: 0.4686
+Epoch 2 [32/172] - loss: 0.3189
+Epoch 2 [33/172] - loss: 0.2722
+Epoch 2 [34/172] - loss: 0.4354
+Epoch 2 [35/172] - loss: 0.2487
+Epoch 2 [36/172] - loss: 0.4429
+Epoch 2 [37/172] - loss: 0.2207
+Epoch 2 [38/172] - loss: 0.3383
+Epoch 2 [39/172] - loss: 0.4560
+Epoch 2 [40/172] - loss: 0.3612, acc: 0.8750
+Epoch 2 [41/172] - loss: 0.4399
+Epoch 2 [42/172] - loss: 0.2248
+Epoch 2 [43/172] - loss: 0.2436
+Epoch 2 [44/172] - loss: 0.5263
+Epoch 2 [45/172] - loss: 0.3548
+Epoch 2 [46/172] - loss: 0.2904
+Epoch 2 [47/172] - loss: 0.4664
+Epoch 2 [48/172] - loss: 0.3966
+Epoch 2 [49/172] - loss: 0.2890
+Epoch 2 [50/172] - loss: 0.3558, acc: 0.9062
+Epoch 2 [51/172] - loss: 0.6075
+Epoch 2 [52/172] - loss: 0.3403
+Epoch 2 [53/172] - loss: 0.2400
+Epoch 2 [54/172] - loss: 0.2704
+Epoch 2 [55/172] - loss: 0.3496
+Epoch 2 [56/172] - loss: 0.3258
+Epoch 2 [57/172] - loss: 0.2393
+Epoch 2 [58/172] - loss: 0.4482
+Epoch 2 [59/172] - loss: 0.5460
+Epoch 2 [60/172] - loss: 0.3518, acc: 0.8438
+Epoch 2 [61/172] - loss: 0.1745
+Epoch 2 [62/172] - loss: 0.1850
+Epoch 2 [63/172] - loss: 0.3785
+Epoch 2 [64/172] - loss: 0.3231
+Epoch 2 [65/172] - loss: 0.2698
+Epoch 2 [66/172] - loss: 0.2859
+Epoch 2 [67/172] - loss: 0.1446
+Epoch 2 [68/172] - loss: 0.4077
+Epoch 2 [69/172] - loss: 0.3324
+Epoch 2 [70/172] - loss: 0.3119, acc: 0.8750
+Epoch 2 [71/172] - loss: 0.5279
+Epoch 2 [72/172] - loss: 0.3157
+Epoch 2 [73/172] - loss: 0.2638
+Epoch 2 [74/172] - loss: 0.2755
+Epoch 2 [75/172] - loss: 0.2624
+Epoch 2 [76/172] - loss: 0.3973
+Epoch 2 [77/172] - loss: 0.3839
+Epoch 2 [78/172] - loss: 0.2946
+Epoch 2 [79/172] - loss: 0.3730
+Epoch 2 [80/172] - loss: 0.2558, acc: 0.8750
+Epoch 2 [81/172] - loss: 0.3481
+Epoch 2 [82/172] - loss: 0.2719
+Epoch 2 [83/172] - loss: 0.2881
+Epoch 2 [84/172] - loss: 0.3764
+Epoch 2 [85/172] - loss: 0.2115
+Epoch 2 [86/172] - loss: 0.5196
+Epoch 2 [87/172] - loss: 0.6861
+Epoch 2 [88/172] - loss: 0.2853
+Epoch 2 [89/172] - loss: 0.2286
+Epoch 2 [90/172] - loss: 0.4288, acc: 0.8438
+Epoch 2 [91/172] - loss: 0.0953
+Epoch 2 [92/172] - loss: 0.4306
+Epoch 2 [93/172] - loss: 0.1975
+Epoch 2 [94/172] - loss: 0.3152
+Epoch 2 [95/172] - loss: 0.3602
+Epoch 2 [96/172] - loss: 0.1690
+Epoch 2 [97/172] - loss: 0.2875
+Epoch 2 [98/172] - loss: 0.2005
+Epoch 2 [99/172] - loss: 0.2397
+Epoch 2 [100/172] - loss: 0.2238, acc: 0.9375
+Epoch 2 [101/172] - loss: 0.2648
+Epoch 2 [102/172] - loss: 0.3009
+Epoch 2 [103/172] - loss: 0.4677
+Epoch 2 [104/172] - loss: 0.2857
+Epoch 2 [105/172] - loss: 0.2520
+Epoch 2 [106/172] - loss: 0.2016
+Epoch 2 [107/172] - loss: 0.2517
+Epoch 2 [108/172] - loss: 0.7464
+Epoch 2 [109/172] - loss: 0.1821
+Epoch 2 [110/172] - loss: 0.3970, acc: 0.8125
+Epoch 2 [111/172] - loss: 0.3981
+Epoch 2 [112/172] - loss: 0.2635
+Epoch 2 [113/172] - loss: 0.1514
+Epoch 2 [114/172] - loss: 0.2575
+Epoch 2 [115/172] - loss: 0.3335
+Epoch 2 [116/172] - loss: 0.3717
+Epoch 2 [117/172] - loss: 0.7207
+Epoch 2 [118/172] - loss: 0.2156
+Epoch 2 [119/172] - loss: 0.3829
+Epoch 2 [120/172] - loss: 0.1909, acc: 0.9062
+Epoch 2 [121/172] - loss: 0.3123
+Epoch 2 [122/172] - loss: 0.5601
+Epoch 2 [123/172] - loss: 0.1900
+Epoch 2 [124/172] - loss: 0.4531
+Epoch 2 [125/172] - loss: 0.1715
+Epoch 2 [126/172] - loss: 0.1729
+Epoch 2 [127/172] - loss: 0.1228
+Epoch 2 [128/172] - loss: 0.1359
+Epoch 2 [129/172] - loss: 0.2670
+Epoch 2 [130/172] - loss: 0.3444, acc: 0.8750
+Epoch 2 [131/172] - loss: 0.1746
+Epoch 2 [132/172] - loss: 0.3161
+Epoch 2 [133/172] - loss: 0.2189
+Epoch 2 [134/172] - loss: 0.2338
+Epoch 2 [135/172] - loss: 0.5822
+Epoch 2 [136/172] - loss: 0.1477
+Epoch 2 [137/172] - loss: 0.1059
+Epoch 2 [138/172] - loss: 0.1598
+Epoch 2 [139/172] - loss: 0.2582
+Epoch 2 [140/172] - loss: 0.2048, acc: 0.9375
+Epoch 2 [141/172] - loss: 0.2636
+Epoch 2 [142/172] - loss: 0.2426
+Epoch 2 [143/172] - loss: 0.3244
+Epoch 2 [144/172] - loss: 0.2681
+Epoch 2 [145/172] - loss: 0.8875
+Epoch 2 [146/172] - loss: 0.0968
+Epoch 2 [147/172] - loss: 0.3732
+Epoch 2 [148/172] - loss: 0.2142
+Epoch 2 [149/172] - loss: 0.3451
+Epoch 2 [150/172] - loss: 0.3453, acc: 0.8750
+Epoch 2 [151/172] - loss: 0.1395
+Epoch 2 [152/172] - loss: 0.1547
+Epoch 2 [153/172] - loss: 0.1293
+Epoch 2 [154/172] - loss: 0.1369
+Epoch 2 [155/172] - loss: 0.3041
+Epoch 2 [156/172] - loss: 0.0921
+Epoch 2 [157/172] - loss: 0.0847
+Epoch 2 [158/172] - loss: 0.3010
+Epoch 2 [159/172] - loss: 0.2288
+Epoch 2 [160/172] - loss: 0.2037, acc: 0.9062
+Epoch 2 [161/172] - loss: 0.1163
+Epoch 2 [162/172] - loss: 0.1156
+Epoch 2 [163/172] - loss: 0.4235
+Epoch 2 [164/172] - loss: 0.2145
+Epoch 2 [165/172] - loss: 0.1882
+Epoch 2 [166/172] - loss: 0.3765
+Epoch 2 [167/172] - loss: 0.2965
+Epoch 2 [168/172] - loss: 0.1824
+Epoch 2 [169/172] - loss: 0.1492
+Epoch 2 [170/172] - loss: 0.1976, acc: 0.9375
+Epoch 2 [171/172] - loss: 0.3127
+Epoch 2 [172/172] - loss: 0.7268
+
+类别准确率:
+positive: 0.8223 (384/467)
+neutral: 0.3614 (30/83)
+negative: 0.5360 (134/250)
+
+Epoch 2/10
+Train Loss: 0.2574, Train Acc: 0.9212
+Val Loss: 0.8931, Val Acc: 0.6850
+Epoch 3 [1/172] - loss: 0.1161, acc: 0.9688
+Epoch 3 [2/172] - loss: 0.2052
+Epoch 3 [3/172] - loss: 0.0846
+Epoch 3 [4/172] - loss: 0.1602
+Epoch 3 [5/172] - loss: 0.1945
+Epoch 3 [6/172] - loss: 0.1050
+Epoch 3 [7/172] - loss: 0.1181
+Epoch 3 [8/172] - loss: 0.1162
+Epoch 3 [9/172] - loss: 0.1434
+Epoch 3 [10/172] - loss: 0.1470, acc: 0.9688
+Epoch 3 [11/172] - loss: 0.1073
+Epoch 3 [12/172] - loss: 0.1106
+Epoch 3 [13/172] - loss: 0.1019
+Epoch 3 [14/172] - loss: 0.1083
+Epoch 3 [15/172] - loss: 0.0984
+Epoch 3 [16/172] - loss: 0.2957
+Epoch 3 [17/172] - loss: 0.1578
+Epoch 3 [18/172] - loss: 0.2926
+Epoch 3 [19/172] - loss: 0.1039
+Epoch 3 [20/172] - loss: 0.1185, acc: 0.9688
+Epoch 3 [21/172] - loss: 0.0718
+Epoch 3 [22/172] - loss: 0.1875
+Epoch 3 [23/172] - loss: 0.2905
+Epoch 3 [24/172] - loss: 0.2256
+Epoch 3 [25/172] - loss: 0.1873
+Epoch 3 [26/172] - loss: 0.1096
+Epoch 3 [27/172] - loss: 0.0590
+Epoch 3 [28/172] - loss: 0.0467
+Epoch 3 [29/172] - loss: 0.1870
+Epoch 3 [30/172] - loss: 0.1159, acc: 0.9688
+Epoch 3 [31/172] - loss: 0.0893
+Epoch 3 [32/172] - loss: 0.0905
+Epoch 3 [33/172] - loss: 0.0707
+Epoch 3 [34/172] - loss: 0.2018
+Epoch 3 [35/172] - loss: 0.2693
+Epoch 3 [36/172] - loss: 0.0895
+Epoch 3 [37/172] - loss: 0.1436
+Epoch 3 [38/172] - loss: 0.0544
+Epoch 3 [39/172] - loss: 0.0982
+Epoch 3 [40/172] - loss: 0.1192, acc: 0.9375
+Epoch 3 [41/172] - loss: 0.1362
+Epoch 3 [42/172] - loss: 0.1168
+Epoch 3 [43/172] - loss: 0.0903
+Epoch 3 [44/172] - loss: 0.0579
+Epoch 3 [45/172] - loss: 0.1182
+Epoch 3 [46/172] - loss: 0.0717
+Epoch 3 [47/172] - loss: 0.0611
+Epoch 3 [48/172] - loss: 0.1577
+Epoch 3 [49/172] - loss: 0.2217
+Epoch 3 [50/172] - loss: 0.0821, acc: 0.9688
+Epoch 3 [51/172] - loss: 0.1216
+Epoch 3 [52/172] - loss: 0.2836
+Epoch 3 [53/172] - loss: 0.0840
+Epoch 3 [54/172] - loss: 0.1258
+Epoch 3 [55/172] - loss: 0.0838
+Epoch 3 [56/172] - loss: 0.1494
+Epoch 3 [57/172] - loss: 0.2002
+Epoch 3 [58/172] - loss: 0.0596
+Epoch 3 [59/172] - loss: 0.1540
+Epoch 3 [60/172] - loss: 0.1317, acc: 0.9688
+Epoch 3 [61/172] - loss: 0.1086
+Epoch 3 [62/172] - loss: 0.0826
+Epoch 3 [63/172] - loss: 0.1000
+Epoch 3 [64/172] - loss: 0.1879
+Epoch 3 [65/172] - loss: 0.2980
+Epoch 3 [66/172] - loss: 0.1694
+Epoch 3 [67/172] - loss: 0.0357
+Epoch 3 [68/172] - loss: 0.0998
+Epoch 3 [69/172] - loss: 0.2779
+Epoch 3 [70/172] - loss: 0.0874, acc: 0.9688
+Epoch 3 [71/172] - loss: 0.1285
+Epoch 3 [72/172] - loss: 0.2381
+Epoch 3 [73/172] - loss: 0.0684
+Epoch 3 [74/172] - loss: 0.2464
+Epoch 3 [75/172] - loss: 0.1822
+Epoch 3 [76/172] - loss: 0.1015
+Epoch 3 [77/172] - loss: 0.1947
+Epoch 3 [78/172] - loss: 0.2844
+Epoch 3 [79/172] - loss: 0.0846
+Epoch 3 [80/172] - loss: 0.2679, acc: 0.9062
+Epoch 3 [81/172] - loss: 0.0770
+Epoch 3 [82/172] - loss: 0.1098
+Epoch 3 [83/172] - loss: 0.1594
+Epoch 3 [84/172] - loss: 0.1056
+Epoch 3 [85/172] - loss: 0.2194
+Epoch 3 [86/172] - loss: 0.0736
+Epoch 3 [87/172] - loss: 0.1416
+Epoch 3 [88/172] - loss: 0.1000
+Epoch 3 [89/172] - loss: 0.1796
+Epoch 3 [90/172] - loss: 0.0637, acc: 1.0000
+Epoch 3 [91/172] - loss: 0.1011
+Epoch 3 [92/172] - loss: 0.1271
+Epoch 3 [93/172] - loss: 0.3232
+Epoch 3 [94/172] - loss: 0.1657
+Epoch 3 [95/172] - loss: 0.0545
+Epoch 3 [96/172] - loss: 0.1145
+Epoch 3 [97/172] - loss: 0.0690
+Epoch 3 [98/172] - loss: 0.0623
+Epoch 3 [99/172] - loss: 0.0736
+Epoch 3 [100/172] - loss: 0.0831, acc: 1.0000
+Epoch 3 [101/172] - loss: 0.2062
+Epoch 3 [102/172] - loss: 0.0783
+Epoch 3 [103/172] - loss: 0.2002
+Epoch 3 [104/172] - loss: 0.1153
+Epoch 3 [105/172] - loss: 0.0892
+Epoch 3 [106/172] - loss: 0.0865
+Epoch 3 [107/172] - loss: 0.0846
+Epoch 3 [108/172] - loss: 0.2203
+Epoch 3 [109/172] - loss: 0.0945
+Epoch 3 [110/172] - loss: 0.2587, acc: 0.9062
+Epoch 3 [111/172] - loss: 0.2601
+Epoch 3 [112/172] - loss: 0.0619
+Epoch 3 [113/172] - loss: 0.0443
+Epoch 3 [114/172] - loss: 0.0598
+Epoch 3 [115/172] - loss: 0.1854
+Epoch 3 [116/172] - loss: 0.1831
+Epoch 3 [117/172] - loss: 0.1846
+Epoch 3 [118/172] - loss: 0.1730
+Epoch 3 [119/172] - loss: 0.0617
+Epoch 3 [120/172] - loss: 0.1819, acc: 0.9688
+Epoch 3 [121/172] - loss: 0.3072
+Epoch 3 [122/172] - loss: 0.1045
+Epoch 3 [123/172] - loss: 0.0899
+Epoch 3 [124/172] - loss: 0.2455
+Epoch 3 [125/172] - loss: 0.1944
+Epoch 3 [126/172] - loss: 0.2944
+Epoch 3 [127/172] - loss: 0.1531
+Epoch 3 [128/172] - loss: 0.0415
+Epoch 3 [129/172] - loss: 0.0524
+Epoch 3 [130/172] - loss: 0.0391, acc: 1.0000
+Epoch 3 [131/172] - loss: 0.1619
+Epoch 3 [132/172] - loss: 0.0498
+Epoch 3 [133/172] - loss: 0.1514
+Epoch 3 [134/172] - loss: 0.0725
+Epoch 3 [135/172] - loss: 0.1412
+Epoch 3 [136/172] - loss: 0.1545
+Epoch 3 [137/172] - loss: 0.0958
+Epoch 3 [138/172] - loss: 0.1686
+Epoch 3 [139/172] - loss: 0.0838
+Epoch 3 [140/172] - loss: 0.1269, acc: 1.0000
+Epoch 3 [141/172] - loss: 0.2094
+Epoch 3 [142/172] - loss: 0.1506
+Epoch 3 [143/172] - loss: 0.0576
+Epoch 3 [144/172] - loss: 0.2991
+Epoch 3 [145/172] - loss: 0.0639
+Epoch 3 [146/172] - loss: 0.2021
+Epoch 3 [147/172] - loss: 0.0911
+Epoch 3 [148/172] - loss: 0.1660
+Epoch 3 [149/172] - loss: 0.1582
+Epoch 3 [150/172] - loss: 0.1272, acc: 0.9688
+Epoch 3 [151/172] - loss: 0.1966
+Epoch 3 [152/172] - loss: 0.2080
+Epoch 3 [153/172] - loss: 0.2611
+Epoch 3 [154/172] - loss: 0.0859
+Epoch 3 [155/172] - loss: 0.0484
+Epoch 3 [156/172] - loss: 0.0780
+Epoch 3 [157/172] - loss: 0.1291
+Epoch 3 [158/172] - loss: 0.1862
+Epoch 3 [159/172] - loss: 0.0434
+Epoch 3 [160/172] - loss: 0.2280, acc: 0.9062
+Epoch 3 [161/172] - loss: 0.3312
+Epoch 3 [162/172] - loss: 0.1120
+Epoch 3 [163/172] - loss: 0.1146
+Epoch 3 [164/172] - loss: 0.0464
+Epoch 3 [165/172] - loss: 0.0321
+Epoch 3 [166/172] - loss: 0.0628
+Epoch 3 [167/172] - loss: 0.1026
+Epoch 3 [168/172] - loss: 0.0405
+Epoch 3 [169/172] - loss: 0.0471
+Epoch 3 [170/172] - loss: 0.1864, acc: 0.9062
+Epoch 3 [171/172] - loss: 0.0719
+Epoch 3 [172/172] - loss: 0.0552
+
+类别准确率:
+positive: 0.8351 (390/467)
+neutral: 0.3133 (26/83)
+negative: 0.5640 (141/250)
+
+Epoch 3/10
+Train Loss: 0.1118, Train Acc: 0.9657
+Val Loss: 1.0297, Val Acc: 0.6963
+Epoch 4 [1/172] - loss: 0.0223, acc: 1.0000
+Epoch 4 [2/172] - loss: 0.0415
+Epoch 4 [3/172] - loss: 0.0616
+Epoch 4 [4/172] - loss: 0.0551
+Epoch 4 [5/172] - loss: 0.0987
+Epoch 4 [6/172] - loss: 0.0276
+Epoch 4 [7/172] - loss: 0.0269
+Epoch 4 [8/172] - loss: 0.0301
+Epoch 4 [9/172] - loss: 0.1446
+Epoch 4 [10/172] - loss: 0.1321, acc: 0.9375
+Epoch 4 [11/172] - loss: 0.0158
+Epoch 4 [12/172] - loss: 0.0903
+Epoch 4 [13/172] - loss: 0.0857
+Epoch 4 [14/172] - loss: 0.1061
+Epoch 4 [15/172] - loss: 0.0545
+Epoch 4 [16/172] - loss: 0.0346
+Epoch 4 [17/172] - loss: 0.0355
+Epoch 4 [18/172] - loss: 0.0683
+Epoch 4 [19/172] - loss: 0.0274
+Epoch 4 [20/172] - loss: 0.0591, acc: 0.9688
+Epoch 4 [21/172] - loss: 0.1124
+Epoch 4 [22/172] - loss: 0.0287
+Epoch 4 [23/172] - loss: 0.1578
+Epoch 4 [24/172] - loss: 0.0234
+Epoch 4 [25/172] - loss: 0.0204
+Epoch 4 [26/172] - loss: 0.1170
+Epoch 4 [27/172] - loss: 0.0223
+Epoch 4 [28/172] - loss: 0.1244
+Epoch 4 [29/172] - loss: 0.0423
+Epoch 4 [30/172] - loss: 0.1428, acc: 0.9375
+Epoch 4 [31/172] - loss: 0.1332
+Epoch 4 [32/172] - loss: 0.1093
+Epoch 4 [33/172] - loss: 0.0326
+Epoch 4 [34/172] - loss: 0.0196
+Epoch 4 [35/172] - loss: 0.0735
+Epoch 4 [36/172] - loss: 0.0353
+Epoch 4 [37/172] - loss: 0.0181
+Epoch 4 [38/172] - loss: 0.0181
+Epoch 4 [39/172] - loss: 0.0725
+Epoch 4 [40/172] - loss: 0.4088, acc: 0.8438
+Epoch 4 [41/172] - loss: 0.0283
+Epoch 4 [42/172] - loss: 0.1374
+Epoch 4 [43/172] - loss: 0.0569
+Epoch 4 [44/172] - loss: 0.0421
+Epoch 4 [45/172] - loss: 0.0198
+Epoch 4 [46/172] - loss: 0.0218
+Epoch 4 [47/172] - loss: 0.0408
+Epoch 4 [48/172] - loss: 0.0338
+Epoch 4 [49/172] - loss: 0.1424
+Epoch 4 [50/172] - loss: 0.1131, acc: 0.9688
+Epoch 4 [51/172] - loss: 0.0311
+Epoch 4 [52/172] - loss: 0.0957
+Epoch 4 [53/172] - loss: 0.0348
+Epoch 4 [54/172] - loss: 0.0597
+Epoch 4 [55/172] - loss: 0.1912
+Epoch 4 [56/172] - loss: 0.0719
+Epoch 4 [57/172] - loss: 0.0504
+Epoch 4 [58/172] - loss: 0.0558
+Epoch 4 [59/172] - loss: 0.0762
+Epoch 4 [60/172] - loss: 0.0239, acc: 1.0000
+Epoch 4 [61/172] - loss: 0.0494
+Epoch 4 [62/172] - loss: 0.1278
+Epoch 4 [63/172] - loss: 0.0433
+Epoch 4 [64/172] - loss: 0.0403
+Epoch 4 [65/172] - loss: 0.0871
+Epoch 4 [66/172] - loss: 0.0892
+Epoch 4 [67/172] - loss: 0.0463
+Epoch 4 [68/172] - loss: 0.0495
+Epoch 4 [69/172] - loss: 0.1233
+Epoch 4 [70/172] - loss: 0.0234, acc: 1.0000
+Epoch 4 [71/172] - loss: 0.0261
+Epoch 4 [72/172] - loss: 0.0222
+Epoch 4 [73/172] - loss: 0.0847
+Epoch 4 [74/172] - loss: 0.2020
+Epoch 4 [75/172] - loss: 0.0687
+Epoch 4 [76/172] - loss: 0.0182
+Epoch 4 [77/172] - loss: 0.0385
+Epoch 4 [78/172] - loss: 0.0507
+Epoch 4 [79/172] - loss: 0.0148
+Epoch 4 [80/172] - loss: 0.0222, acc: 1.0000
+Epoch 4 [81/172] - loss: 0.0610
+Epoch 4 [82/172] - loss: 0.0209
+Epoch 4 [83/172] - loss: 0.0212
+Epoch 4 [84/172] - loss: 0.0279
+Epoch 4 [85/172] - loss: 0.0860
+Epoch 4 [86/172] - loss: 0.1276
+Epoch 4 [87/172] - loss: 0.0300
+Epoch 4 [88/172] - loss: 0.0274
+Epoch 4 [89/172] - loss: 0.0344
+Epoch 4 [90/172] - loss: 0.0180, acc: 1.0000
+Epoch 4 [91/172] - loss: 0.1615
+Epoch 4 [92/172] - loss: 0.1941
+Epoch 4 [93/172] - loss: 0.0202
+Epoch 4 [94/172] - loss: 0.0156
+Epoch 4 [95/172] - loss: 0.0828
+Epoch 4 [96/172] - loss: 0.0412
+Epoch 4 [97/172] - loss: 0.0301
+Epoch 4 [98/172] - loss: 0.0343
+Epoch 4 [99/172] - loss: 0.0292
+Epoch 4 [100/172] - loss: 0.0517, acc: 0.9688
+Epoch 4 [101/172] - loss: 0.0714
+Epoch 4 [102/172] - loss: 0.0278
+Epoch 4 [103/172] - loss: 0.0984
+Epoch 4 [104/172] - loss: 0.0188
+Epoch 4 [105/172] - loss: 0.0389
+Epoch 4 [106/172] - loss: 0.0270
+Epoch 4 [107/172] - loss: 0.0234
+Epoch 4 [108/172] - loss: 0.0810
+Epoch 4 [109/172] - loss: 0.1398
+Epoch 4 [110/172] - loss: 0.2215, acc: 0.9375
+Epoch 4 [111/172] - loss: 0.0179
+Epoch 4 [112/172] - loss: 0.0179
+Epoch 4 [113/172] - loss: 0.0212
+Epoch 4 [114/172] - loss: 0.0536
+Epoch 4 [115/172] - loss: 0.1418
+Epoch 4 [116/172] - loss: 0.0189
+Epoch 4 [117/172] - loss: 0.0243
+Epoch 4 [118/172] - loss: 0.0367
+Epoch 4 [119/172] - loss: 0.0211
+Epoch 4 [120/172] - loss: 0.0284, acc: 1.0000
+Epoch 4 [121/172] - loss: 0.0495
+Epoch 4 [122/172] - loss: 0.2188
+Epoch 4 [123/172] - loss: 0.0382
+Epoch 4 [124/172] - loss: 0.0517
+Epoch 4 [125/172] - loss: 0.0637
+Epoch 4 [126/172] - loss: 0.0819
+Epoch 4 [127/172] - loss: 0.0544
+Epoch 4 [128/172] - loss: 0.0225
+Epoch 4 [129/172] - loss: 0.0391
+Epoch 4 [130/172] - loss: 0.0125, acc: 1.0000
+Epoch 4 [131/172] - loss: 0.0320
+Epoch 4 [132/172] - loss: 0.0167
+Epoch 4 [133/172] - loss: 0.0297
+Epoch 4 [134/172] - loss: 0.0409
+Epoch 4 [135/172] - loss: 0.0955
+Epoch 4 [136/172] - loss: 0.1251
+Epoch 4 [137/172] - loss: 0.0212
+Epoch 4 [138/172] - loss: 0.0162
+Epoch 4 [139/172] - loss: 0.0185
+Epoch 4 [140/172] - loss: 0.0192, acc: 1.0000
+Epoch 4 [141/172] - loss: 0.0489
+Epoch 4 [142/172] - loss: 0.0467
+Epoch 4 [143/172] - loss: 0.0265
+Epoch 4 [144/172] - loss: 0.0265
+Epoch 4 [145/172] - loss: 0.1481
+Epoch 4 [146/172] - loss: 0.0281
+Epoch 4 [147/172] - loss: 0.0323
+Epoch 4 [148/172] - loss: 0.0763
+Epoch 4 [149/172] - loss: 0.0305
+Epoch 4 [150/172] - loss: 0.0882, acc: 0.9375
+Epoch 4 [151/172] - loss: 0.2257
+Epoch 4 [152/172] - loss: 0.0257
+Epoch 4 [153/172] - loss: 0.0225
+Epoch 4 [154/172] - loss: 0.1293
+Epoch 4 [155/172] - loss: 0.0167
+Epoch 4 [156/172] - loss: 0.0360
+Epoch 4 [157/172] - loss: 0.0249
+Epoch 4 [158/172] - loss: 0.0147
+Epoch 4 [159/172] - loss: 0.0164
+Epoch 4 [160/172] - loss: 0.0163, acc: 1.0000
+Epoch 4 [161/172] - loss: 0.0443
+Epoch 4 [162/172] - loss: 0.0335
+Epoch 4 [163/172] - loss: 0.1199
+Epoch 4 [164/172] - loss: 0.0163
+Epoch 4 [165/172] - loss: 0.0608
+Epoch 4 [166/172] - loss: 0.0355
+Epoch 4 [167/172] - loss: 0.0317
+Epoch 4 [168/172] - loss: 0.0379
+Epoch 4 [169/172] - loss: 0.1434
+Epoch 4 [170/172] - loss: 0.0692, acc: 0.9688
+Epoch 4 [171/172] - loss: 0.0286
+Epoch 4 [172/172] - loss: 0.0425
+
+类别准确率:
+positive: 0.8522 (398/467)
+neutral: 0.3133 (26/83)
+negative: 0.6120 (153/250)
+
+Epoch 4/10
+Train Loss: 0.0460, Train Acc: 0.9919
+Val Loss: 0.9632, Val Acc: 0.7212
+Epoch 5 [1/172] - loss: 0.0141, acc: 1.0000
+Epoch 5 [2/172] - loss: 0.0314
+Epoch 5 [3/172] - loss: 0.0169
+Epoch 5 [4/172] - loss: 0.0148
+Epoch 5 [5/172] - loss: 0.0131
+Epoch 5 [6/172] - loss: 0.0425
+Epoch 5 [7/172] - loss: 0.0390
+Epoch 5 [8/172] - loss: 0.0466
+Epoch 5 [9/172] - loss: 0.0673
+Epoch 5 [10/172] - loss: 0.0189, acc: 1.0000
+Epoch 5 [11/172] - loss: 0.0281
+Epoch 5 [12/172] - loss: 0.0378
+Epoch 5 [13/172] - loss: 0.1006
+Epoch 5 [14/172] - loss: 0.1553
+Epoch 5 [15/172] - loss: 0.0266
+Epoch 5 [16/172] - loss: 0.0138
+Epoch 5 [17/172] - loss: 0.0457
+Epoch 5 [18/172] - loss: 0.0264
+Epoch 5 [19/172] - loss: 0.1040
+Epoch 5 [20/172] - loss: 0.0540, acc: 1.0000
+Epoch 5 [21/172] - loss: 0.1520
+Epoch 5 [22/172] - loss: 0.1479
+Epoch 5 [23/172] - loss: 0.0139
+Epoch 5 [24/172] - loss: 0.0234
+Epoch 5 [25/172] - loss: 0.0132
+Epoch 5 [26/172] - loss: 0.0434
+Epoch 5 [27/172] - loss: 0.0244
+Epoch 5 [28/172] - loss: 0.0220
+Epoch 5 [29/172] - loss: 0.0255
+Epoch 5 [30/172] - loss: 0.0314, acc: 1.0000
+Epoch 5 [31/172] - loss: 0.0238
+Epoch 5 [32/172] - loss: 0.0162
+Epoch 5 [33/172] - loss: 0.0260
+Epoch 5 [34/172] - loss: 0.0145
+Epoch 5 [35/172] - loss: 0.0211
+Epoch 5 [36/172] - loss: 0.0148
+Epoch 5 [37/172] - loss: 0.0173
+Epoch 5 [38/172] - loss: 0.0134
+Epoch 5 [39/172] - loss: 0.0460
+Epoch 5 [40/172] - loss: 0.0565, acc: 0.9688
+Epoch 5 [41/172] - loss: 0.0235
+Epoch 5 [42/172] - loss: 0.0660
+Epoch 5 [43/172] - loss: 0.0553
+Epoch 5 [44/172] - loss: 0.0202
+Epoch 5 [45/172] - loss: 0.0134
+Epoch 5 [46/172] - loss: 0.0228
+Epoch 5 [47/172] - loss: 0.0154
+Epoch 5 [48/172] - loss: 0.0356
+Epoch 5 [49/172] - loss: 0.0332
+Epoch 5 [50/172] - loss: 0.0503, acc: 1.0000
+Epoch 5 [51/172] - loss: 0.1348
+Epoch 5 [52/172] - loss: 0.0132
+Epoch 5 [53/172] - loss: 0.0312
+Epoch 5 [54/172] - loss: 0.0940
+Epoch 5 [55/172] - loss: 0.0663
+Epoch 5 [56/172] - loss: 0.0324
+Epoch 5 [57/172] - loss: 0.0185
+Epoch 5 [58/172] - loss: 0.0194
+Epoch 5 [59/172] - loss: 0.0585
+Epoch 5 [60/172] - loss: 0.0196, acc: 1.0000
+Epoch 5 [61/172] - loss: 0.0194
+Epoch 5 [62/172] - loss: 0.0209
+Epoch 5 [63/172] - loss: 0.1439
+Epoch 5 [64/172] - loss: 0.1418
+Epoch 5 [65/172] - loss: 0.0126
+Epoch 5 [66/172] - loss: 0.0158
+Epoch 5 [67/172] - loss: 0.0210
+Epoch 5 [68/172] - loss: 0.0243
+Epoch 5 [69/172] - loss: 0.0214
+Epoch 5 [70/172] - loss: 0.0128, acc: 1.0000
+Epoch 5 [71/172] - loss: 0.0246
+Epoch 5 [72/172] - loss: 0.0234
+Epoch 5 [73/172] - loss: 0.0272
+Epoch 5 [74/172] - loss: 0.0462
+Epoch 5 [75/172] - loss: 0.0171
+Epoch 5 [76/172] - loss: 0.0194
+Epoch 5 [77/172] - loss: 0.0158
+Epoch 5 [78/172] - loss: 0.0193
+Epoch 5 [79/172] - loss: 0.0118
+Epoch 5 [80/172] - loss: 0.0185, acc: 1.0000
+Epoch 5 [81/172] - loss: 0.0455
+Epoch 5 [82/172] - loss: 0.0492
+Epoch 5 [83/172] - loss: 0.0150
+Epoch 5 [84/172] - loss: 0.0127
+Epoch 5 [85/172] - loss: 0.1357
+Epoch 5 [86/172] - loss: 0.0343
+Epoch 5 [87/172] - loss: 0.0311
+Epoch 5 [88/172] - loss: 0.1004
+Epoch 5 [89/172] - loss: 0.0176
+Epoch 5 [90/172] - loss: 0.0796, acc: 0.9688
+Epoch 5 [91/172] - loss: 0.0162
+Epoch 5 [92/172] - loss: 0.0194
+Epoch 5 [93/172] - loss: 0.0146
+Epoch 5 [94/172] - loss: 0.0322
+Epoch 5 [95/172] - loss: 0.0339
+Epoch 5 [96/172] - loss: 0.0259
+Epoch 5 [97/172] - loss: 0.0434
+Epoch 5 [98/172] - loss: 0.0152
+Epoch 5 [99/172] - loss: 0.1499
+Epoch 5 [100/172] - loss: 0.0323, acc: 1.0000
+Epoch 5 [101/172] - loss: 0.0275
+Epoch 5 [102/172] - loss: 0.0219
+Epoch 5 [103/172] - loss: 0.0198
+Epoch 5 [104/172] - loss: 0.1186
+Epoch 5 [105/172] - loss: 0.2627
+Epoch 5 [106/172] - loss: 0.0193
+Epoch 5 [107/172] - loss: 0.0235
+Epoch 5 [108/172] - loss: 0.0854
+Epoch 5 [109/172] - loss: 0.0172
+Epoch 5 [110/172] - loss: 0.0178, acc: 1.0000
+Epoch 5 [111/172] - loss: 0.0223
+Epoch 5 [112/172] - loss: 0.0312
+Epoch 5 [113/172] - loss: 0.1080
+Epoch 5 [114/172] - loss: 0.0317
+Epoch 5 [115/172] - loss: 0.0210
+Epoch 5 [116/172] - loss: 0.0126
+Epoch 5 [117/172] - loss: 0.0259
+Epoch 5 [118/172] - loss: 0.0107
+Epoch 5 [119/172] - loss: 0.0182
+Epoch 5 [120/172] - loss: 0.0199, acc: 1.0000
+Epoch 5 [121/172] - loss: 0.0366
+Epoch 5 [122/172] - loss: 0.0221
+Epoch 5 [123/172] - loss: 0.0660
+Epoch 5 [124/172] - loss: 0.0225
+Epoch 5 [125/172] - loss: 0.0192
+Epoch 5 [126/172] - loss: 0.0243
+Epoch 5 [127/172] - loss: 0.0155
+Epoch 5 [128/172] - loss: 0.0221
+Epoch 5 [129/172] - loss: 0.1179
+Epoch 5 [130/172] - loss: 0.0113, acc: 1.0000
+Epoch 5 [131/172] - loss: 0.0238
+Epoch 5 [132/172] - loss: 0.0709
+Epoch 5 [133/172] - loss: 0.1431
+Epoch 5 [134/172] - loss: 0.0800
+Epoch 5 [135/172] - loss: 0.0094
+Epoch 5 [136/172] - loss: 0.0139
+Epoch 5 [137/172] - loss: 0.0358
+Epoch 5 [138/172] - loss: 0.0972
+Epoch 5 [139/172] - loss: 0.0793
+Epoch 5 [140/172] - loss: 0.0502, acc: 0.9688
+Epoch 5 [141/172] - loss: 0.0168
+Epoch 5 [142/172] - loss: 0.0130
+Epoch 5 [143/172] - loss: 0.0193
+Epoch 5 [144/172] - loss: 0.0113
+Epoch 5 [145/172] - loss: 0.0284
+Epoch 5 [146/172] - loss: 0.0153
+Epoch 5 [147/172] - loss: 0.0665
+Epoch 5 [148/172] - loss: 0.0139
+Epoch 5 [149/172] - loss: 0.0148
+Epoch 5 [150/172] - loss: 0.0905, acc: 0.9688
+Epoch 5 [151/172] - loss: 0.0126
+Epoch 5 [152/172] - loss: 0.0310
+Epoch 5 [153/172] - loss: 0.0638
+Epoch 5 [154/172] - loss: 0.0133
+Epoch 5 [155/172] - loss: 0.0377
+Epoch 5 [156/172] - loss: 0.0248
+Epoch 5 [157/172] - loss: 0.0684
+Epoch 5 [158/172] - loss: 0.0178
+Epoch 5 [159/172] - loss: 0.0212
+Epoch 5 [160/172] - loss: 0.0234, acc: 1.0000
+Epoch 5 [161/172] - loss: 0.0115
+Epoch 5 [162/172] - loss: 0.0606
+Epoch 5 [163/172] - loss: 0.1924
+Epoch 5 [164/172] - loss: 0.0117
+Epoch 5 [165/172] - loss: 0.1654
+Epoch 5 [166/172] - loss: 0.0324
+Epoch 5 [167/172] - loss: 0.0541
+Epoch 5 [168/172] - loss: 0.0126
+Epoch 5 [169/172] - loss: 0.0197
+Epoch 5 [170/172] - loss: 0.0110, acc: 1.0000
+Epoch 5 [171/172] - loss: 0.0215
+Epoch 5 [172/172] - loss: 0.0444
+
+类别准确率:
+positive: 0.8501 (397/467)
+neutral: 0.3373 (28/83)
+negative: 0.5960 (149/250)
+
+Epoch 5/10
+Train Loss: 0.0480, Train Acc: 0.9899
+Val Loss: 0.9917, Val Acc: 0.7175
+Epoch 6 [1/172] - loss: 0.0568, acc: 1.0000
+Epoch 6 [2/172] - loss: 0.0624
+Epoch 6 [3/172] - loss: 0.0135
+Epoch 6 [4/172] - loss: 0.0131
+Epoch 6 [5/172] - loss: 0.0952
+Epoch 6 [6/172] - loss: 0.0148
+Epoch 6 [7/172] - loss: 0.0131
+Epoch 6 [8/172] - loss: 0.0306
+Epoch 6 [9/172] - loss: 0.0159
+Epoch 6 [10/172] - loss: 0.0142, acc: 1.0000
+Epoch 6 [11/172] - loss: 0.0150
+Epoch 6 [12/172] - loss: 0.0119
+Epoch 6 [13/172] - loss: 0.0328
+Epoch 6 [14/172] - loss: 0.0115
+Epoch 6 [15/172] - loss: 0.0171
+Epoch 6 [16/172] - loss: 0.1034
+Epoch 6 [17/172] - loss: 0.0175
+Epoch 6 [18/172] - loss: 0.0203
+Epoch 6 [19/172] - loss: 0.0166
+Epoch 6 [20/172] - loss: 0.0146, acc: 1.0000
+Epoch 6 [21/172] - loss: 0.1185
+Epoch 6 [22/172] - loss: 0.0218
+Epoch 6 [23/172] - loss: 0.0205
+Epoch 6 [24/172] - loss: 0.0284
+Epoch 6 [25/172] - loss: 0.0648
+Epoch 6 [26/172] - loss: 0.0287
+Epoch 6 [27/172] - loss: 0.0394
+Epoch 6 [28/172] - loss: 0.0150
+Epoch 6 [29/172] - loss: 0.0167
+Epoch 6 [30/172] - loss: 0.0225, acc: 1.0000
+Epoch 6 [31/172] - loss: 0.0146
+Epoch 6 [32/172] - loss: 0.0104
+Epoch 6 [33/172] - loss: 0.0149
+Epoch 6 [34/172] - loss: 0.0130
+Epoch 6 [35/172] - loss: 0.0110
+Epoch 6 [36/172] - loss: 0.0354
+Epoch 6 [37/172] - loss: 0.0153
+Epoch 6 [38/172] - loss: 0.0143
+Epoch 6 [39/172] - loss: 0.0301
+Epoch 6 [40/172] - loss: 0.0251, acc: 1.0000
+Epoch 6 [41/172] - loss: 0.0627
+Epoch 6 [42/172] - loss: 0.0903
+Epoch 6 [43/172] - loss: 0.1010
+Epoch 6 [44/172] - loss: 0.0099
+Epoch 6 [45/172] - loss: 0.0359
+Epoch 6 [46/172] - loss: 0.0215
+Epoch 6 [47/172] - loss: 0.0127
+Epoch 6 [48/172] - loss: 0.0120
+Epoch 6 [49/172] - loss: 0.0231
+Epoch 6 [50/172] - loss: 0.0875, acc: 0.9375
+Epoch 6 [51/172] - loss: 0.0468
+Epoch 6 [52/172] - loss: 0.0281
+Epoch 6 [53/172] - loss: 0.0128
+Epoch 6 [54/172] - loss: 0.1270
+Epoch 6 [55/172] - loss: 0.0184
+Epoch 6 [56/172] - loss: 0.0211
+Epoch 6 [57/172] - loss: 0.0217
+Epoch 6 [58/172] - loss: 0.0116
+Epoch 6 [59/172] - loss: 0.0613
+Epoch 6 [60/172] - loss: 0.0160, acc: 1.0000
+Epoch 6 [61/172] - loss: 0.0167
+Epoch 6 [62/172] - loss: 0.0216
+Epoch 6 [63/172] - loss: 0.0232
+Epoch 6 [64/172] - loss: 0.1674
+Epoch 6 [65/172] - loss: 0.0347
+Epoch 6 [66/172] - loss: 0.1142
+Epoch 6 [67/172] - loss: 0.0094
+Epoch 6 [68/172] - loss: 0.0718
+Epoch 6 [69/172] - loss: 0.0291
+Epoch 6 [70/172] - loss: 0.0371, acc: 0.9688
+Epoch 6 [71/172] - loss: 0.0181
+Epoch 6 [72/172] - loss: 0.0354
+Epoch 6 [73/172] - loss: 0.0485
+Epoch 6 [74/172] - loss: 0.0122
+Epoch 6 [75/172] - loss: 0.0370
+Epoch 6 [76/172] - loss: 0.0181
+Epoch 6 [77/172] - loss: 0.0565
+Epoch 6 [78/172] - loss: 0.0340
+Epoch 6 [79/172] - loss: 0.0126
+Epoch 6 [80/172] - loss: 0.0707, acc: 0.9688
+Epoch 6 [81/172] - loss: 0.0392
+Epoch 6 [82/172] - loss: 0.0365
+Epoch 6 [83/172] - loss: 0.0161
+Epoch 6 [84/172] - loss: 0.0103
+Epoch 6 [85/172] - loss: 0.0380
+Epoch 6 [86/172] - loss: 0.0501
+Epoch 6 [87/172] - loss: 0.0241
+Epoch 6 [88/172] - loss: 0.0445
+Epoch 6 [89/172] - loss: 0.0204
+Epoch 6 [90/172] - loss: 0.0117, acc: 1.0000
+Epoch 6 [91/172] - loss: 0.0276
+Epoch 6 [92/172] - loss: 0.0153
+Epoch 6 [93/172] - loss: 0.0169
+Epoch 6 [94/172] - loss: 0.0202
+Epoch 6 [95/172] - loss: 0.0169
+Epoch 6 [96/172] - loss: 0.0098
+Epoch 6 [97/172] - loss: 0.0213
+Epoch 6 [98/172] - loss: 0.0205
+Epoch 6 [99/172] - loss: 0.0107
+Epoch 6 [100/172] - loss: 0.0146, acc: 1.0000
+Epoch 6 [101/172] - loss: 0.0624
+Epoch 6 [102/172] - loss: 0.0138
+Epoch 6 [103/172] - loss: 0.0541
+Epoch 6 [104/172] - loss: 0.0692
+Epoch 6 [105/172] - loss: 0.0578
+Epoch 6 [106/172] - loss: 0.1065
+Epoch 6 [107/172] - loss: 0.0501
+Epoch 6 [108/172] - loss: 0.0179
+Epoch 6 [109/172] - loss: 0.1112
+Epoch 6 [110/172] - loss: 0.0172, acc: 1.0000
+Epoch 6 [111/172] - loss: 0.0118
+Epoch 6 [112/172] - loss: 0.0095
+Epoch 6 [113/172] - loss: 0.0246
+Epoch 6 [114/172] - loss: 0.0110
+Epoch 6 [115/172] - loss: 0.0500
+Epoch 6 [116/172] - loss: 0.1989
+Epoch 6 [117/172] - loss: 0.0129
+Epoch 6 [118/172] - loss: 0.0125
+Epoch 6 [119/172] - loss: 0.2294
+Epoch 6 [120/172] - loss: 0.0132, acc: 1.0000
+Epoch 6 [121/172] - loss: 0.0212
+Epoch 6 [122/172] - loss: 0.0356
+Epoch 6 [123/172] - loss: 0.0124
+Epoch 6 [124/172] - loss: 0.0137
+Epoch 6 [125/172] - loss: 0.0291
+Epoch 6 [126/172] - loss: 0.0993
+Epoch 6 [127/172] - loss: 0.1135
+Epoch 6 [128/172] - loss: 0.0291
+Epoch 6 [129/172] - loss: 0.0207
+Epoch 6 [130/172] - loss: 0.0606, acc: 0.9688
+Epoch 6 [131/172] - loss: 0.0427
+Epoch 6 [132/172] - loss: 0.0241
+Epoch 6 [133/172] - loss: 0.0099
+Epoch 6 [134/172] - loss: 0.0092
+Epoch 6 [135/172] - loss: 0.0115
+Epoch 6 [136/172] - loss: 0.0330
+Epoch 6 [137/172] - loss: 0.0151
+Epoch 6 [138/172] - loss: 0.0206
+Epoch 6 [139/172] - loss: 0.0265
+Epoch 6 [140/172] - loss: 0.0239, acc: 1.0000
+Epoch 6 [141/172] - loss: 0.0110
+Epoch 6 [142/172] - loss: 0.0099
+Epoch 6 [143/172] - loss: 0.0176
+Epoch 6 [144/172] - loss: 0.0459
+Epoch 6 [145/172] - loss: 0.0139
+Epoch 6 [146/172] - loss: 0.0127
+Epoch 6 [147/172] - loss: 0.0235
+Epoch 6 [148/172] - loss: 0.0255
+Epoch 6 [149/172] - loss: 0.0184
+Epoch 6 [150/172] - loss: 0.0104, acc: 1.0000
+Epoch 6 [151/172] - loss: 0.0231
+Epoch 6 [152/172] - loss: 0.0227
+Epoch 6 [153/172] - loss: 0.0102
+Epoch 6 [154/172] - loss: 0.0109
+Epoch 6 [155/172] - loss: 0.1190
+Epoch 6 [156/172] - loss: 0.1814
+Epoch 6 [157/172] - loss: 0.0149
+Epoch 6 [158/172] - loss: 0.0249
+Epoch 6 [159/172] - loss: 0.0183
+Epoch 6 [160/172] - loss: 0.1158, acc: 0.9688
+Epoch 6 [161/172] - loss: 0.0128
+Epoch 6 [162/172] - loss: 0.0221
+Epoch 6 [163/172] - loss: 0.0251
+Epoch 6 [164/172] - loss: 0.1883
+Epoch 6 [165/172] - loss: 0.2533
+Epoch 6 [166/172] - loss: 0.0229
+Epoch 6 [167/172] - loss: 0.0114
+Epoch 6 [168/172] - loss: 0.0304
+Epoch 6 [169/172] - loss: 0.0303
+Epoch 6 [170/172] - loss: 0.0094, acc: 1.0000
+Epoch 6 [171/172] - loss: 0.0294
+Epoch 6 [172/172] - loss: 0.0123
+
+类别准确率:
+positive: 0.8244 (385/467)
+neutral: 0.3012 (25/83)
+negative: 0.6400 (160/250)
+
+Epoch 6/10
+Train Loss: 0.0513, Train Acc: 0.9879
+Val Loss: 1.0372, Val Acc: 0.7125
+Epoch 7 [1/172] - loss: 0.0148, acc: 1.0000
+Epoch 7 [2/172] - loss: 0.0170
+Epoch 7 [3/172] - loss: 0.0096
+Epoch 7 [4/172] - loss: 0.0208
+Epoch 7 [5/172] - loss: 0.0084
+Epoch 7 [6/172] - loss: 0.0164
+Epoch 7 [7/172] - loss: 0.0190
+Epoch 7 [8/172] - loss: 0.0375
+Epoch 7 [9/172] - loss: 0.0092
+Epoch 7 [10/172] - loss: 0.0135, acc: 1.0000
+Epoch 7 [11/172] - loss: 0.0132
+Epoch 7 [12/172] - loss: 0.0874
+Epoch 7 [13/172] - loss: 0.0178
+Epoch 7 [14/172] - loss: 0.0463
+Epoch 7 [15/172] - loss: 0.0425
+Epoch 7 [16/172] - loss: 0.0171
+Epoch 7 [17/172] - loss: 0.0691
+Epoch 7 [18/172] - loss: 0.0101
+Epoch 7 [19/172] - loss: 0.0177
+Epoch 7 [20/172] - loss: 0.0152, acc: 1.0000
+Epoch 7 [21/172] - loss: 0.0265
+Epoch 7 [22/172] - loss: 0.0182
+Epoch 7 [23/172] - loss: 0.0133
+Epoch 7 [24/172] - loss: 0.0124
+Epoch 7 [25/172] - loss: 0.0174
+Epoch 7 [26/172] - loss: 0.0909
+Epoch 7 [27/172] - loss: 0.0156
+Epoch 7 [28/172] - loss: 0.0243
+Epoch 7 [29/172] - loss: 0.0160
+Epoch 7 [30/172] - loss: 0.1296, acc: 0.9688
+Epoch 7 [31/172] - loss: 0.0362
+Epoch 7 [32/172] - loss: 0.0098
+Epoch 7 [33/172] - loss: 0.0789
+Epoch 7 [34/172] - loss: 0.0256
+Epoch 7 [35/172] - loss: 0.0303
+Epoch 7 [36/172] - loss: 0.1037
+Epoch 7 [37/172] - loss: 0.0140
+Epoch 7 [38/172] - loss: 0.0092
+Epoch 7 [39/172] - loss: 0.0198
+Epoch 7 [40/172] - loss: 0.0102, acc: 1.0000
+Epoch 7 [41/172] - loss: 0.0106
+Epoch 7 [42/172] - loss: 0.0117
+Epoch 7 [43/172] - loss: 0.0138
+Epoch 7 [44/172] - loss: 0.0221
+Epoch 7 [45/172] - loss: 0.0376
+Epoch 7 [46/172] - loss: 0.0497
+Epoch 7 [47/172] - loss: 0.0511
+Epoch 7 [48/172] - loss: 0.0143
+Epoch 7 [49/172] - loss: 0.0087
+Epoch 7 [50/172] - loss: 0.0091, acc: 1.0000
+Epoch 7 [51/172] - loss: 0.0832
+Epoch 7 [52/172] - loss: 0.0125
+Epoch 7 [53/172] - loss: 0.0113
+Epoch 7 [54/172] - loss: 0.0863
+Epoch 7 [55/172] - loss: 0.0164
+Epoch 7 [56/172] - loss: 0.0111
+Epoch 7 [57/172] - loss: 0.0248
+Epoch 7 [58/172] - loss: 0.0153
+Epoch 7 [59/172] - loss: 0.0119
+Epoch 7 [60/172] - loss: 0.0310, acc: 1.0000
+Epoch 7 [61/172] - loss: 0.0241
+Epoch 7 [62/172] - loss: 0.0174
+Epoch 7 [63/172] - loss: 0.1349
+Epoch 7 [64/172] - loss: 0.0260
+Epoch 7 [65/172] - loss: 0.0367
+Epoch 7 [66/172] - loss: 0.0304
+Epoch 7 [67/172] - loss: 0.0442
+Epoch 7 [68/172] - loss: 0.0918
+Epoch 7 [69/172] - loss: 0.0154
+Epoch 7 [70/172] - loss: 0.0221, acc: 1.0000
+Epoch 7 [71/172] - loss: 0.0210
+Epoch 7 [72/172] - loss: 0.0379
+Epoch 7 [73/172] - loss: 0.0303
+Epoch 7 [74/172] - loss: 0.0105
+Epoch 7 [75/172] - loss: 0.0113
+Epoch 7 [76/172] - loss: 0.0192
+Epoch 7 [77/172] - loss: 0.0208
+Epoch 7 [78/172] - loss: 0.0118
+Epoch 7 [79/172] - loss: 0.0669
+Epoch 7 [80/172] - loss: 0.0340, acc: 1.0000
+Epoch 7 [81/172] - loss: 0.0100
+Epoch 7 [82/172] - loss: 0.0136
+Epoch 7 [83/172] - loss: 0.1205
+Epoch 7 [84/172] - loss: 0.0129
+Epoch 7 [85/172] - loss: 0.0258
+Epoch 7 [86/172] - loss: 0.0188
+Epoch 7 [87/172] - loss: 0.0120
+Epoch 7 [88/172] - loss: 0.0138
+Epoch 7 [89/172] - loss: 0.0161
+Epoch 7 [90/172] - loss: 0.0146, acc: 1.0000
+Epoch 7 [91/172] - loss: 0.0179
+Epoch 7 [92/172] - loss: 0.0173
+Epoch 7 [93/172] - loss: 0.1238
+Epoch 7 [94/172] - loss: 0.0147
+Epoch 7 [95/172] - loss: 0.0135
+Epoch 7 [96/172] - loss: 0.0094
+Epoch 7 [97/172] - loss: 0.0336
+Epoch 7 [98/172] - loss: 0.0545
+Epoch 7 [99/172] - loss: 0.0127
+Epoch 7 [100/172] - loss: 0.0099, acc: 1.0000
+Epoch 7 [101/172] - loss: 0.0138
+Epoch 7 [102/172] - loss: 0.0148
+Epoch 7 [103/172] - loss: 0.0098
+Epoch 7 [104/172] - loss: 0.0160
+Epoch 7 [105/172] - loss: 0.0521
+Epoch 7 [106/172] - loss: 0.1519
+Epoch 7 [107/172] - loss: 0.0113
+Epoch 7 [108/172] - loss: 0.0144
+Epoch 7 [109/172] - loss: 0.0442
+Epoch 7 [110/172] - loss: 0.0503, acc: 0.9688
+Epoch 7 [111/172] - loss: 0.0223
+Epoch 7 [112/172] - loss: 0.0547
+Epoch 7 [113/172] - loss: 0.0135
+Epoch 7 [114/172] - loss: 0.0119
+Epoch 7 [115/172] - loss: 0.0107
+Epoch 7 [116/172] - loss: 0.0817
+Epoch 7 [117/172] - loss: 0.0243
+Epoch 7 [118/172] - loss: 0.0216
+Epoch 7 [119/172] - loss: 0.0199
+Epoch 7 [120/172] - loss: 0.0183, acc: 1.0000
+Epoch 7 [121/172] - loss: 0.0263
+Epoch 7 [122/172] - loss: 0.0125
+Epoch 7 [123/172] - loss: 0.0106
+Epoch 7 [124/172] - loss: 0.0430
+Epoch 7 [125/172] - loss: 0.0111
+Epoch 7 [126/172] - loss: 0.0133
+Epoch 7 [127/172] - loss: 0.0182
+Epoch 7 [128/172] - loss: 0.0197
+Epoch 7 [129/172] - loss: 0.0153
+Epoch 7 [130/172] - loss: 0.0133, acc: 1.0000
+Epoch 7 [131/172] - loss: 0.1031
+Epoch 7 [132/172] - loss: 0.1282
+Epoch 7 [133/172] - loss: 0.0103
+Epoch 7 [134/172] - loss: 0.0231
+Epoch 7 [135/172] - loss: 0.0231
+Epoch 7 [136/172] - loss: 0.0115
+Epoch 7 [137/172] - loss: 0.0406
+Epoch 7 [138/172] - loss: 0.0078
+Epoch 7 [139/172] - loss: 0.1330
+Epoch 7 [140/172] - loss: 0.0149, acc: 1.0000
+Epoch 7 [141/172] - loss: 0.0454
+Epoch 7 [142/172] - loss: 0.0154
+Epoch 7 [143/172] - loss: 0.0286
+Epoch 7 [144/172] - loss: 0.0154
+Epoch 7 [145/172] - loss: 0.0363
+Epoch 7 [146/172] - loss: 0.0972
+Epoch 7 [147/172] - loss: 0.0333
+Epoch 7 [148/172] - loss: 0.0216
+Epoch 7 [149/172] - loss: 0.0169
+Epoch 7 [150/172] - loss: 0.0161, acc: 1.0000
+Epoch 7 [151/172] - loss: 0.0836
+Epoch 7 [152/172] - loss: 0.0092
+Epoch 7 [153/172] - loss: 0.0130
+Epoch 7 [154/172] - loss: 0.0319
+Epoch 7 [155/172] - loss: 0.0126
+Epoch 7 [156/172] - loss: 0.0766
+Epoch 7 [157/172] - loss: 0.0160
+Epoch 7 [158/172] - loss: 0.0145
+Epoch 7 [159/172] - loss: 0.0480
+Epoch 7 [160/172] - loss: 0.0236, acc: 1.0000
+Epoch 7 [161/172] - loss: 0.0121
+Epoch 7 [162/172] - loss: 0.0197
+Epoch 7 [163/172] - loss: 0.0264
+Epoch 7 [164/172] - loss: 0.0401
+Epoch 7 [165/172] - loss: 0.0446
+Epoch 7 [166/172] - loss: 0.0147
+Epoch 7 [167/172] - loss: 0.0237
+Epoch 7 [168/172] - loss: 0.0114
+Epoch 7 [169/172] - loss: 0.0099
+Epoch 7 [170/172] - loss: 0.0910, acc: 0.9688
+Epoch 7 [171/172] - loss: 0.0127
+Epoch 7 [172/172] - loss: 0.0087
+
+类别准确率:
+positive: 0.8672 (405/467)
+neutral: 0.2892 (24/83)
+negative: 0.5680 (142/250)
+
+Epoch 7/10
+Train Loss: 0.0261, Train Acc: 0.9960
+Val Loss: 1.0876, Val Acc: 0.7137
+Early stopping triggered!
+Best validation accuracy: 0.7212
+
+=== 标准错误 ===
+/root/miniconda3/lib/python3.12/site-packages/torch/nn/modules/transformer.py:379: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.self_attn.batch_first was not True(use batch_first for better inference performance)
+  warnings.warn(
+/root/miniconda3/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:62: UserWarning: The verbose parameter is deprecated. Please use get_last_lr() to access the learning rate.
+  warnings.warn(
+wandb: Using wandb-core as the SDK backend.  Please refer to https://wandb.me/wandb-core for more information.
+wandb: Currently logged in as: leofyfan (leofyfan-east-china-normal-university). Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.19.1
+wandb: Run data is saved locally in /root/project5/wandb/run-20250118_160026-4ez9eva6
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run loss_ce_alpha0.25_beta0.75_weight0.5_dropout0.3_Multimodal_iterations_20250118_160025
+wandb: ⭐️ View project at https://wandb.ai/leofyfan-east-china-normal-university/multimodal_sentiment_analysis_loss
+wandb: 🚀 View run at https://wandb.ai/leofyfan-east-china-normal-university/multimodal_sentiment_analysis_loss/runs/4ez9eva6
+wandb: uploading wandb-summary.json; uploading config.yaml; uploading output.log
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:  iteration ▁▁▁▁▂▂▂▂▂▂▂▃▃▃▃▃▄▄▅▅▅▅▅▅▅▅▅▆▆▆▆▇▇▇▇▇▇███
+wandb:  train_acc ▁▄▄▅▆▇▇▇▇█▇██▇██▇█▆██▇██████████████████
+wandb: train_loss █▇▇▆▄▃▂▃▂▂▁▃▁▂▂▂▁▁▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:  iteration 1202
+wandb:  train_acc 0.96875
+wandb: train_loss 0.09101
+wandb: 
+wandb: 🚀 View run loss_ce_alpha0.25_beta0.75_weight0.5_dropout0.3_Multimodal_iterations_20250118_160025 at: https://wandb.ai/leofyfan-east-china-normal-university/multimodal_sentiment_analysis_loss/runs/4ez9eva6
+wandb: ⭐️ View project at: https://wandb.ai/leofyfan-east-china-normal-university/multimodal_sentiment_analysis_loss
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250118_160026-4ez9eva6/logs
+wandb: Tracking run with wandb version 0.19.1
+wandb: Run data is saved locally in /root/project5/wandb/run-20250118_161109-irdilst4
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run loss_ce_alpha0.25_beta0.75_weight0.5_dropout0.3_Multimodal_epochs_20250118_161109
+wandb: ⭐️ View project at https://wandb.ai/leofyfan-east-china-normal-university/multimodal_sentiment_analysis_loss
+wandb: 🚀 View run at https://wandb.ai/leofyfan-east-china-normal-university/multimodal_sentiment_analysis_loss/runs/irdilst4
+wandb: uploading history steps 0-0, summary; uploading wandb-summary.json; uploading wandb-metadata.json
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▂▃▅▆▇█
+wandb:  train_acc ▁▆▇████
+wandb: train_loss █▄▂▁▁▁▁
+wandb:    val_acc ▄▁▃█▇▆▇
+wandb:   val_loss ▁▅▇▆▆▇█
+wandb: 
+wandb: Run summary:
+wandb:      epoch 7
+wandb:  train_acc 0.99596
+wandb: train_loss 0.02606
+wandb:    val_acc 0.71375
+wandb:   val_loss 1.08758
+wandb: 
+wandb: 🚀 View run loss_ce_alpha0.25_beta0.75_weight0.5_dropout0.3_Multimodal_epochs_20250118_161109 at: https://wandb.ai/leofyfan-east-china-normal-university/multimodal_sentiment_analysis_loss/runs/irdilst4
+wandb: ⭐️ View project at: https://wandb.ai/leofyfan-east-china-normal-university/multimodal_sentiment_analysis_loss
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250118_161109-irdilst4/logs
+

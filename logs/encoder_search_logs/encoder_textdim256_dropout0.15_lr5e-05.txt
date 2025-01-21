@@ -1,0 +1,181 @@
+=== 命令 ===
+python /root/project5/main.py --text_dim 256 --image_dim 256 --dropout 0.15 --learning_rate 5e-05 --feature_fusion encoder --name encoder_textdim256_dropout0.15_lr5e-05 --wandb True
+
+=== 标准输出 ===
+Config Info:
+device: cuda
+batch_size: 32
+learning_rate: 5e-05
+num_epochs: 30
+val_ratio: 0.2
+wandb: True
+early_stop_patience: 3
+text_model_name: ./pretrained_models/bert-base-uncased
+image_model_name: ./pretrained_models/swinv2-base
+data_dir: data
+train_file: train.txt
+test_file: test_without_label.txt
+result_file: result.txt
+use_kfold: False
+k_folds: 5
+project_name: multimodal_sentiment_analysis_fusion
+use_text: True
+use_image: True
+feature_fusion: encoder
+num_classes: 3
+log_iteration: 10
+name: encoder_textdim256_dropout0.15_lr5e-05
+text_dim: 256
+image_dim: 256
+dropout: 0.15
+loss_type: focal
+alpha: 0.25
+beta: 0.75
+neural_init_weight: 1.5
+
+数据集统计信息:
+总样本数: 6869
+原始样本数: 4000
+增强样本数: 2869
+
+标签分布:
+negative: 2386 (34.74%)
+neutral: 2095 (30.50%)
+positive: 2388 (34.76%)
+
+缺失文本数: 0
+缺失图像数: 0
+Training on cuda
+
+类别准确率:
+positive: 0.7388 (345/467)
+neutral: 0.6024 (50/83)
+negative: 0.6200 (155/250)
+
+Epoch 1/30
+Train Loss: 0.4175, Train Acc: 0.7980
+Val Loss: 0.7827, Val Acc: 0.6875
+
+类别准确率:
+positive: 0.7880 (368/467)
+neutral: 0.3494 (29/83)
+negative: 0.7400 (185/250)
+
+Epoch 2/30
+Train Loss: 0.2307, Train Acc: 0.9010
+Val Loss: 0.7081, Val Acc: 0.7275
+
+类别准确率:
+positive: 0.8394 (392/467)
+neutral: 0.3012 (25/83)
+negative: 0.7160 (179/250)
+
+Epoch 3/30
+Train Loss: 0.1855, Train Acc: 0.9596
+Val Loss: 0.8779, Val Acc: 0.7450
+
+类别准确率:
+positive: 0.8908 (416/467)
+neutral: 0.2048 (17/83)
+negative: 0.6440 (161/250)
+
+Epoch 4/30
+Train Loss: 0.1336, Train Acc: 0.9838
+Val Loss: 0.9144, Val Acc: 0.7425
+
+类别准确率:
+positive: 0.8544 (399/467)
+neutral: 0.2410 (20/83)
+negative: 0.7240 (181/250)
+
+Epoch 5/30
+Train Loss: 0.1413, Train Acc: 0.9737
+Val Loss: 0.9533, Val Acc: 0.7500
+
+类别准确率:
+positive: 0.8587 (401/467)
+neutral: 0.2771 (23/83)
+negative: 0.6080 (152/250)
+
+Epoch 6/30
+Train Loss: 0.1215, Train Acc: 0.9899
+Val Loss: 1.1264, Val Acc: 0.7200
+
+类别准确率:
+positive: 0.8844 (413/467)
+neutral: 0.2289 (19/83)
+negative: 0.6560 (164/250)
+
+Epoch 7/30
+Train Loss: 0.1296, Train Acc: 0.9838
+Val Loss: 1.0821, Val Acc: 0.7450
+
+类别准确率:
+positive: 0.8501 (397/467)
+neutral: 0.2892 (24/83)
+negative: 0.6800 (170/250)
+
+Epoch 8/30
+Train Loss: 0.1147, Train Acc: 0.9939
+Val Loss: 1.0001, Val Acc: 0.7388
+Early stopping triggered!
+Best validation accuracy: 0.7500
+
+=== wandb 日志 ===
+/root/miniconda3/lib/python3.12/site-packages/torch/nn/modules/transformer.py:379: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.self_attn.batch_first was not True(use batch_first for better inference performance)
+  warnings.warn(
+/root/miniconda3/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:62: UserWarning: The verbose parameter is deprecated. Please use get_last_lr() to access the learning rate.
+  warnings.warn(
+wandb: Using wandb-core as the SDK backend.  Please refer to https://wandb.me/wandb-core for more information.
+wandb: Currently logged in as: leofyfan (leofyfan-east-china-normal-university). Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.19.1
+wandb: Run data is saved locally in /root/project5/wandb/run-20250120_020506-r4i1t1qr
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run encoder_textdim256_dropout0.15_lr5e-05_Multimodal_iterations_20250120_020505
+wandb: ⭐️ View project at https://wandb.ai/leofyfan-east-china-normal-university/multimodal_sentiment_analysis_fusion
+wandb: 🚀 View run at https://wandb.ai/leofyfan-east-china-normal-university/multimodal_sentiment_analysis_fusion/runs/r4i1t1qr
+wandb: uploading wandb-summary.json; uploading config.yaml; uploading output.log
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:  iteration ▁▁▁▁▁▂▂▂▂▂▂▃▃▃▃▃▃▄▄▄▄▄▄▄▅▅▅▆▆▆▆▆▆▇▇▇▇▇██
+wandb:  train_acc ▁▂▆▄▆▆▆▆█▇██▇█▇███▇█████▇██████▇▇███████
+wandb: train_loss ▇█▄▃▄▄▃▂▂▃▁▂▃▁▁▁▁▁▁▁▂▁▁▁▁▃▁▁▂▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:  iteration 1374
+wandb:  train_acc 1
+wandb: train_loss 0.10628
+wandb: 
+wandb: 🚀 View run encoder_textdim256_dropout0.15_lr5e-05_Multimodal_iterations_20250120_020505 at: https://wandb.ai/leofyfan-east-china-normal-university/multimodal_sentiment_analysis_fusion/runs/r4i1t1qr
+wandb: ⭐️ View project at: https://wandb.ai/leofyfan-east-china-normal-university/multimodal_sentiment_analysis_fusion
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250120_020506-r4i1t1qr/logs
+wandb: Tracking run with wandb version 0.19.1
+wandb: Run data is saved locally in /root/project5/wandb/run-20250120_021623-pj87frjt
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run encoder_textdim256_dropout0.15_lr5e-05_Multimodal_epochs_20250120_021623
+wandb: ⭐️ View project at https://wandb.ai/leofyfan-east-china-normal-university/multimodal_sentiment_analysis_fusion
+wandb: 🚀 View run at https://wandb.ai/leofyfan-east-china-normal-university/multimodal_sentiment_analysis_fusion/runs/pj87frjt
+wandb: uploading history steps 0-0, summary; uploading wandb-metadata.json; uploading wandb-summary.json
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▂▃▄▅▆▇█
+wandb:  train_acc ▁▅▇█▇███
+wandb: train_loss █▄▃▁▂▁▁▁
+wandb:    val_acc ▁▅▇▇█▅▇▇
+wandb:   val_loss ▂▁▄▄▅█▇▆
+wandb: 
+wandb: Run summary:
+wandb:      epoch 8
+wandb:  train_acc 0.99394
+wandb: train_loss 0.11471
+wandb:    val_acc 0.73875
+wandb:   val_loss 1.00006
+wandb: 
+wandb: 🚀 View run encoder_textdim256_dropout0.15_lr5e-05_Multimodal_epochs_20250120_021623 at: https://wandb.ai/leofyfan-east-china-normal-university/multimodal_sentiment_analysis_fusion/runs/pj87frjt
+wandb: ⭐️ View project at: https://wandb.ai/leofyfan-east-china-normal-university/multimodal_sentiment_analysis_fusion
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250120_021623-pj87frjt/logs
+

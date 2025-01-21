@@ -1,0 +1,263 @@
+=== 命令 ===
+python /root/project5/main.py --feature_fusion attention_concat --use_text 1 --use_image 0 --text_dim 128 --image_dim 128 --dropout 0.15 --learning_rate 8e-05 --name attention_concat_textTrue_imageFalse_textdim128_imagedim128_dropout0.15_lr8e-05 --wandb True
+
+=== 标准输出 ===
+Config Info:
+device: cuda
+batch_size: 32
+learning_rate: 8e-05
+num_epochs: 30
+val_ratio: 0.2
+wandb: True
+early_stop_patience: 3
+text_model_name: ./pretrained_models/bert-base-uncased
+image_model_name: ./pretrained_models/swinv2-base
+data_dir: data
+train_file: train.txt
+test_file: test_without_label.txt
+result_file: result.txt
+use_kfold: False
+k_folds: 5
+project_name: multimodal_sentiment_analysis_ablation
+use_text: True
+use_image: False
+feature_fusion: attention_concat
+num_classes: 3
+log_iteration: 10
+name: attention_concat_textTrue_imageFalse_textdim128_imagedim128_dropout0.15_lr8e-05
+text_dim: 128
+image_dim: 128
+dropout: 0.15
+loss_type: focal
+alpha: 0.25
+beta: 0.75
+neural_init_weight: 1.5
+
+数据集统计信息:
+总样本数: 6869
+原始样本数: 4000
+增强样本数: 2869
+
+标签分布:
+negative: 2386 (34.74%)
+neutral: 2095 (30.50%)
+positive: 2388 (34.76%)
+
+缺失文本数: 0
+缺失图像数: 0
+Training on cuda
+
+详细评估指标:
+
+positive类别指标:
+准确率: 0.6852 (320/467)
+精确率: 0.8556
+召回率: 0.6852
+F1分数: 0.7610
+
+neutral类别指标:
+准确率: 0.3133 (26/83)
+精确率: 0.5417
+召回率: 0.3133
+F1分数: 0.3969
+
+negative类别指标:
+准确率: 0.8240 (206/250)
+精确率: 0.5450
+召回率: 0.8240
+F1分数: 0.6561
+
+整体评估指标:
+准确率: 0.6900
+宏平均精确率: 0.6474
+宏平均召回率: 0.6075
+宏平均F1分数: 0.6047
+
+Epoch 1/30
+Train Loss: 0.4369, Train Acc: 0.7495
+Val Loss: 0.8069, Val Acc: 0.6900
+
+详细评估指标:
+
+positive类别指标:
+准确率: 0.7602 (355/467)
+精确率: 0.8161
+召回率: 0.7602
+F1分数: 0.7871
+
+neutral类别指标:
+准确率: 0.2530 (21/83)
+精确率: 0.5250
+召回率: 0.2530
+F1分数: 0.3415
+
+negative类别指标:
+准确率: 0.7520 (188/250)
+精确率: 0.5785
+召回率: 0.7520
+F1分数: 0.6539
+
+整体评估指标:
+准确率: 0.7050
+宏平均精确率: 0.6399
+宏平均召回率: 0.5884
+宏平均F1分数: 0.5942
+
+Epoch 2/30
+Train Loss: 0.2174, Train Acc: 0.9131
+Val Loss: 0.8913, Val Acc: 0.7050
+
+详细评估指标:
+
+positive类别指标:
+准确率: 0.8223 (384/467)
+精确率: 0.7245
+召回率: 0.8223
+F1分数: 0.7703
+
+neutral类别指标:
+准确率: 0.4217 (35/83)
+精确率: 0.3241
+召回率: 0.4217
+F1分数: 0.3665
+
+negative类别指标:
+准确率: 0.4560 (114/250)
+精确率: 0.7037
+召回率: 0.4560
+F1分数: 0.5534
+
+整体评估指标:
+准确率: 0.6663
+宏平均精确率: 0.5841
+宏平均召回率: 0.5667
+宏平均F1分数: 0.5634
+
+Epoch 3/30
+Train Loss: 0.2081, Train Acc: 0.9273
+Val Loss: 0.9134, Val Acc: 0.6663
+
+详细评估指标:
+
+positive类别指标:
+准确率: 0.7645 (357/467)
+精确率: 0.7863
+召回率: 0.7645
+F1分数: 0.7752
+
+neutral类别指标:
+准确率: 0.3614 (30/83)
+精确率: 0.3947
+召回率: 0.3614
+F1分数: 0.3774
+
+negative类别指标:
+准确率: 0.6680 (167/250)
+精确率: 0.6185
+召回率: 0.6680
+F1分数: 0.6423
+
+整体评估指标:
+准确率: 0.6925
+宏平均精确率: 0.5999
+宏平均召回率: 0.5980
+宏平均F1分数: 0.5983
+
+Epoch 4/30
+Train Loss: 0.1438, Train Acc: 0.9737
+Val Loss: 1.0302, Val Acc: 0.6925
+
+详细评估指标:
+
+positive类别指标:
+准确率: 0.7837 (366/467)
+精确率: 0.7922
+召回率: 0.7837
+F1分数: 0.7879
+
+neutral类别指标:
+准确率: 0.3133 (26/83)
+精确率: 0.4483
+召回率: 0.3133
+F1分数: 0.3688
+
+negative类别指标:
+准确率: 0.6840 (171/250)
+精确率: 0.6107
+召回率: 0.6840
+F1分数: 0.6453
+
+整体评估指标:
+准确率: 0.7037
+宏平均精确率: 0.6171
+宏平均召回率: 0.5937
+宏平均F1分数: 0.6007
+
+Epoch 5/30
+Train Loss: 0.1147, Train Acc: 0.9960
+Val Loss: 1.0633, Val Acc: 0.7037
+Early stopping triggered!
+Best validation accuracy: 0.7050
+
+=== wandb 日志 ===
+/root/miniconda3/lib/python3.12/site-packages/torch/nn/modules/transformer.py:379: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.self_attn.batch_first was not True(use batch_first for better inference performance)
+  warnings.warn(
+/root/miniconda3/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:62: UserWarning: The verbose parameter is deprecated. Please use get_last_lr() to access the learning rate.
+  warnings.warn(
+wandb: Using wandb-core as the SDK backend.  Please refer to https://wandb.me/wandb-core for more information.
+wandb: Currently logged in as: leofyfan (leofyfan-east-china-normal-university). Use `wandb login --relogin` to force relogin
+wandb: - Waiting for wandb.init()...
+wandb: \ Waiting for wandb.init()...
+wandb: Tracking run with wandb version 0.19.1
+wandb: Run data is saved locally in /root/project5/wandb/run-20250120_212645-dgh2td7l
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run attention_concat_textTrue_imageFalse_textdim128_imagedim128_dropout0.15_lr8e-05_Multimodal_iterations_20250120_212644
+wandb: ⭐️ View project at https://wandb.ai/leofyfan-east-china-normal-university/multimodal_sentiment_analysis_ablation
+wandb: 🚀 View run at https://wandb.ai/leofyfan-east-china-normal-university/multimodal_sentiment_analysis_ablation/runs/dgh2td7l
+wandb: uploading wandb-summary.json; uploading config.yaml; uploading output.log
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:  iteration ▁▁▂▂▂▂▂▂▃▃▃▃▄▄▄▄▄▄▄▅▅▅▅▅▅▆▆▆▆▆▆▆▆▇▇▇▇███
+wandb:  train_acc ▁▅▃▄▃▄▄▅▅▅▆▇▆▇▇▇███▇███████▇▇███████████
+wandb: train_loss █▇▇▅▅▅▅▅▄▃▂▂▃▃▂▂▂▁▂▂▁▁▂▁▁▂▁▁▂▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:  iteration 858
+wandb:  train_acc 0.96875
+wandb: train_loss 0.12316
+wandb: 
+wandb: 🚀 View run attention_concat_textTrue_imageFalse_textdim128_imagedim128_dropout0.15_lr8e-05_Multimodal_iterations_20250120_212644 at: https://wandb.ai/leofyfan-east-china-normal-university/multimodal_sentiment_analysis_ablation/runs/dgh2td7l
+wandb: ⭐️ View project at: https://wandb.ai/leofyfan-east-china-normal-university/multimodal_sentiment_analysis_ablation
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250120_212645-dgh2td7l/logs
+wandb: - Waiting for wandb.init()...
+wandb: \ Waiting for wandb.init()...
+wandb: Tracking run with wandb version 0.19.1
+wandb: Run data is saved locally in /root/project5/wandb/run-20250120_213126-xumvzuzn
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run attention_concat_textTrue_imageFalse_textdim128_imagedim128_dropout0.15_lr8e-05_Multimodal_epochs_20250120_213126
+wandb: ⭐️ View project at https://wandb.ai/leofyfan-east-china-normal-university/multimodal_sentiment_analysis_ablation
+wandb: 🚀 View run at https://wandb.ai/leofyfan-east-china-normal-university/multimodal_sentiment_analysis_ablation/runs/xumvzuzn
+wandb: uploading wandb-metadata.json; uploading requirements.txt; uploading history steps 0-0, summary; uploading wandb-summary.json
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▃▅▆█
+wandb:  train_acc ▁▆▆▇█
+wandb: train_loss █▃▃▂▁
+wandb:    val_acc ▅█▁▆█
+wandb:   val_loss ▁▃▄▇█
+wandb: 
+wandb: Run summary:
+wandb:      epoch 5
+wandb:  train_acc 0.99596
+wandb: train_loss 0.11466
+wandb:    val_acc 0.70375
+wandb:   val_loss 1.06327
+wandb: 
+wandb: 🚀 View run attention_concat_textTrue_imageFalse_textdim128_imagedim128_dropout0.15_lr8e-05_Multimodal_epochs_20250120_213126 at: https://wandb.ai/leofyfan-east-china-normal-university/multimodal_sentiment_analysis_ablation/runs/xumvzuzn
+wandb: ⭐️ View project at: https://wandb.ai/leofyfan-east-china-normal-university/multimodal_sentiment_analysis_ablation
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250120_213126-xumvzuzn/logs
+
