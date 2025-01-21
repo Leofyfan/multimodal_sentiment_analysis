@@ -74,17 +74,13 @@ pip install -r requirements.txt
         |-- ...
 |-- pretrained_models/  # 预训练模型目录
     |-- bert-base-uncased/  # bert-base-uncased预训练模型目录，需自行下载放置在该目录
-    |-- swinv2-base/  # Swin Transfo
-    rmer V2预训练模型目录，需自行下载放置在该目录
+    |-- swinv2-base/  # Swin Transformer V2预训练模型目录，需自行下载放置在该目录
 |-- results/  # 实验结果目录
     |-- result.txt  # 测试集预测结果
 |-- search/  # 参数搜索目录
-    |-- search_loss_para.py  # 损失函数参数搜索实现
-    |-- search_logs/  # 参数搜索日志目录
-        |-- loss_acb_alpha0.25_beta0.75_weight1.5_dropout0.15.txt  # acb损失函数参数组合1的搜索日志
-        |-- loss_acb_alpha0.5_beta0.5_weight1.0_dropout0.2.txt  # acb损失函数参数组合2的搜索日志
-        |-- loss_ce_alpha0.25_beta0.75_weight1.5_dropout0.15.txt  # ce损失函数参数组合1的搜索日志
-        |-- loss_ce_alpha0.5_beta0.5_weight1.0_dropout0.2.txt  # ce损失函数参数组合2的搜索日志
+    |-- search_xx.py  # xx融合方式参数搜索
+    |-- search_loss_para.py  # 损失函数参数搜索
+    |-- search_dp_lr_dim.py  # 数据增强、学习率、维度参数搜索
 |-- utils/  # 工具类目录
     |-- config.py  # 配置类,包含所有模型训练和评估需要的参数
     |-- dataload.py  # 数据加载类,实现数据集的加载和预处理
